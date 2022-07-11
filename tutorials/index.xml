@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tutorials on SoDa</title>
+    <link>https://demo.soda-team.nl/tutorials/</link>
+    <description>Recent content in Tutorials on SoDa</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <lastBuildDate>Mon, 16 May 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://demo.soda-team.nl/tutorials/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>How to share your research code</title>
+      <link>https://demo.soda-team.nl/tutorials/post-1/</link>
+      <pubDate>Mon, 16 May 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://demo.soda-team.nl/tutorials/post-1/</guid>
+      <description>With the increasing popularity of open science practices, it is now more and more common to openly share code along with more traditional scientific objects such as papers.</description>
+    </item>
+    
+  </channel>
+</rss>
