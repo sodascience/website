@@ -1,10 +1,1 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Categories on SoDa</title>
-    <link>https://demo.soda-team.nl/categories/</link>
-    <description>Recent content in Categories on SoDa</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-US</language><atom:link href="https://demo.soda-team.nl/categories/index.xml" rel="self" type="application/rss+xml" />
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Categories on SoDa</title><link>https://sodascience.github.io/website/categories/</link><description>Recent content in Categories on SoDa</description><generator>Hugo -- gohugo.io</generator><language>en-US</language><atom:link href="https://sodascience.github.io/website/categories/index.xml" rel="self" type="application/rss+xml"/></channel></rss>
