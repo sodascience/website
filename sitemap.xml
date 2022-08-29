@@ -2,23 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://sodascience.github.io/website/</loc>
+    <loc>http://socialdatascience.org/</loc>
     <lastmod>2022-05-16T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://sodascience.github.io/website/tutorials/post-1/</loc>
+    <loc>http://socialdatascience.org/tutorials/post-1/</loc>
     <lastmod>2022-05-16T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://sodascience.github.io/website/tutorials/</loc>
+    <loc>http://socialdatascience.org/tutorials/</loc>
     <lastmod>2022-05-16T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://sodascience.github.io/website/categories/</loc>
+    <loc>http://socialdatascience.org/categories/</loc>
   </url><url>
-    <loc>https://sodascience.github.io/website/principles/</loc>
+    <loc>http://socialdatascience.org/principles/</loc>
   </url><url>
-    <loc>https://sodascience.github.io/website/projects/</loc>
+    <loc>http://socialdatascience.org/projects/</loc>
   </url><url>
-    <loc>https://sodascience.github.io/website/tags/</loc>
+    <loc>http://socialdatascience.org/tags/</loc>
   </url><url>
-    <loc>https://sodascience.github.io/website/team/</loc>
+    <loc>http://socialdatascience.org/team/</loc>
   </url>
 </urlset>

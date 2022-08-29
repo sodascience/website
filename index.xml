@@ -2,44 +2,44 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>SoDa</title>
-    <link>https://sodascience.github.io/website/</link>
+    <link>http://socialdatascience.org/</link>
     <description>Recent content on SoDa</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Mon, 16 May 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://sodascience.github.io/website/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 16 May 2022 00:00:00 +0000</lastBuildDate><atom:link href="http://socialdatascience.org/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>How to share your research code</title>
-      <link>https://sodascience.github.io/website/tutorials/post-1/</link>
+      <link>http://socialdatascience.org/tutorials/post-1/</link>
       <pubDate>Mon, 16 May 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://sodascience.github.io/website/tutorials/post-1/</guid>
+      <guid>http://socialdatascience.org/tutorials/post-1/</guid>
       <description>With the increasing popularity of open science practices, it is now more and more common to openly share code along with more traditional scientific objects such as papers.</description>
     </item>
     
     <item>
       <title>Principles</title>
-      <link>https://sodascience.github.io/website/principles/</link>
+      <link>http://socialdatascience.org/principles/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://sodascience.github.io/website/principles/</guid>
+      <guid>http://socialdatascience.org/principles/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Projects</title>
-      <link>https://sodascience.github.io/website/projects/</link>
+      <link>http://socialdatascience.org/projects/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://sodascience.github.io/website/projects/</guid>
+      <guid>http://socialdatascience.org/projects/</guid>
       <description></description>
     </item>
     
     <item>
       <title>The SoDa Team</title>
-      <link>https://sodascience.github.io/website/team/</link>
+      <link>http://socialdatascience.org/team/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://sodascience.github.io/website/team/</guid>
+      <guid>http://socialdatascience.org/team/</guid>
       <description></description>
     </item>
     
