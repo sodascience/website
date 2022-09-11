@@ -35,4 +35,4 @@ E-Mail: j.garciabernardo@uu.nl
 GitHub: https://github.com/jgarciab/
 
 
-or go to the Teams page on our website: https://socialdatascience.org/team
+or go to the Teams page on our website: https://socialdatascience.org/team/
