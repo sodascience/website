@@ -2,44 +2,44 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>SoDa</title>
-    <link>http://socialdatascience.org/</link>
+    <link>http://odissei-soda.nl/</link>
     <description>Recent content on SoDa</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Mon, 16 May 2022 00:00:00 +0000</lastBuildDate><atom:link href="http://socialdatascience.org/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 16 May 2022 00:00:00 +0000</lastBuildDate><atom:link href="http://odissei-soda.nl/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>How to share your research code</title>
-      <link>http://socialdatascience.org/tutorials/post-1/</link>
+      <link>http://odissei-soda.nl/tutorials/post-1/</link>
       <pubDate>Mon, 16 May 2022 00:00:00 +0000</pubDate>
       
-      <guid>http://socialdatascience.org/tutorials/post-1/</guid>
+      <guid>http://odissei-soda.nl/tutorials/post-1/</guid>
       <description>With the increasing popularity of open science practices, it is now more and more common to openly share code along with more traditional scientific objects such as papers.</description>
     </item>
     
     <item>
       <title>Principles</title>
-      <link>http://socialdatascience.org/principles/</link>
+      <link>http://odissei-soda.nl/principles/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://socialdatascience.org/principles/</guid>
+      <guid>http://odissei-soda.nl/principles/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Projects</title>
-      <link>http://socialdatascience.org/projects/</link>
+      <link>http://odissei-soda.nl/projects/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://socialdatascience.org/projects/</guid>
+      <guid>http://odissei-soda.nl/projects/</guid>
       <description></description>
     </item>
     
     <item>
       <title>The SoDa Team</title>
-      <link>http://socialdatascience.org/team/</link>
+      <link>http://odissei-soda.nl/team/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://socialdatascience.org/team/</guid>
+      <guid>http://odissei-soda.nl/team/</guid>
       <description></description>
     </item>
     

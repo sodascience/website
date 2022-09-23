@@ -3,7 +3,7 @@
 This is the website for the Social Data Science Team - SoDa.  
 SoDa is part of ODISSEI and aims on helping social scientists with data intensive & computational research.
 
-Link to website: https://socialdatascience.org/
+Link to website: https://odissei-soda.nl/
 
 ## Description
 
@@ -33,7 +33,7 @@ E-Mail: j.garciabernardo@uu.nl
 GitHub: https://github.com/jgarciab/
 
 
-or go to the Teams page on our website: https://socialdatascience.org/team/
+or go to the Teams page on our website: https://odissei-soda.nl/team/
 
 
 ----
