@@ -8,6 +8,15 @@
     <language>en-US</language>
     <lastBuildDate>Mon, 16 May 2022 00:00:00 +0000</lastBuildDate><atom:link href="http://odissei-soda.nl/tutorials/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>ArtScraper: A Python library to scrape online artworks</title>
+      <link>http://odissei-soda.nl/tutorials/post-2/</link>
+      <pubDate>Mon, 16 May 2022 00:00:00 +0000</pubDate>
+      
+      <guid>http://odissei-soda.nl/tutorials/post-2/</guid>
+      <description>ArtScraper is a Python library to download images and metadata for artworks available on WikiArt and Google Arts &amp;amp; Culture.</description>
+    </item>
+    
+    <item>
       <title>How to share your research code</title>
       <link>http://odissei-soda.nl/tutorials/post-1/</link>
       <pubDate>Mon, 16 May 2022 00:00:00 +0000</pubDate>
