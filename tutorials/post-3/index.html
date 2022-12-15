@@ -4,7 +4,7 @@
 <head>
 	
 	<meta charset="utf-8">
-<title>ArtScraper: A Python library to scrape online artworks</title>
+<title>Reproducible science using Statistics Netherlands microdata</title>
 
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
@@ -390,11 +390,11 @@
 
 
 <picture>
-  <source  srcset="/images/tutorial-2/nantenbo_header_hu48d98726654ff846597d2fe25a58192f_52421_545x0_resize_q100_h2_box.webp"  media="(max-width: 575px)">
-  <source  srcset="/images/tutorial-2/nantenbo_header_hu48d98726654ff846597d2fe25a58192f_52421_600x0_resize_q100_h2_box.webp"  media="(max-width: 767px)">
-  <source  srcset="/images/tutorial-2/nantenbo_header_hu48d98726654ff846597d2fe25a58192f_52421_700x0_resize_q100_h2_box.webp"  media="(max-width: 991px)">
-  <source  srcset="/images/tutorial-2/nantenbo_header_hu48d98726654ff846597d2fe25a58192f_52421_1110x0_resize_q100_h2_box.webp" >
-  <img  loading="lazy" decoding="async" src="/images/tutorial-2/nantenbo_header_hu48d98726654ff846597d2fe25a58192f_52421_1110x0_resize_q100_box.jpg"class=" rounded-2 w-100 mb-5 img-fluid" alt="ArtScraper: A Python library to scrape online artworks" width="600" height="300">
+  <source  srcset="/images/tutorial-3/tutorial3_header_hudfeb7f39f2da94fb9b40217771ccd9c4_772114_545x0_resize_q100_h2_box_3.webp"  media="(max-width: 575px)">
+  <source  srcset="/images/tutorial-3/tutorial3_header_hudfeb7f39f2da94fb9b40217771ccd9c4_772114_600x0_resize_q100_h2_box_3.webp"  media="(max-width: 767px)">
+  <source  srcset="/images/tutorial-3/tutorial3_header_hudfeb7f39f2da94fb9b40217771ccd9c4_772114_700x0_resize_q100_h2_box_3.webp"  media="(max-width: 991px)">
+  <source  srcset="/images/tutorial-3/tutorial3_header_hudfeb7f39f2da94fb9b40217771ccd9c4_772114_1110x0_resize_q100_h2_box_3.webp" >
+  <img  loading="lazy" decoding="async" src="/images/tutorial-3/tutorial3_header_hudfeb7f39f2da94fb9b40217771ccd9c4_772114_1110x0_resize_box_3.png"class=" rounded-2 w-100 mb-5 img-fluid" alt="Reproducible science using Statistics Netherlands microdata" width="5760" height="1775">
 </picture>
  
  
@@ -404,51 +404,973 @@
         
         
         
-        <span class="text-muted fw-500"><i class="far fa-calendar-alt text-dark me-1"></i> October 4, 2022 <span class="mx-1 text-dark-50 fw-500">|</span> <i class="far fa-clock text-dark me-1"></i> 2 </span>
+        <span class="text-muted fw-500"><i class="far fa-calendar-alt text-dark me-1"></i> December 7, 2022 <span class="mx-1 text-dark-50 fw-500">|</span> <i class="far fa-clock text-dark me-1"></i> 14 </span>
 
-        <h2 class="h3 my-3">ArtScraper: A Python library to scrape online artworks</h2>
+        <h2 class="h3 my-3">Reproducible science using Statistics Netherlands microdata</h2>
 
-        <div class="mt-5 content"><p>ArtScraper is a Python library to download images and metadata for artworks available on
-<a href="www.wikiart.org/">WikiArt</a> and <a href="artsandculture.google.com/">Google Arts &amp; Culture</a>.</p>
-<h6 id="installation">Installation</h6>
-<pre tabindex="0"><code>pip install https://github.com/sodascience/artscraper.git
-</code></pre><h6 id="downloading-images-from-wikiart">Downloading images from WikiArt</h6>
-<p>To download data from WikiArt it is necessary to obtain <a href="https://www.wikiart.org/en/App/GetApi">free API keys</a>.</p>
-<p>Once you have the API keys, you can simply run the code below to download the images and metadata of the three artworks of Aleksandra Ekster.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># artworks to scrape</span>
-</span></span><span style="display:flex;"><span>some_links <span style="color:#f92672">=</span> [
-</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;https://www.wikiart.org/en/aleksandra-ekster/women-s-costume-1918&#34;</span>,
-</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;https://www.wikiart.org/en/aleksandra-ekster/still-life-1913&#34;</span>,
-</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;https://www.wikiart.org/en/aleksandra-ekster/view-of-paris-1912&#34;</span>
-</span></span><span style="display:flex;"><span>]
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># download images and metadata to the folder &#34;data&#34;</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">with</span> WikiArtScraper(output_dir<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;data&#34;</span>) <span style="color:#66d9ef">as</span> scraper:
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> url <span style="color:#f92672">in</span> some_links:
-</span></span><span style="display:flex;"><span>        scraper<span style="color:#f92672">.</span>load_link(url)
-</span></span><span style="display:flex;"><span>        scraper<span style="color:#f92672">.</span>save_metadata()
-</span></span><span style="display:flex;"><span>        scraper<span style="color:#f92672">.</span>save_image()
-</span></span></code></pre></div><h6 id="downloading-images-from-google-art--culture">Downloading images from Google Art &amp; Culture</h6>
-<p>To download data from Google Art &amp; Culture you need to download Firefox and geckodriver. The installation instructions can be found in our <a href="https://github.com/sodascience/artscraper/">GitHub repository</a>.</p>
-<p>Once you have Firefox and geckodriver, you can simply run the code below to download artworks. You are <strong>not allowed</strong> to share or publish the images. Use them only for research.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># artworks to scrape</span>
-</span></span><span style="display:flex;"><span>some_links <span style="color:#f92672">=</span> [
-</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;https://artsandculture.google.com/asset/helena-hunter-fairytales/dwFMypq0ZSiq6w&#34;</span>,
-</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;https://artsandculture.google.com/asset/erina-takahashi-and-isaac-hernandez-in-fantastic-beings-laurent-liotardo/MQEhgoWpWJUd_w&#34;</span>,
-</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;https://artsandculture.google.com/asset/rinaldo-roberto-masotti/swG7r2rgfvPOFQ&#34;</span>
-</span></span><span style="display:flex;"><span>]
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># If you are on Windows, you can download geckodriver, place it in your directory,</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">#  and use the argument geckodriver_path=&#34;geckodriver.exe&#34;</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">with</span> GoogleArtScraper(<span style="color:#e6db74">&#34;data&#34;</span>) <span style="color:#66d9ef">as</span> scraper: 
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> url <span style="color:#f92672">in</span> some_links:
-</span></span><span style="display:flex;"><span>        scraper<span style="color:#f92672">.</span>load_link(url)
-</span></span><span style="display:flex;"><span>        scraper<span style="color:#f92672">.</span>save_metadata()
-</span></span><span style="display:flex;"><span>        scraper<span style="color:#f92672">.</span>save_image()
-</span></span></code></pre></div><p>You can find more examples <a href="https://github.com/sodascience/artscraper/examples/example_artscraper.ipynb">here</a></p>
-<p>Do you want to know more about this library? Check our <a href="https://github.com/sodascience/artscraper/">GitHub repository</a></p>
-<p>Are you using it for academic work? Please cite our package:</p>
-<pre><code>Schram, Raoul, Garcia-Bernardo, Javier, van Kesteren, Erik-Jan, de Bruin, Jonathan, &amp; Stamkou, Eftychia. (2022).
-ArtScraper: A Python library to scrape online artworks (0.1.1). Zenodo. https://doi.org/10.5281/zenodo.7129975
-</code></pre>
+        <div class="mt-5 content"><p>Through <a href="https://odissei-data.nl">ODISSEI</a>, researchers can get access to microdata of the Dutch national statistical agency Statistics Netherlands (CBS). This access is highly restricted, ensuring privacy of the inhabitants of the Netherlands. However, this restriction is at odds with reproducibility, a key open science research practice: analyses done using these microdatasets cannot be easily reproduced by others. In this post, we describe a workflow to enhance the reproducibility of CBS microdata analyses done on the Remote Access (RA) environment by creating and publishing <em>synthetic data</em>. For this, we will be using our new <a href="https://github.com/sodascience/synthpop.extract"><code>synthpop.extract</code></a> R package.</p>
+<p>The general procedure of the workflow is as follows:</p>
+<blockquote>
+<p><strong>Preparation</strong></p>
+<ol>
+<li>Install <a href="https://github.com/sodascience/synthpop.extract"><code>synthpop.extract</code></a> on the remote access (RA) environment and on your own computer.</li>
+</ol>
+<p><strong>On the CBS RA environment:</strong></p>
+<ol start="2">
+<li>Estimate a parametric generative model for the dataset using the well-known <code>synthpop</code> package in R.</li>
+<li>Extract parameters of this generative model and ensure disclosure control according to the <a href="https://www.cbs.nl/en-gb/our-services/customised-services-microdata/microdata-conducting-your-own-research/export-of-information">CBS output guidelines</a> using <code>synthpop.extract</code>.</li>
+<li>Export the disclosure controlled parameters to an <code>xlsx</code> file using <code>synthpop.extract</code>.</li>
+<li>Offer the <code>xlsx</code> file to the microdata team for output control.</li>
+</ol>
+<p><strong>Then, outside the CBS RA environment:</strong></p>
+<ol start="6">
+<li>Download the <code>xlsx</code> file and load the parameters back in R using <code>synthpop.extract</code>.</li>
+<li>Generate synthetic data based on the model parameters using <code>synthpop.extract</code>.</li>
+<li>Run the original analysis on the synthetic data and report differences.</li>
+</ol>
+</blockquote>
+<p>Below, we perform this procedure using an example: confirmatory factor analysis on a personality trait questionnaire dataset.</p>
+<h5 id="installation">Installation</h5>
+<p>Install the <code>synthpop.extract</code> package on your own computer using the following code.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-R" data-lang="R"><span style="display:flex;"><span><span style="color:#75715e"># Install the package</span>
+</span></span><span style="display:flex;"><span>remotes<span style="color:#f92672">::</span><span style="color:#a6e22e">install.packages</span>(<span style="color:#e6db74">&#34;sodascience/synthpop.extract&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Load the package (this also loads the synthpop package!)</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">library</span>(synthpop.extract)
+</span></span></code></pre></div><p>On the RA environment, you first need to upload the package as a folder (subject to checks by the RA team). This folder can be downloaded from the releases page <a href="https://github.com/sodascience/synthpop.extract/releases/latest">here</a>. Once the folder is on the RA environment, unzip it to a nice location and install the package as follows:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-R" data-lang="R"><span style="display:flex;"><span><span style="color:#a6e22e">install.packages</span>(<span style="color:#e6db74">&#34;C:/path/to/synthpop.extract&#34;</span>, repos <span style="color:#f92672">=</span> <span style="color:#66d9ef">NULL</span>, type <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;source&#34;</span>)
+</span></span></code></pre></div><h5 id="estimate-parametric-generative-model">Estimate parametric generative model</h5>
+<p>As the first step to generate synthetic data, we use the <code>synthpop</code> package. Specifically, we will estimate a parametric conditional regression model for the dataset of interest. If you want to know more about <code>synthpop</code> and how to generate data, see <a href="https://synthpop.org.uk/">synthpop.org.uk</a>.</p>
+<p>For this example, we use the data <code>big5</code>, which is included in the <code>synthpop.extract</code> package. Load the data and call the <code>syn</code> function as follows:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-R" data-lang="R"><span style="display:flex;"><span>synds <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">syn</span>(big5, method <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;norm&#34;</span>, models <span style="color:#f92672">=</span> <span style="color:#66d9ef">TRUE</span>)
+</span></span></code></pre></div><p>Make sure to set <code>models = TRUE</code> when calling the <code>syn</code> function, as that ensures that the model parameters are stored in the output object (<code>synds</code>). Our <code>big5</code> data is continuous and roughly multivariate normal, hence we chose <code>method = &quot;norm&quot;</code>. For different data types, we support the following methods:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">method</th>
+<th style="text-align:left">variable type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>&quot;norm&quot;</code></td>
+<td style="text-align:left">continuous variables</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>&quot;logreg&quot;</code></td>
+<td style="text-align:left">binary variables</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>&quot;polyreg&quot;</code></td>
+<td style="text-align:left">unordered categorical variables</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>&quot;polr&quot;</code></td>
+<td style="text-align:left">ordered categorical variables</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>Note: the variable names of your dataset <em>should not include numbers</em> due to a bug in the <code>synthpop</code> package when <code>models = TRUE</code>.</p>
+</blockquote>
+<h5 id="extract-parameters">Extract parameters</h5>
+<p>After creating our model, we use the <code>synp_get_param</code> function, which takes the original data and the <code>synds</code> object as arguments to create a list of the parameters of the generative models:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-R" data-lang="R"><span style="display:flex;"><span>model_par <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">synp_get_param</span>(big5, synds)
+</span></span></code></pre></div><p>The <code>synp_get_param</code> function performs some checks to see if the process meets the disclosure control conditions according to the <a href="https://www.cbs.nl/en-gb/our-services/customised-services-microdata/microdata-conducting-your-own-research/export-of-information">CBS output guidelines</a>. For example, if you create these parameters based on only 15 observations, you will get the following error:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-txt" data-lang="txt"><span style="display:flex;"><span>Error in synp_get_param(big5[1:15, ], synds) : 
+</span></span><span style="display:flex;"><span>  Disclosure control (as per CBS guideline #2): EST_I should have minimum 10 degrees of freedom to proceed.
+</span></span></code></pre></div><blockquote>
+<p>Note: although <code>synthpop.extract</code> mostly ensures that output guidelines are met, we cannot guarantee that all edge cases are included. The data analyst maintains the full responsibility of ensuring privacy in the output stage.</p>
+</blockquote>
+<h5 id="save-to-excel">Save to Excel</h5>
+<p>Next, we export the disclosure controlled parameters to an <code>xlsx</code> file using the <code>synp_write_sheets</code> function.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-R" data-lang="R"><span style="display:flex;"><span><span style="color:#a6e22e">synp_write_sheets</span>(model_par, <span style="color:#e6db74">&#34;big5.xlsx&#34;</span>)
+</span></span></code></pre></div><p>You can check to see that all the parameters are indeed written to the excel sheet. If you want to perform additional disclosure control steps, you can do this directly in the excel file (but be sure to not change its structure!).</p>
+<h5 id="export-from-cbs-ra-environment">Export from CBS RA environment</h5>
+<p>The next step is to offer the <code>xlsx</code> file to the microdata team for output control. For this, store the <code>big5.xlsx</code> file in the output folder of the CBS RA environment. After this file passes the check, it can be downloaded and stored on your own computer.</p>
+<h5 id="load-the-parameters-in-the-excel-file-into-r">Load the parameters in the Excel file into R</h5>
+<p>With our outputted <code>big5.xlsx</code> file downloaded to our own computer, we can now load the parameters back in R using <code>synp_read_sheets</code> function.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-R" data-lang="R"><span style="display:flex;"><span>model_par <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">synp_read_sheets</span>(<span style="color:#e6db74">&#34;path/to/big5.xlsx&#34;</span>)
+</span></span></code></pre></div><h5 id="generate-synthetic-data">Generate synthetic data</h5>
+<p>Now, we can finally generate the synthetic data using <code>synp_gen_syndat</code> function. It takes the list of parameters resulting from <code>synp_read_sheets()</code> and the sample size <code>n</code> as arguments (if not specified, default <code>n = 1000</code> is applied). Our example <code>big5</code> dataset has 100000 rows, so we generate the same amount in this step.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-R" data-lang="R"><span style="display:flex;"><span>syndat <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">synp_gen_syndat</span>(model_par, n <span style="color:#f92672">=</span> <span style="color:#ae81ff">100000</span>)
+</span></span></code></pre></div><details><summary><strong>Check the synthetic data.</strong></summary>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-R" data-lang="R"><span style="display:flex;"><span><span style="color:#75715e"># show the first 6 rows and columns</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">head</span>(syndat[, <span style="color:#ae81ff">1</span><span style="color:#f92672">:</span><span style="color:#ae81ff">6</span>])
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-txt" data-lang="txt"><span style="display:flex;"><span>      EXT_I    EXT_II  EXT_III   EXT_IV    EXT_V    EST_I
+</span></span><span style="display:flex;"><span>1 1.7967667 4.5696000 2.470643 3.594090 4.198519 2.772357
+</span></span><span style="display:flex;"><span>2 1.5007013 3.3665465 3.995861 3.043404 1.888603 2.725456
+</span></span><span style="display:flex;"><span>3 0.2680578 3.3021180 4.042961 2.081508 2.697252 1.983089
+</span></span><span style="display:flex;"><span>4 2.1136429 2.6683560 2.328611 3.324001 2.376048 0.606386
+</span></span><span style="display:flex;"><span>5 1.9526136 0.2552039 2.827340 1.287563 2.680024 3.749983
+</span></span><span style="display:flex;"><span>6 4.3846772 4.3583375 2.510808 3.943423 2.911146 2.809992
+</span></span></code></pre></div></details>
+<h5 id="compare-analyses-on-synthetic--real-data">Compare analyses on synthetic &amp; real data</h5>
+<p>Before publishing the synthetic data, it is important to show how well the analysis you&rsquo;re interested in replicates in the synthetic data. We recommend briefly summarizing the differences in the main analysis for potential users of your code. For our <code>big5</code> example, we perform confirmatory factor analysis on both the synthesized and original data. Then, we compare the results to see if they lead to more or less the same conclusion.</p>
+<p>As seen below in the table, it is observed that the resulting estimates from the factor analysis on the synthetic data coincide closely with those from the analysis on the original data.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Factor loading</th>
+<th style="text-align:center">Original data (se)</th>
+<th style="text-align:center">Synthetic data (se)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">EXTRA =~ EXT_IV</td>
+<td style="text-align:center">0.858 (.004)</td>
+<td style="text-align:center">0.860 (.004)</td>
+</tr>
+<tr>
+<td style="text-align:left">EXTRA =~ EXT_V</td>
+<td style="text-align:center">0.959 (.004)</td>
+<td style="text-align:center">0.953 (.004)</td>
+</tr>
+<tr>
+<td style="text-align:left">AGREE =~ AGR_IV</td>
+<td style="text-align:center">0.788 (.004)</td>
+<td style="text-align:center">0.787 (.004)</td>
+</tr>
+<tr>
+<td style="text-align:left">AGREE =~ AGR_V</td>
+<td style="text-align:center">0.796 (.004)</td>
+<td style="text-align:center">0.797 (.004)</td>
+</tr>
+<tr>
+<td style="text-align:left">EMO =~ EST_IV</td>
+<td style="text-align:center">0.438 (.004)</td>
+<td style="text-align:center">0.439 (.004)</td>
+</tr>
+<tr>
+<td style="text-align:left">EMO =~ EST_V</td>
+<td style="text-align:center">0.557 (.004)</td>
+<td style="text-align:center">0.561 (.004)</td>
+</tr>
+<tr>
+<td style="text-align:left">OPEN =~ OPN_IV</td>
+<td style="text-align:center">0.708 (.004)</td>
+<td style="text-align:center">0.702 (.004)</td>
+</tr>
+<tr>
+<td style="text-align:left">OPEN =~ OPN_V</td>
+<td style="text-align:center">0.440 (.004)</td>
+<td style="text-align:center">0.441 (.004)</td>
+</tr>
+<tr>
+<td style="text-align:left">CON =~ CSN_IV</td>
+<td style="text-align:center">0.808 (.004)</td>
+<td style="text-align:center">0.808 (.004)</td>
+</tr>
+<tr>
+<td style="text-align:left">CON =~ CSN_V</td>
+<td style="text-align:center">0.789 (.004)</td>
+<td style="text-align:center">0.782 (.004)</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>Note: these analyses align closely because Confirmatory Factor Analysis is linear and assumes normality, and the model we used to generate the synthetic data does too. With more complicated analyses, you will likely see larger deviations from the original analysis!</p>
+</blockquote>
+<h5 id="conclusion">Conclusion</h5>
+<p>In this tutorial, we have shown how to estimate a parametric model for your data, extract and store its parameters, and then produce synthetic data based on this model. Publishing synthetic data along with your analysis script will improve the reproducibility and understandability of your analyses, so we recommend doing so!</p>
+<br/>
+<hr>
+<br/>
+<h5 id="appendix-detailed-description-of-performing-factor-analysis">Appendix: Detailed description of performing factor analysis</h5>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-R" data-lang="R"><span style="display:flex;"><span><span style="color:#a6e22e">library</span>(tidyverse)
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">library</span>(skimr)
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">library</span>(lavaan)
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">library</span>(lavaanPlot)
+</span></span></code></pre></div><h5 id="example-dataset">Example dataset</h5>
+<p>As an example analysis, we perform <a href="https://en.wikipedia.org/wiki/Factor_analysis">factor analysis</a> for the big five personality traits. For the detailed description of the data, please check the help file (e.g., <code>?big5</code>). We can take a quick look at the data summary as below.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-R" data-lang="R"><span style="display:flex;"><span><span style="color:#75715e">## data summary</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">skim</span>(big5)
+</span></span></code></pre></div><details>
+<summary>
+<strong>See the data summary.</strong>
+</summary>
+<font size="2" face="Courier New" >
+<table>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Name</td>
+<td style="text-align: left;">big5</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Number of rows</td>
+<td style="text-align: left;">100000</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Number of columns</td>
+<td style="text-align: left;">25</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">_______________________</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Column type frequency:</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">numeric</td>
+<td style="text-align: left;">25</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">________________________</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Group variables</td>
+<td style="text-align: left;">None</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Variable type: numeric</strong></p>
+<table>
+<colgroup>
+<col style="width: 13%" />
+<col style="width: 14%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">variable</th>
+<th style="text-align: center;">n_missing</th>
+<th style="text-align: center;">mean</th>
+<th style="text-align: center;">sd</th>
+<th style="text-align: center;">p25</th>
+<th style="text-align: center;">p50</th>
+<th style="text-align: center;">p75</th>
+<th style="text-align: center;">hist</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">EXT1</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">2.64</td>
+<td style="text-align: center;">1.26</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: left;">▇▆▇▅▂</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">EXT2</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">3.21</td>
+<td style="text-align: center;">1.31</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: left;">▅▆▇▇▇</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">EXT3</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">3.29</td>
+<td style="text-align: center;">1.22</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: left;">▂▆▇▇▅</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">EXT4</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">2.84</td>
+<td style="text-align: center;">1.21</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: left;">▅▇▇▆▃</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">EXT5</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">3.28</td>
+<td style="text-align: center;">1.28</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: left;">▃▅▆▇▅</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">EST1</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">2.69</td>
+<td style="text-align: center;">1.32</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: left;">▇▇▆▆▃</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">EST2</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">3.17</td>
+<td style="text-align: center;">1.23</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: left;">▃▆▇▇▅</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">EST3</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">2.14</td>
+<td style="text-align: center;">1.13</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: left;">▇▇▃▂▁</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">EST4</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">2.66</td>
+<td style="text-align: center;">1.25</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: left;">▆▇▇▅▂</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">EST5</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">3.14</td>
+<td style="text-align: center;">1.25</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: left;">▃▇▇▇▅</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">AGR1</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">3.73</td>
+<td style="text-align: center;">1.33</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">5</td>
+<td style="text-align: left;">▂▃▃▅▇</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">AGR2</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">3.83</td>
+<td style="text-align: center;">1.14</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">5</td>
+<td style="text-align: left;">▁▂▅▇▇</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">AGR3</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">3.73</td>
+<td style="text-align: center;">1.27</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">5</td>
+<td style="text-align: left;">▁▃▃▅▇</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">AGR4</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">3.93</td>
+<td style="text-align: center;">1.13</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">5</td>
+<td style="text-align: left;">▁▂▃▇▇</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">AGR5</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">3.71</td>
+<td style="text-align: center;">1.16</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">5</td>
+<td style="text-align: left;">▁▂▅▇▆</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">CSN1</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">3.29</td>
+<td style="text-align: center;">1.18</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: left;">▂▅▆▇▃</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">CSN2</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">3.05</td>
+<td style="text-align: center;">1.37</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: left;">▅▇▆▇▆</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">CSN3</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">3.98</td>
+<td style="text-align: center;">1.04</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">5</td>
+<td style="text-align: left;">▁▂▃▇▇</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">CSN4</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">3.36</td>
+<td style="text-align: center;">1.23</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: left;">▂▅▆▇▆</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">CSN5</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">2.62</td>
+<td style="text-align: center;">1.27</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: left;">▇▇▇▅▃</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">OPN1</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">3.65</td>
+<td style="text-align: center;">1.16</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">5</td>
+<td style="text-align: left;">▁▂▆▇▇</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">OPN2</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">3.91</td>
+<td style="text-align: center;">1.10</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">5</td>
+<td style="text-align: left;">▁▂▅▇▇</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">OPN3</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">4.00</td>
+<td style="text-align: center;">1.10</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">5</td>
+<td style="text-align: left;">▁▂▃▆▇</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">OPN4</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">3.98</td>
+<td style="text-align: center;">1.07</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">5</td>
+<td style="text-align: left;">▁▁▃▆▇</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">OPN5</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">3.79</td>
+<td style="text-align: center;">0.99</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">5</td>
+<td style="text-align: left;">▁▁▆▇▅</td>
+</tr>
+</tbody>
+</table>
+</font>
+</details>
+<h5 id="perform-factor-analysis">Perform factor analysis</h5>
+<p>We first run factor analysis on the original data.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-R" data-lang="R"><span style="display:flex;"><span><span style="color:#75715e">## lavaan model syntax</span>
+</span></span><span style="display:flex;"><span>syntax <span style="color:#f92672">&lt;-</span> <span style="color:#e6db74">&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  EXTRA =~ EXT_I + EXT_II + EXT_III + EXT_IV + EXT_V 
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  AGREE =~ AGR_I + AGR_II + AGR_III + AGR_IV + AGR_V 
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  EMO   =~ EST_I + EST_II + EST_III + EST_IV + EST_V 
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  OPEN  =~ OPN_I + OPN_II + OPN_III + OPN_IV + OPN_V
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  CON   =~ CSN_I + CSN_II + CSN_III + CSN_IV + CSN_V 
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">## run CFA on original data</span>
+</span></span><span style="display:flex;"><span>original_CFA <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">cfa</span>(model <span style="color:#f92672">=</span> syntax, data <span style="color:#f92672">=</span> big5, std.lv <span style="color:#f92672">=</span> <span style="color:#66d9ef">TRUE</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">## assess the fit indices</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">fitMeasures</span>(original_CFA, fit.measures <span style="color:#f92672">=</span> <span style="color:#a6e22e">c</span>(<span style="color:#e6db74">&#34;cfi&#34;</span>,<span style="color:#e6db74">&#34;srmr&#34;</span>, <span style="color:#e6db74">&#34;rmsea&#34;</span>))
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-txt" data-lang="txt"><span style="display:flex;"><span>cfi  srmr rmsea 
+</span></span><span style="display:flex;"><span>0.813 0.066 0.066 
+</span></span></code></pre></div><details><summary><strong>Check the CFA results in detail.</strong></summary>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-txt" data-lang="txt"><span style="display:flex;"><span>lavaan 0.6-12 ended normally after 19 iterations
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  Estimator                                         ML
+</span></span><span style="display:flex;"><span>  Optimization method                           NLMINB
+</span></span><span style="display:flex;"><span>  Number of model parameters                        60
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  Number of observations                        100000
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Model Test User Model:
+</span></span><span style="display:flex;"><span>                                                        
+</span></span><span style="display:flex;"><span>  Test statistic                              116396.465
+</span></span><span style="display:flex;"><span>  Degrees of freedom                                 265
+</span></span><span style="display:flex;"><span>  P-value (Chi-square)                             0.000
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Model Test Baseline Model:
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  Test statistic                            621980.047
+</span></span><span style="display:flex;"><span>  Degrees of freedom                               300
+</span></span><span style="display:flex;"><span>  P-value                                        0.000
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>User Model versus Baseline Model:
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  Comparative Fit Index (CFI)                    0.813
+</span></span><span style="display:flex;"><span>  Tucker-Lewis Index (TLI)                       0.789
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Loglikelihood and Information Criteria:
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  Loglikelihood user model (H0)           -3741032.528
+</span></span><span style="display:flex;"><span>  Loglikelihood unrestricted model (H1)   -3682834.295
+</span></span><span style="display:flex;"><span>                                                      
+</span></span><span style="display:flex;"><span>  Akaike (AIC)                             7482185.055
+</span></span><span style="display:flex;"><span>  Bayesian (BIC)                           7482755.831
+</span></span><span style="display:flex;"><span>  Sample-size adjusted Bayesian (BIC)      7482565.149
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Root Mean Square Error of Approximation:
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  RMSEA                                          0.066
+</span></span><span style="display:flex;"><span>  90 Percent confidence interval - lower         0.066
+</span></span><span style="display:flex;"><span>  90 Percent confidence interval - upper         0.067
+</span></span><span style="display:flex;"><span>  P-value RMSEA &lt;= 0.05                          0.000
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Standardized Root Mean Square Residual:
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  SRMR                                           0.066
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Parameter Estimates:
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  Standard errors                             Standard
+</span></span><span style="display:flex;"><span>  Information                                 Expected
+</span></span><span style="display:flex;"><span>  Information saturated (h1) model          Structured
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Latent Variables:
+</span></span><span style="display:flex;"><span>                    Estimate  Std.Err  z-value  P(&gt;|z|)   Std.lv  Std.all
+</span></span><span style="display:flex;"><span>  EXTRA =~                                                              
+</span></span><span style="display:flex;"><span>    EXT_I             0.838    0.004  217.930    0.000    0.838    0.662
+</span></span><span style="display:flex;"><span>    EXT_II            0.903    0.004  230.160    0.000    0.903    0.691
+</span></span><span style="display:flex;"><span>    EXT_III           0.853    0.004  234.583    0.000    0.853    0.701
+</span></span><span style="display:flex;"><span>    EXT_IV            0.860    0.004  239.410    0.000    0.860    0.712
+</span></span><span style="display:flex;"><span>    EXT_V             0.953    0.004  254.331    0.000    0.953    0.746
+</span></span><span style="display:flex;"><span>  AGREE =~                                                              
+</span></span><span style="display:flex;"><span>    AGR_I             0.665    0.005  146.177    0.000    0.665    0.501
+</span></span><span style="display:flex;"><span>    AGR_II            0.677    0.004  177.939    0.000    0.677    0.596
+</span></span><span style="display:flex;"><span>    AGR_III           0.427    0.004   94.987    0.000    0.427    0.336
+</span></span><span style="display:flex;"><span>    AGR_IV            0.787    0.004  212.670    0.000    0.787    0.698
+</span></span><span style="display:flex;"><span>    AGR_V             0.797    0.004  209.239    0.000    0.797    0.688
+</span></span><span style="display:flex;"><span>  EMO =~                                                                
+</span></span><span style="display:flex;"><span>    EST_I             1.077    0.004  264.435    0.000    1.077    0.819
+</span></span><span style="display:flex;"><span>    EST_II            0.722    0.004  181.993    0.000    0.722    0.589
+</span></span><span style="display:flex;"><span>    EST_III           0.783    0.004  219.824    0.000    0.783    0.695
+</span></span><span style="display:flex;"><span>    EST_IV            0.439    0.004  102.545    0.000    0.439    0.351
+</span></span><span style="display:flex;"><span>    EST_V             0.561    0.004  133.401    0.000    0.561    0.448
+</span></span><span style="display:flex;"><span>  OPEN =~                                                               
+</span></span><span style="display:flex;"><span>    OPN_I             0.534    0.004  129.802    0.000    0.534    0.461
+</span></span><span style="display:flex;"><span>    OPN_II            0.796    0.004  206.772    0.000    0.796    0.725
+</span></span><span style="display:flex;"><span>    OPN_III           0.450    0.004  114.457    0.000    0.450    0.410
+</span></span><span style="display:flex;"><span>    OPN_IV            0.702    0.004  187.002    0.000    0.702    0.653
+</span></span><span style="display:flex;"><span>    OPN_V             0.441    0.004  125.096    0.000    0.441    0.445
+</span></span><span style="display:flex;"><span>  CON =~                                                                
+</span></span><span style="display:flex;"><span>    CSN_I             0.687    0.004  168.047    0.000    0.687    0.583
+</span></span><span style="display:flex;"><span>    CSN_II            0.797    0.005  167.636    0.000    0.797    0.582
+</span></span><span style="display:flex;"><span>    CSN_III           0.358    0.004   94.671    0.000    0.358    0.343
+</span></span><span style="display:flex;"><span>    CSN_IV            0.808    0.004  190.284    0.000    0.808    0.655
+</span></span><span style="display:flex;"><span>    CSN_V             0.782    0.004  177.832    0.000    0.782    0.615
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Covariances:
+</span></span><span style="display:flex;"><span>                    Estimate  Std.Err  z-value  P(&gt;|z|)   Std.lv  Std.all
+</span></span><span style="display:flex;"><span>  EXTRA ~~                                                              
+</span></span><span style="display:flex;"><span>    AGREE             0.388    0.004  108.706    0.000    0.388    0.388
+</span></span><span style="display:flex;"><span>    EMO               0.247    0.004   66.694    0.000    0.247    0.247
+</span></span><span style="display:flex;"><span>    OPEN              0.134    0.004   33.270    0.000    0.134    0.134
+</span></span><span style="display:flex;"><span>    CON               0.140    0.004   34.647    0.000    0.140    0.140
+</span></span><span style="display:flex;"><span>  AGREE ~~                                                              
+</span></span><span style="display:flex;"><span>    EMO              -0.072    0.004  -17.563    0.000   -0.072   -0.072
+</span></span><span style="display:flex;"><span>    OPEN              0.189    0.004   44.841    0.000    0.189    0.189
+</span></span><span style="display:flex;"><span>    CON               0.120    0.004   28.003    0.000    0.120    0.120
+</span></span><span style="display:flex;"><span>  EMO ~~                                                                
+</span></span><span style="display:flex;"><span>    OPEN              0.178    0.004   43.620    0.000    0.178    0.178
+</span></span><span style="display:flex;"><span>    CON               0.241    0.004   60.043    0.000    0.241    0.241
+</span></span><span style="display:flex;"><span>  OPEN ~~                                                               
+</span></span><span style="display:flex;"><span>    CON               0.071    0.004   16.110    0.000    0.071    0.071
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Variances:
+</span></span><span style="display:flex;"><span>                    Estimate  Std.Err  z-value  P(&gt;|z|)   Std.lv  Std.all
+</span></span><span style="display:flex;"><span>    .EXT_I             0.897    0.005  189.010    0.000    0.897    0.561
+</span></span><span style="display:flex;"><span>    .EXT_II            0.892    0.005  183.014    0.000    0.892    0.522
+</span></span><span style="display:flex;"><span>    .EXT_III           0.751    0.004  180.594    0.000    0.751    0.508
+</span></span><span style="display:flex;"><span>    .EXT_IV            0.719    0.004  177.781    0.000    0.719    0.493
+</span></span><span style="display:flex;"><span>    .EXT_V             0.725    0.004  167.795    0.000    0.725    0.444
+</span></span><span style="display:flex;"><span>    .AGR_I             1.323    0.007  198.755    0.000    1.323    0.749
+</span></span><span style="display:flex;"><span>    .AGR_II            0.835    0.005  182.157    0.000    0.835    0.645
+</span></span><span style="display:flex;"><span>    .AGR_III           1.428    0.007  214.249    0.000    1.428    0.887
+</span></span><span style="display:flex;"><span>    .AGR_IV            0.650    0.004  150.839    0.000    0.650    0.512
+</span></span><span style="display:flex;"><span>    .AGR_V             0.705    0.005  154.735    0.000    0.705    0.526
+</span></span><span style="display:flex;"><span>    .EST_I             0.570    0.005  104.019    0.000    0.570    0.330
+</span></span><span style="display:flex;"><span>    .EST_II            0.982    0.005  191.825    0.000    0.982    0.653
+</span></span><span style="display:flex;"><span>    .EST_III           0.657    0.004  163.529    0.000    0.657    0.517
+</span></span><span style="display:flex;"><span>    .EST_IV            1.373    0.006  215.662    0.000    1.373    0.877
+</span></span><span style="display:flex;"><span>    .EST_V             1.256    0.006  209.221    0.000    1.256    0.800
+</span></span><span style="display:flex;"><span>    .OPN_I             1.059    0.005  199.927    0.000    1.059    0.788
+</span></span><span style="display:flex;"><span>    .OPN_II            0.572    0.005  123.242    0.000    0.572    0.475
+</span></span><span style="display:flex;"><span>    .OPN_III           1.003    0.005  206.019    0.000    1.003    0.832
+</span></span><span style="display:flex;"><span>    .OPN_IV            0.663    0.004  153.580    0.000    0.663    0.574
+</span></span><span style="display:flex;"><span>    .OPN_V             0.788    0.004  201.943    0.000    0.788    0.802
+</span></span><span style="display:flex;"><span>    .CSN_I             0.914    0.005  177.508    0.000    0.914    0.660
+</span></span><span style="display:flex;"><span>    .CSN_II            1.240    0.007  177.830    0.000    1.240    0.661
+</span></span><span style="display:flex;"><span>    .CSN_III           0.960    0.005  211.978    0.000    0.960    0.882
+</span></span><span style="display:flex;"><span>    .CSN_IV            0.869    0.006  156.051    0.000    0.869    0.571
+</span></span><span style="display:flex;"><span>    .CSN_V             1.007    0.006  169.093    0.000    1.007    0.622
+</span></span><span style="display:flex;"><span>    EXTRA             1.000                               1.000    1.000
+</span></span><span style="display:flex;"><span>    AGREE             1.000                               1.000    1.000
+</span></span><span style="display:flex;"><span>    EMO               1.000                               1.000    1.000
+</span></span><span style="display:flex;"><span>    OPEN              1.000                               1.000    1.000
+</span></span><span style="display:flex;"><span>    CON               1.000                               1.000    1.000
+</span></span></code></pre></div></details>
+<br/>
+<p>Then, we can also display a plot of the CFA results.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-R" data-lang="R"><span style="display:flex;"><span><span style="color:#a6e22e">lavaanPlot</span>(
+</span></span><span style="display:flex;"><span>  model <span style="color:#f92672">=</span> original_CFA, 
+</span></span><span style="display:flex;"><span>  node_options <span style="color:#f92672">=</span> <span style="color:#a6e22e">list</span>(shape <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;box&#34;</span>, fontname <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Helvetica&#34;</span>), 
+</span></span><span style="display:flex;"><span>  edge_options <span style="color:#f92672">=</span> <span style="color:#a6e22e">list</span>(color <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;grey&#34;</span>), 
+</span></span><span style="display:flex;"><span>  coefs <span style="color:#f92672">=</span> <span style="color:#66d9ef">TRUE</span>, 
+</span></span><span style="display:flex;"><span>  graph_options <span style="color:#f92672">=</span> <span style="color:#a6e22e">list</span>(layout <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;circo&#34;</span>)
+</span></span><span style="display:flex;"><span>)
+</span></span></code></pre></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<img title="image title" loading="lazy" decoding="async" class="img-fluid img-center" width="1287" height="794" src="/images/tutorial-3/CFA_originaldata_hu5ed860e0a04d6399edcf2cfbe941789b_2469533_1287x794_fit_q100_h2_box_3.webp" alt="CFA_originaldata" onerror="this.onerror='null';this.src='\/images\/tutorial-3\/CFA_originaldata_hu5ed860e0a04d6399edcf2cfbe941789b_2469533_1287x794_fit_q100_box_3.png'">
+
+
+
+
+
+
+
+<hr>
+<p>Now, we run factor analysis again on the synthesized data.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-R" data-lang="R"><span style="display:flex;"><span>synthetic_CFA <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">cfa</span>(model <span style="color:#f92672">=</span> syntax, data <span style="color:#f92672">=</span> syndat, std.lv <span style="color:#f92672">=</span> <span style="color:#66d9ef">TRUE</span>)
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">fitMeasures</span>(synthetic_CFA, fit.measures <span style="color:#f92672">=</span> <span style="color:#a6e22e">c</span>(<span style="color:#e6db74">&#34;cfi&#34;</span>,<span style="color:#e6db74">&#34;srmr&#34;</span>, <span style="color:#e6db74">&#34;rmsea&#34;</span>))
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-txt" data-lang="txt"><span style="display:flex;"><span>cfi  srmr rmsea 
+</span></span><span style="display:flex;"><span>0.811 0.066 0.067 
+</span></span></code></pre></div><details>
+<summary>
+<strong>Check the CFA (on synthetic data) results in detail.</strong>
+</summary>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-txt" data-lang="txt"><span style="display:flex;"><span>lavaan 0.6-10 ended normally after 18 iterations
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  Estimator                                         ML
+</span></span><span style="display:flex;"><span>  Optimization method                           NLMINB
+</span></span><span style="display:flex;"><span>  Number of model parameters                        60
+</span></span><span style="display:flex;"><span>                                                      
+</span></span><span style="display:flex;"><span>  Number of observations                        100000
+</span></span><span style="display:flex;"><span>                                                      
+</span></span><span style="display:flex;"><span>Model Test User Model:
+</span></span><span style="display:flex;"><span>                                                        
+</span></span><span style="display:flex;"><span>  Test statistic                              116919.160
+</span></span><span style="display:flex;"><span>  Degrees of freedom                                 265
+</span></span><span style="display:flex;"><span>  P-value (Chi-square)                             0.000
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Model Test Baseline Model:
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  Test statistic                            625458.621
+</span></span><span style="display:flex;"><span>  Degrees of freedom                               300
+</span></span><span style="display:flex;"><span>  P-value                                        0.000
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>User Model versus Baseline Model:
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  Comparative Fit Index (CFI)                    0.813
+</span></span><span style="display:flex;"><span>  Tucker-Lewis Index (TLI)                       0.789
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Loglikelihood and Information Criteria:
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  Loglikelihood user model (H0)           -3741187.475
+</span></span><span style="display:flex;"><span>  Loglikelihood unrestricted model (H1)   -3682727.895
+</span></span><span style="display:flex;"><span>                                                      
+</span></span><span style="display:flex;"><span>  Akaike (AIC)                             7482494.950
+</span></span><span style="display:flex;"><span>  Bayesian (BIC)                           7483065.725
+</span></span><span style="display:flex;"><span>  Sample-size adjusted Bayesian (BIC)      7482875.043
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Root Mean Square Error of Approximation:
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  RMSEA                                          0.066
+</span></span><span style="display:flex;"><span>  90 Percent confidence interval - lower         0.066
+</span></span><span style="display:flex;"><span>  90 Percent confidence interval - upper         0.067
+</span></span><span style="display:flex;"><span>  P-value RMSEA &lt;= 0.05                          0.000
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Standardized Root Mean Square Residual:
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  SRMR                                           0.066
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Parameter Estimates:
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  Standard errors                             Standard
+</span></span><span style="display:flex;"><span>  Information                                 Expected
+</span></span><span style="display:flex;"><span>  Information saturated (h1) model          Structured
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Latent Variables:
+</span></span><span style="display:flex;"><span>                    Estimate  Std.Err  z-value  P(&gt;|z|)   Std.lv  Std.all
+</span></span><span style="display:flex;"><span>  EXTRA =~                                                              
+</span></span><span style="display:flex;"><span>    EXT_I             0.836    0.004  217.009    0.000    0.836    0.660
+</span></span><span style="display:flex;"><span>    EXT_II            0.905    0.004  230.084    0.000    0.905    0.691
+</span></span><span style="display:flex;"><span>    EXT_III           0.853    0.004  235.714    0.000    0.853    0.704
+</span></span><span style="display:flex;"><span>    EXT_IV            0.858    0.004  239.002    0.000    0.858    0.711
+</span></span><span style="display:flex;"><span>    EXT_V             0.959    0.004  256.354    0.000    0.959    0.750
+</span></span><span style="display:flex;"><span>  AGREE =~                                                              
+</span></span><span style="display:flex;"><span>    AGR_I             0.669    0.005  147.141    0.000    0.669    0.503
+</span></span><span style="display:flex;"><span>    AGR_II            0.674    0.004  177.811    0.000    0.674    0.594
+</span></span><span style="display:flex;"><span>    AGR_III           0.433    0.004   96.378    0.000    0.433    0.341
+</span></span><span style="display:flex;"><span>    AGR_IV            0.788    0.004  213.202    0.000    0.788    0.699
+</span></span><span style="display:flex;"><span>    AGR_V             0.796    0.004  210.257    0.000    0.796    0.690
+</span></span><span style="display:flex;"><span>  EMO =~                                                                
+</span></span><span style="display:flex;"><span>    EST_I             1.081    0.004  264.490    0.000    1.081    0.819
+</span></span><span style="display:flex;"><span>    EST_II            0.723    0.004  182.167    0.000    0.723    0.589
+</span></span><span style="display:flex;"><span>    EST_III           0.786    0.004  220.893    0.000    0.786    0.698
+</span></span><span style="display:flex;"><span>    EST_IV            0.438    0.004  102.049    0.000    0.438    0.349
+</span></span><span style="display:flex;"><span>    EST_V             0.557    0.004  132.607    0.000    0.557    0.445
+</span></span><span style="display:flex;"><span>  OPEN =~                                                               
+</span></span><span style="display:flex;"><span>    OPN_I             0.535    0.004  129.758    0.000    0.535    0.460
+</span></span><span style="display:flex;"><span>    OPN_II            0.794    0.004  206.900    0.000    0.794    0.723
+</span></span><span style="display:flex;"><span>    OPN_III           0.457    0.004  116.120    0.000    0.457    0.415
+</span></span><span style="display:flex;"><span>    OPN_IV            0.708    0.004  189.101    0.000    0.708    0.659
+</span></span><span style="display:flex;"><span>    OPN_V             0.440    0.004  124.628    0.000    0.440    0.443
+</span></span><span style="display:flex;"><span>  CON =~                                                                
+</span></span><span style="display:flex;"><span>    CSN_I             0.693    0.004  169.387    0.000    0.693    0.587
+</span></span><span style="display:flex;"><span>    CSN_II            0.797    0.005  168.217    0.000    0.797    0.583
+</span></span><span style="display:flex;"><span>    CSN_III           0.357    0.004   94.143    0.000    0.357    0.341
+</span></span><span style="display:flex;"><span>    CSN_IV            0.808    0.004  190.368    0.000    0.808    0.654
+</span></span><span style="display:flex;"><span>    CSN_V             0.789    0.004  179.113    0.000    0.789    0.618
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Covariances:
+</span></span><span style="display:flex;"><span>                    Estimate  Std.Err  z-value  P(&gt;|z|)   Std.lv  Std.all
+</span></span><span style="display:flex;"><span>  EXTRA ~~                                                              
+</span></span><span style="display:flex;"><span>    AGREE             0.395    0.004  111.237    0.000    0.395    0.395
+</span></span><span style="display:flex;"><span>    EMO               0.246    0.004   66.386    0.000    0.246    0.246
+</span></span><span style="display:flex;"><span>    OPEN              0.137    0.004   34.000    0.000    0.137    0.137
+</span></span><span style="display:flex;"><span>    CON               0.149    0.004   37.068    0.000    0.149    0.149
+</span></span><span style="display:flex;"><span>  AGREE ~~                                                              
+</span></span><span style="display:flex;"><span>    EMO              -0.071    0.004  -17.432    0.000   -0.071   -0.071
+</span></span><span style="display:flex;"><span>    OPEN              0.198    0.004   47.030    0.000    0.198    0.198
+</span></span><span style="display:flex;"><span>    CON               0.126    0.004   29.356    0.000    0.126    0.126
+</span></span><span style="display:flex;"><span>  EMO ~~                                                                
+</span></span><span style="display:flex;"><span>    OPEN              0.171    0.004   41.849    0.000    0.171    0.171
+</span></span><span style="display:flex;"><span>    CON               0.237    0.004   58.889    0.000    0.237    0.237
+</span></span><span style="display:flex;"><span>  OPEN ~~                                                               
+</span></span><span style="display:flex;"><span>    CON               0.070    0.004   15.891    0.000    0.070    0.070
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Variances:
+</span></span><span style="display:flex;"><span>                    Estimate  Std.Err  z-value  P(&gt;|z|)   Std.lv  Std.all
+</span></span><span style="display:flex;"><span>    .EXT_I             0.905    0.005  189.674    0.000    0.905    0.564
+</span></span><span style="display:flex;"><span>    .EXT_II            0.898    0.005  183.356    0.000    0.898    0.523
+</span></span><span style="display:flex;"><span>    .EXT_III           0.741    0.004  180.280    0.000    0.741    0.505
+</span></span><span style="display:flex;"><span>    .EXT_IV            0.720    0.004  178.370    0.000    0.720    0.494
+</span></span><span style="display:flex;"><span>    .EXT_V             0.716    0.004  166.717    0.000    0.716    0.438
+</span></span><span style="display:flex;"><span>    .AGR_I             1.321    0.007  198.630    0.000    1.321    0.747
+</span></span><span style="display:flex;"><span>    .AGR_II            0.831    0.005  182.753    0.000    0.831    0.647
+</span></span><span style="display:flex;"><span>    .AGR_III           1.426    0.007  214.048    0.000    1.426    0.884
+</span></span><span style="display:flex;"><span>    .AGR_IV            0.651    0.004  151.337    0.000    0.651    0.512
+</span></span><span style="display:flex;"><span>    .AGR_V             0.698    0.005  154.653    0.000    0.698    0.524
+</span></span><span style="display:flex;"><span>    .EST_I             0.575    0.006  104.022    0.000    0.575    0.330
+</span></span><span style="display:flex;"><span>    .EST_II            0.983    0.005  191.841    0.000    0.983    0.653
+</span></span><span style="display:flex;"><span>    .EST_III           0.652    0.004  162.567    0.000    0.652    0.513
+</span></span><span style="display:flex;"><span>    .EST_IV            1.377    0.006  215.764    0.000    1.377    0.878
+</span></span><span style="display:flex;"><span>    .EST_V             1.255    0.006  209.457    0.000    1.255    0.802
+</span></span><span style="display:flex;"><span>    .OPN_I             1.067    0.005  200.191    0.000    1.067    0.788
+</span></span><span style="display:flex;"><span>    .OPN_II            0.575    0.005  124.617    0.000    0.575    0.477
+</span></span><span style="display:flex;"><span>    .OPN_III           1.003    0.005  205.597    0.000    1.003    0.828
+</span></span><span style="display:flex;"><span>    .OPN_IV            0.653    0.004  151.889    0.000    0.653    0.566
+</span></span><span style="display:flex;"><span>    .OPN_V             0.792    0.004  202.352    0.000    0.792    0.804
+</span></span><span style="display:flex;"><span>    .CSN_I             0.913    0.005  176.974    0.000    0.913    0.656
+</span></span><span style="display:flex;"><span>    .CSN_II            1.234    0.007  177.891    0.000    1.234    0.660
+</span></span><span style="display:flex;"><span>    .CSN_III           0.966    0.005  212.219    0.000    0.966    0.884
+</span></span><span style="display:flex;"><span>    .CSN_IV            0.873    0.006  156.813    0.000    0.873    0.572
+</span></span><span style="display:flex;"><span>    .CSN_V             1.009    0.006  168.548    0.000    1.009    0.618
+</span></span><span style="display:flex;"><span>    EXTRA             1.000                               1.000    1.000
+</span></span><span style="display:flex;"><span>    AGREE             1.000                               1.000    1.000
+</span></span><span style="display:flex;"><span>    EMO               1.000                               1.000    1.000
+</span></span><span style="display:flex;"><span>    OPEN              1.000                               1.000    1.000
+</span></span><span style="display:flex;"><span>    CON               1.000                               1.000    1.000
+</span></span></code></pre></div></details>
+<br/>
+<p>And we show the plot as well</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-R" data-lang="R"><span style="display:flex;"><span><span style="color:#a6e22e">lavaanPlot</span>(
+</span></span><span style="display:flex;"><span>  model <span style="color:#f92672">=</span> synthetic_CFA, 
+</span></span><span style="display:flex;"><span>  node_options <span style="color:#f92672">=</span> <span style="color:#a6e22e">list</span>(shape <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;box&#34;</span>, fontname <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Helvetica&#34;</span>), 
+</span></span><span style="display:flex;"><span>  edge_options <span style="color:#f92672">=</span> <span style="color:#a6e22e">list</span>(color <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;grey&#34;</span>), 
+</span></span><span style="display:flex;"><span>  coefs <span style="color:#f92672">=</span> <span style="color:#66d9ef">TRUE</span>, 
+</span></span><span style="display:flex;"><span>  graph_options <span style="color:#f92672">=</span> <span style="color:#a6e22e">list</span>(layout <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;circo&#34;</span>)
+</span></span><span style="display:flex;"><span>)
+</span></span></code></pre></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<img title="image title" loading="lazy" decoding="async" class="img-fluid img-center" width="1287" height="794" src="/images/tutorial-3/CFA_syndata_hu5ed860e0a04d6399edcf2cfbe941789b_2469533_1287x794_fit_q100_h2_box_3.webp" alt="CFA_syndata" onerror="this.onerror='null';this.src='\/images\/tutorial-3\/CFA_syndata_hu5ed860e0a04d6399edcf2cfbe941789b_2469533_1287x794_fit_q100_box_3.png'">
+
+
+
+
+
+
+
 </div>
         
         
