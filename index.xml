@@ -6,16 +6,7 @@
     <description>Recent content on SoDa</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Thu, 15 Dec 2022 00:00:00 +0000</lastBuildDate><atom:link href="http://odissei-soda.nl/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Reproducible science using Statistics Netherlands microdata</title>
-      <link>http://odissei-soda.nl/tutorials/post-3/</link>
-      <pubDate>Thu, 15 Dec 2022 00:00:00 +0000</pubDate>
-      
-      <guid>http://odissei-soda.nl/tutorials/post-3/</guid>
-      <description>Through ODISSEI, researchers can get access to microdata of the Dutch national statistical agency Statistics Netherlands (CBS).</description>
-    </item>
-    
+    <lastBuildDate>Tue, 04 Oct 2022 00:00:00 +0000</lastBuildDate><atom:link href="http://odissei-soda.nl/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>ArtScraper: A Python library to scrape online artworks</title>
       <link>http://odissei-soda.nl/tutorials/post-2/</link>
