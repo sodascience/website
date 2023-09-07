@@ -26,6 +26,16 @@
     </item>
     
     <item>
+      <title>Fellowship</title>
+      <link>http://odissei-soda.nl/fellowship/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://odissei-soda.nl/fellowship/</guid>
+      <description>During your time as a fellow:
+you will spend between 3-8 months full-time* working on a social science research project.</description>
+    </item>
+    
+    <item>
       <title>Principles</title>
       <link>http://odissei-soda.nl/principles/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -50,16 +60,6 @@
       
       <guid>http://odissei-soda.nl/team/</guid>
       <description></description>
-    </item>
-    
-    <item>
-      <title>Traineeship</title>
-      <link>http://odissei-soda.nl/traineeship/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://odissei-soda.nl/traineeship/</guid>
-      <description>During your time as a trainee:
-you will spend between 3-8 months full-time* working on a social science research project.</description>
     </item>
     
   </channel>
