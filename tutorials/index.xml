@@ -8,6 +8,15 @@
     <language>en-US</language>
     <lastBuildDate>Fri, 29 Sep 2023 00:00:00 +0000</lastBuildDate><atom:link href="http://odissei-soda.nl/tutorials/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Visualizing international flows with Geoflow visualizer</title>
+      <link>http://odissei-soda.nl/tutorials/post-7/</link>
+      <pubDate>Fri, 29 Sep 2023 00:00:00 +0000</pubDate>
+      
+      <guid>http://odissei-soda.nl/tutorials/post-7/</guid>
+      <description>In this tutorial we present Geoflow, a newly created tool designed to visualize international flows in an interactive way.</description>
+    </item>
+    
+    <item>
       <title>Wrangling interval data using lubridate</title>
       <link>http://odissei-soda.nl/tutorials/post-5/</link>
       <pubDate>Fri, 29 Sep 2023 00:00:00 +0000</pubDate>
