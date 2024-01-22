@@ -6,7 +6,16 @@
     <description>Recent content on SoDa</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Fri, 29 Sep 2023 00:00:00 +0000</lastBuildDate><atom:link href="http://odissei-soda.nl/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 22 Jan 2024 00:00:00 +0000</lastBuildDate><atom:link href="http://odissei-soda.nl/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Training a fastText model from scratch using Python</title>
+      <link>http://odissei-soda.nl/tutorials/post-6/</link>
+      <pubDate>Mon, 22 Jan 2024 00:00:00 +0000</pubDate>
+      
+      <guid>http://odissei-soda.nl/tutorials/post-6/</guid>
+      <description>By now, it&amp;rsquo;s no surprise to anybody the astonishing results large language models produce.</description>
+    </item>
+    
     <item>
       <title>Visualizing international flows with Geoflow visualizer</title>
       <link>http://odissei-soda.nl/tutorials/post-7/</link>

@@ -4,7 +4,7 @@
 <head>
 	
 	<meta charset="utf-8">
-<title>Tags</title>
+<title>Training a fastText model from scratch using Python</title>
 
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
@@ -315,28 +315,14 @@
 	<main>
 		
 
-<section class="section pb-0">
-  <div class="container text-center">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-6 mx-auto">
-          <h1 class="h2 mb-3">Tags</h1>
-          
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
 
 
-<section class="section mt-4">
+
+<section class="section">
   <div class="container">
-    <div class="row gx-5 gy-6">
-      
-      <div class="col-12 pb-5">
-        <div class="row align-items-center">
-          <div class="col-md-6 mb-4 mb-md-0">
-            
+    <div class="row">
+      <div class="col-lg-8 mx-auto">
+        
 
 
 
@@ -408,52 +394,98 @@
   <source  srcset="/images/tutorial-6/logo-color_hu1abe885bd00d0c3db0943f497a717f5c_29206_600x0_resize_q100_h2_box_3.webp"  media="(max-width: 767px)">
   <source  srcset="/images/tutorial-6/logo-color_hu1abe885bd00d0c3db0943f497a717f5c_29206_700x0_resize_q100_h2_box_3.webp"  media="(max-width: 991px)">
   <source  srcset="/images/tutorial-6/logo-color_hu1abe885bd00d0c3db0943f497a717f5c_29206_1110x0_resize_q100_h2_box_3.webp" >
-  <img  loading="lazy" decoding="async" src="/images/tutorial-6/logo-color_hu1abe885bd00d0c3db0943f497a717f5c_29206_1110x0_resize_box_3.png"class=" rounded-2 w-100 img-fluid" alt="Training a fastText model from scratch using Python" width="1890" height="435">
+  <img  loading="lazy" decoding="async" src="/images/tutorial-6/logo-color_hu1abe885bd00d0c3db0943f497a717f5c_29206_1110x0_resize_box_3.png"class=" rounded-2 w-100 mb-5 img-fluid" alt="Training a fastText model from scratch using Python" width="1890" height="435">
 </picture>
  
  
  
 
 
-          </div>
-          <div class="col-md-6">
-            <div class="d-flex align-items-center mb-4">
-              
-              <div class="fw-500"><i class="far fa-calendar-alt text-dark me-1"></i> January 22, 2024</div>
-            </div>
+        
+        
+        
+        <span class="text-muted fw-500"><i class="far fa-calendar-alt text-dark me-1"></i> January 22, 2024 <span class="mx-1 text-dark-50 fw-500">|</span> <i class="far fa-clock text-dark me-1"></i> 8 </span>
 
-            <h2 class="h3 mb-3"><a href="http://odissei-soda.nl/tutorials/post-6/" title="Training a fastText model from scratch using Python" class="text-dark d-inline-block">Training a fastText model from scratch using Python</a></h2>
-            <p class="mb-4">By now, it&rsquo;s no surprise to anybody the astonishing results large language models produce.</p>
-            <a href="http://odissei-soda.nl/tutorials/post-6/" title=" - Training a fastText model from scratch using Python" class="btn btn-sm btn-primary">read more</a>
-          </div>
-        </div>
-      </div>
-      
+        <h2 class="h3 my-3">Training a fastText model from scratch using Python</h2>
 
-
-
-      
-      
-
-
-      
-      <div class="col-12 pt-5">
+        <div class="mt-5 content"><p>By now, it&rsquo;s no surprise to anybody the astonishing results large language models produce. Models such as GPT-4, Bard, Bert or RoBERTa have sparked intense research and media attention, as well as changed many people&rsquo;s workflows. However, these models have issues. A common critique is that they function as black boxes: users do not know much about their training data or modelling choices. Besides, training them usually requires gigantic datasets and processing power. Therefore, there is value in alternative models that can be trained by researchers, having full control over the input data and internal process. In this tutorial, we explain how to train a natural language processing model using fastText: a lightweight, easy-to-implement and efficient word embedding model that has shown good performance in various natural language tasks over the years.</p>
+<p>First, a bit about word-embedding models. Word-embeddings models are one type of natural language processing models. By producing real number vector representations of words, they offer a powerful way to capture the semantic meaning of words in large datasets, which is why they are widely used in diverse research applications. Indeed, their uses are numerous: semantic similarity, text generation, document representation, author recognition, knowledge graph construction, sentiment analysis, or bias detection (<a href="https://www.science.org/doi/10.1126/science.aal4230">Caliskan et al., 2017</a>).</p>
+<h4 id="installation">Installation</h4>
+<p>To install Fasttext, we recommend checking the <a href="https://pypi.org/project/fasttext-wheel/">fasttext-wheel PyPI module</a>. To verify the installation succeeded, you have to importat the package in a Python script.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">&gt;&gt;&gt;</span> <span style="color:#f92672">import</span> fasttext
+</span></span></code></pre></div><p>If there are no error messages, you have succeeded and we can move to the training part.</p>
+<h4 id="training-the-model">Training the model</h4>
+<h5 id="training-data">Training data</h5>
+<p>To train fastText, you need a corpus: a large collection of text. The required size of these corpora varies depending on the research purpose: from several thousand to billions of words. Some research benefits from smaller, well-curated corpora; other research benefits from large unstructured corpora. However, while the exact size needed is hard to determine, do keep in mind that the text in the training data has to relate to your research question! If you want to use word embeddings for studying doctors&rsquo; notes, you need doctors&rsquo; notes - and not legal medical texts. If you want to study niche cultural sub-groups, you need data from these groups - and not necessarily a corpus of random Internet interactions. The corpus is an integral part of your research! Generally, the larger the research-related corpus you can get, the better.</p>
+<p>In this tutorial we use a freely available corpus of <a href="https://www.kaggle.com/datasets/jannesklaas/scifi-stories-text-corpus">Science-Fiction texts downloaded from Kaggle</a>. Preferably, the text you feed to fastText should have each sentence on a new line.</p>
+<h5 id="hyperparameters">Hyperparameters</h5>
+<p>We will train an unsupervised fastText model, which means that lot of implementation decisions need to be made. If you don&rsquo;t have specific methodological reasons and/or you lack the time or computing power for a proper grid search, we suggest you go with the default parameter options - which are optimized for many research contexts -, but switching the &lsquo;dim&rsquo; parameter to 300. Empirical research has shown that a dimensionality of 300 leads to optimal performance in most settings, even if that will increase computational resources and training time. If you can afford spending the time thinking about hyperparameters, you could tune the training model (CBOW or SkipGram), learning rate, dimensionality of the vector, context widow size, and more. You can see <a href="https://fasttext.cc/docs/en/python-module.html">here</a> the full list of tuning parameters available.</p>
+<h5 id="fitting-model">Fitting model</h5>
+<p>We fit the model with the following command:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">&gt;&gt;&gt;</span> model <span style="color:#f92672">=</span> fasttext<span style="color:#f92672">.</span>train_unsupervised(<span style="color:#e6db74">&#39;internet_archive_scifi_v3.txt&#39;</span>, dim <span style="color:#f92672">=</span> <span style="color:#ae81ff">300</span>)
+</span></span></code></pre></div><p>Then, you can save the trained model, so that you do not have to train it again. For this, you need to feed the save_model() method a path to which to save the file. Make sure to add &lsquo;.bin&rsquo; to save the model as a .bin file.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">&gt;&gt;&gt;</span> model<span style="color:#f92672">.</span>save_model(<span style="color:#e6db74">&#39;scifi_fasttext_model.bin&#39;</span>)
+</span></span></code></pre></div><p>Re-opening a saved model is done with the load_model() method:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">&gt;&gt;&gt;</span> model <span style="color:#f92672">=</span> fasttext<span style="color:#f92672">.</span>load_model(<span style="color:#e6db74">&#39;scifi_fasttext_model.bin&#39;</span>)
+</span></span></code></pre></div><h3 id="using-word-embeddings">Using word embeddings</h3>
+<p>Now we have trained the model, we have the word embeddings ready to be used. And, luckily, fastText comes with some nice functions to work with word embeddings!  Here we highlight two of possible uses of word embeddings: obtaining most similar words, and analogies - but remember there are more possible uses. We start by simply retrieving the word embeddings. This can be done with any of the two following commands.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">&gt;&gt;&gt;</span> model<span style="color:#f92672">.</span>get_word_vector(<span style="color:#e6db74">&#39;villain&#39;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&gt;&gt;&gt;</span> model[<span style="color:#e6db74">&#39;villain&#39;</span>]
+</span></span><span style="display:flex;"><span>array([ <span style="color:#ae81ff">0.01417591</span>, <span style="color:#f92672">-</span><span style="color:#ae81ff">0.06866349</span>,  <span style="color:#ae81ff">0.09390495</span>, <span style="color:#f92672">-</span><span style="color:#ae81ff">0.04146367</span>,  <span style="color:#ae81ff">0.10481305</span>,
+</span></span><span style="display:flex;"><span>       <span style="color:#f92672">-</span><span style="color:#ae81ff">0.2541916</span> ,  <span style="color:#ae81ff">0.26757774</span>, <span style="color:#f92672">-</span><span style="color:#ae81ff">0.04365376</span>, <span style="color:#f92672">-</span><span style="color:#ae81ff">0.02336818</span>,  <span style="color:#ae81ff">0.07684527</span>,
+</span></span><span style="display:flex;"><span>       <span style="color:#f92672">-</span><span style="color:#ae81ff">0.05139925</span>,  <span style="color:#ae81ff">0.14692445</span>,  <span style="color:#ae81ff">0.07103274</span>,  <span style="color:#ae81ff">0.23373744</span>, <span style="color:#f92672">-</span><span style="color:#ae81ff">0.28555775</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">..............................................................</span>
+</span></span><span style="display:flex;"><span>       <span style="color:#f92672">-</span><span style="color:#ae81ff">0.14082788</span>,  <span style="color:#ae81ff">0.27454248</span>,  <span style="color:#ae81ff">0.02602287</span>,  <span style="color:#ae81ff">0.03754443</span>,  <span style="color:#ae81ff">0.18067479</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#ae81ff">0.20172128</span>,  <span style="color:#ae81ff">0.02454677</span>,  <span style="color:#ae81ff">0.04874028</span>, <span style="color:#f92672">-</span><span style="color:#ae81ff">0.17860755</span>, <span style="color:#f92672">-</span><span style="color:#ae81ff">0.01387627</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#ae81ff">0.02247835</span>,  <span style="color:#ae81ff">0.05518318</span>,  <span style="color:#ae81ff">0.04844297</span>, <span style="color:#f92672">-</span><span style="color:#ae81ff">0.2925061</span> , <span style="color:#f92672">-</span><span style="color:#ae81ff">0.05710272</span>],
+</span></span><span style="display:flex;"><span>      dtype<span style="color:#f92672">=</span>float32)
+</span></span></code></pre></div><p>Since fastText does not only train an embedding for the full word, but also so for the ngrams in each word as well, subwords and their embeddings can be accessed as follows:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">&gt;&gt;&gt;</span> ngrams, hashes <span style="color:#f92672">=</span> model<span style="color:#f92672">.</span>get_subwords(<span style="color:#e6db74">&#39;villain&#39;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&gt;&gt;&gt;</span> 
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&gt;&gt;&gt;</span> <span style="color:#66d9ef">for</span> ngram, hash <span style="color:#f92672">in</span> zip(ngrams, hashes):
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&gt;&gt;&gt;</span>     print(ngram, model<span style="color:#f92672">.</span>get_input_vector(hash))
+</span></span></code></pre></div><blockquote>
+<p>Note: using the get_subwords() method returns two lists, one with the ngrams of type string, the other with hashes. These hashes are not the same as embeddings, but rather are the identifier that fastText uses to store and retrieve embeddings. Therefore, to get the (sub-)word embedding using a hash, the get_input_vector() method has to be used.</p>
+</blockquote>
+<p>Furthermore, vectors can be created for full sentences as well:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">&gt;&gt;&gt;</span> model<span style="color:#f92672">.</span>get_sentence_vector(<span style="color:#e6db74">&#39;the villain defeated the hero, tyrrany reigned throughout the galaxy for a thousand eons.&#39;</span>)
+</span></span><span style="display:flex;"><span>array([<span style="color:#f92672">-</span><span style="color:#ae81ff">2.73631997e-02</span>,  <span style="color:#ae81ff">7.83981197e-03</span>, <span style="color:#f92672">-</span><span style="color:#ae81ff">1.97590180e-02</span>, <span style="color:#f92672">-</span><span style="color:#ae81ff">1.42770987e-02</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#ae81ff">6.88663125e-03</span>, <span style="color:#f92672">-</span><span style="color:#ae81ff">1.63909234e-02</span>,  <span style="color:#ae81ff">5.72902411e-02</span>,  <span style="color:#ae81ff">1.44126266e-02</span>,
+</span></span><span style="display:flex;"><span>       <span style="color:#f92672">-</span><span style="color:#ae81ff">1.64726824e-02</span>,  <span style="color:#ae81ff">8.55281111e-03</span>, <span style="color:#f92672">-</span><span style="color:#ae81ff">5.33024594e-02</span>,  <span style="color:#ae81ff">4.74718548e-02</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">.................................................................</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#ae81ff">3.30820642e-02</span>,  <span style="color:#ae81ff">7.64035881e-02</span>,  <span style="color:#ae81ff">7.33195152e-03</span>,  <span style="color:#ae81ff">4.60342802e-02</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#ae81ff">4.94049815e-03</span>,  <span style="color:#ae81ff">2.52075139e-02</span>, <span style="color:#f92672">-</span><span style="color:#ae81ff">2.30138078e-02</span>, <span style="color:#f92672">-</span><span style="color:#ae81ff">3.56832631e-02</span>,
+</span></span><span style="display:flex;"><span>       <span style="color:#f92672">-</span><span style="color:#ae81ff">2.22732662e-03</span>, <span style="color:#f92672">-</span><span style="color:#ae81ff">1.84207838e-02</span>,  <span style="color:#ae81ff">2.37668958e-03</span>, <span style="color:#f92672">-</span><span style="color:#ae81ff">1.00214258e-02</span>],
+</span></span><span style="display:flex;"><span>      dtype<span style="color:#f92672">=</span>float32)
+</span></span></code></pre></div><h4 id="most-similar-words">Most similar words</h4>
+<p>A nice usecase of fastText is to retrieve similar words. For instance, you can retrieve the set of 10 words with the most similar meaning (i.e., most similar word vector) to a target word using a nearest neighbours algorithm based on the cosine distance.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">&gt;&gt;&gt;</span> model<span style="color:#f92672">.</span>get_nearest_neighbors(<span style="color:#e6db74">&#39;villain&#39;</span>)
+</span></span><span style="display:flex;"><span>[(<span style="color:#ae81ff">0.9379335641860962</span>, <span style="color:#e6db74">&#39;villainy&#39;</span>), (<span style="color:#ae81ff">0.9019550681114197</span>, <span style="color:#e6db74">&#39;villain,&#39;</span>), (<span style="color:#ae81ff">0.890184223651886</span>, <span style="color:#e6db74">&#39;villain.&#39;</span>), (<span style="color:#ae81ff">0.8709720969200134</span>, <span style="color:#e6db74">&#39;villains&#39;</span>), (<span style="color:#ae81ff">0.8297745585441589</span>, <span style="color:#e6db74">&#39;villains.&#39;</span>), (<span style="color:#ae81ff">0.8225630521774292</span>, <span style="color:#e6db74">&#39;villainous&#39;</span>), (<span style="color:#ae81ff">0.8214142918586731</span>, <span style="color:#e6db74">&#39;villains,&#39;</span>), (<span style="color:#ae81ff">0.6485553979873657</span>, <span style="color:#e6db74">&#39;Villains&#39;</span>), (<span style="color:#ae81ff">0.6020095944404602</span>, <span style="color:#e6db74">&#39;heroine&#39;</span>), (<span style="color:#ae81ff">0.5941146612167358</span>, <span style="color:#e6db74">&#39;villa,&#39;</span>)]
+</span></span></code></pre></div><p>Interestingly, this also works for words not in the model corpus, including misspelled words!</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">&gt;&gt;&gt;</span> model<span style="color:#f92672">.</span>get_nearest_neighbors(<span style="color:#e6db74">&#39;vilain&#39;</span>)
+</span></span><span style="display:flex;"><span>[(<span style="color:#ae81ff">0.6722341179847717</span>, <span style="color:#e6db74">&#39;villain&#39;</span>), (<span style="color:#ae81ff">0.619519829750061</span>, <span style="color:#e6db74">&#39;villain.&#39;</span>), (<span style="color:#ae81ff">0.6137816309928894</span>, <span style="color:#e6db74">&#39;lain&#39;</span>), (<span style="color:#ae81ff">0.6128077507019043</span>, <span style="color:#e6db74">&#39;villainous&#39;</span>), (<span style="color:#ae81ff">0.609745979309082</span>, <span style="color:#e6db74">&#39;villainy&#39;</span>), (<span style="color:#ae81ff">0.6089878678321838</span>, <span style="color:#e6db74">&#39;Glain&#39;</span>), (<span style="color:#ae81ff">0.5980470180511475</span>, <span style="color:#e6db74">&#39;slain&#39;</span>), (<span style="color:#ae81ff">0.5925296545028687</span>, <span style="color:#e6db74">&#39;villain,&#39;</span>), (<span style="color:#ae81ff">0.5779100060462952</span>, <span style="color:#e6db74">&#39;villains&#39;</span>), (<span style="color:#ae81ff">0.5764451622962952</span>, <span style="color:#e6db74">&#39;chaplain&#39;</span>)]
+</span></span></code></pre></div><h4 id="analogies">Analogies</h4>
+<p>Another nice use for fastText is creating analogies. Since the word embedding vectors are created in relation to every other word in the corpus, these relations should be preserved in the vector space so that analogies can be created. For analogies, a triplet of words is required according to the formula &lsquo;A is to B as C is to [output]&rsquo;. For example, if we take the formula &lsquo;Men is to Father as [output] is to Mother&rsquo;, we get the expected answer of Women.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">&gt;&gt;&gt;</span> model<span style="color:#f92672">.</span>get_analogies(<span style="color:#e6db74">&#39;men&#39;</span>, <span style="color:#e6db74">&#39;father&#39;</span>, <span style="color:#e6db74">&#39;mother&#39;</span>)
+</span></span><span style="display:flex;"><span>[(<span style="color:#ae81ff">0.6985629200935364</span>, <span style="color:#e6db74">&#39;women&#39;</span>), (<span style="color:#ae81ff">0.6015384793281555</span>, <span style="color:#e6db74">&#39;all&#39;</span>), (<span style="color:#ae81ff">0.5977899432182312</span>, <span style="color:#e6db74">&#39;man&#39;</span>), (<span style="color:#ae81ff">0.5835891366004944</span>, <span style="color:#e6db74">&#39;out&#39;</span>), (<span style="color:#ae81ff">0.5830296874046326</span>, <span style="color:#e6db74">&#39;now&#39;</span>), (<span style="color:#ae81ff">0.5767865180969238</span>, <span style="color:#e6db74">&#39;one&#39;</span>), (<span style="color:#ae81ff">0.5711579322814941</span>, <span style="color:#e6db74">&#39;in&#39;</span>), (<span style="color:#ae81ff">0.5671708583831787</span>, <span style="color:#e6db74">&#39;wingmen&#39;</span>), (<span style="color:#ae81ff">0.567089855670929</span>, <span style="color:#e6db74">&#39;women&#34;&#39;</span>), (<span style="color:#ae81ff">0.5663136839866638</span>, <span style="color:#e6db74">&#39;were&#39;</span>)]
+</span></span></code></pre></div><p>However, since the model that we have created was done using uncleaned data from a relatively small corpus, our output is not perfect. For example, with the following analogy triplets, the correct answer of <strong>bad</strong> comes fourth, after <em>villainy</em>, <em>villain.</em> and <em>villain,</em> showing that for a better model, we should do some additional cleaning of our data (e.g., removing punctuation).</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">&gt;&gt;&gt;</span> model<span style="color:#f92672">.</span>get_analogies(<span style="color:#e6db74">&#39;good&#39;</span>, <span style="color:#e6db74">&#39;hero&#39;</span>, <span style="color:#e6db74">&#39;villain&#39;</span>)
+</span></span><span style="display:flex;"><span>[(<span style="color:#ae81ff">0.5228292942047119</span>, <span style="color:#e6db74">&#39;villainy&#39;</span>), (<span style="color:#ae81ff">0.5205934047698975</span>, <span style="color:#e6db74">&#39;villain.&#39;</span>), (<span style="color:#ae81ff">0.5122538208961487</span>, <span style="color:#e6db74">&#39;villain,&#39;</span>), (<span style="color:#ae81ff">0.5047158598899841</span>, <span style="color:#e6db74">&#39;bad&#39;</span>), (<span style="color:#ae81ff">0.483129620552063</span>, <span style="color:#e6db74">&#39;villains.&#39;</span>), (<span style="color:#ae81ff">0.4676515460014343</span>, <span style="color:#e6db74">&#39;good&#34;&#39;</span>), (<span style="color:#ae81ff">0.4662466049194336</span>, <span style="color:#e6db74">&#39;vill&#39;</span>), (<span style="color:#ae81ff">0.46115875244140625</span>, <span style="color:#e6db74">&#39;villains&#39;</span>), (<span style="color:#ae81ff">0.4569159746170044</span>, <span style="color:#e6db74">&#34;good&#39;&#34;</span>), (<span style="color:#ae81ff">0.4529685974121094</span>, <span style="color:#e6db74">&#39;excellent.&#34;&#39;</span>)]
+</span></span></code></pre></div><h3 id="conclusion">Conclusion</h3>
+<p>In this blogpost we have shown how to train a lightweight, efficient natural language processing model using fastText. After installing it, we have shown how to use some of the fastText functions to train the model, retrieve word embeddings, and usem them for different questions. While this was a toy example, we hope you found it inspiring for your own research! And remember, if you have a research idea that entails using natural language models and are stuck or do not know how to start - you can contact us!</p>
+<br/>
+<h4 id="bonus-tips-to-improve-your-model-performance">Bonus: Tips to improve your model performance</h4>
+<p>Depending on your research, various tweaks can be made to your data to improve fastText performance. For example, if multi-word phrases (e.g., <em>Social Data Science</em>) play some key aspect in your analyses, you might want to change these word phrases in the data with a dash or underscore (e.g., <em>Social_Data_Science</em>) so that these phrases are trained as a single token, not as a sum of the tokens <em>Social</em>, <em>Data</em>, and <em>Science</em>.</p>
+<p>As shown with the good-hero-villain analogy, removing punctuation and other types of non-alphabetic characters can help remove learning representations for unwanted tokens. For this, stemming (removing word stems) and lemmatization (converting all words to their base form) can also be useful. Similarly, two other ways to deal with unwanted tokens are to remove stop-words from your data, and to play around with the minCount parameter (i.e, the minimum number of times a word needs to occur in the data to have a token be trained) when training your model.</p>
+<p>Most importantly, try to gather as much knowledge about the domain of your research. This tip can seem obvious, but having a proper understanding of the topic you are researching is the most important skill to have when it comes to language models. Let&rsquo;s take the Sci-Fi corpus we used as an example: the 10th nearest neigbor of the word <em>villain</em> was <em>villa</em>. If you don&rsquo;t really understand what either of those words mean, you would not know that these results seem fishy (since the model we created has low internal quality, it relies very much on the trained n-grams. Since both words contain the n-gram &lsquo;villa&rsquo;, they are rated as being close in the vector space). Therefore, make sure to understand the domain to the best of your abilities and scrutinize your findings to get reliable results.</p>
+</div>
+        
+        
         
 
 
 
 
-
-
-
-
-
-
-      </div>
-      
-    </div>
-  </div>
-</section>
 
 
 	</main>
