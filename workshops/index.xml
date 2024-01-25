@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Workshops on SoDa</title>
+    <link>http://odissei-soda.nl/workshops/</link>
+    <description>Recent content in Workshops on SoDa</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <lastBuildDate>Fri, 20 Oct 2023 00:00:00 +0000</lastBuildDate><atom:link href="http://odissei-soda.nl/workshops/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Data Visualization Bootcamp</title>
+      <link>http://odissei-soda.nl/workshops/post-3/</link>
+      <pubDate>Fri, 20 Oct 2023 00:00:00 +0000</pubDate>
+      
+      <guid>http://odissei-soda.nl/workshops/post-3/</guid>
+      <description>On October 2023, we hosted a workshop about data visualization.</description>
+    </item>
+    
+    <item>
+      <title>Network science</title>
+      <link>http://odissei-soda.nl/workshops/post-2/</link>
+      <pubDate>Thu, 22 Jun 2023 00:00:00 +0000</pubDate>
+      
+      <guid>http://odissei-soda.nl/workshops/post-2/</guid>
+      <description>On June 2023, we hosted a workshop about Network Science.</description>
+    </item>
+    
+    <item>
+      <title>[UPCOMING] Supercomputing for social scientists with R</title>
+      <link>http://odissei-soda.nl/workshops/post-6/</link>
+      <pubDate>Fri, 26 May 2023 00:00:00 +0000</pubDate>
+      
+      <guid>http://odissei-soda.nl/workshops/post-6/</guid>
+      <description>On February 2024, we will host a workshop regarding Cluster Computing for Social Scientists with R.</description>
+    </item>
+    
+    <item>
+      <title>Causal Impact Assesment</title>
+      <link>http://odissei-soda.nl/workshops/post-1/</link>
+      <pubDate>Fri, 26 May 2023 00:00:00 +0000</pubDate>
+      
+      <guid>http://odissei-soda.nl/workshops/post-1/</guid>
+      <description>On May 2023, we hosted a workshop in Causal Impact Assesment focusing on policy interventions.</description>
+    </item>
+    
+    <item>
+      <title>Efficient programming with CBS microdata</title>
+      <link>http://odissei-soda.nl/workshops/post-4/</link>
+      <pubDate>Mon, 16 May 2022 00:00:00 +0000</pubDate>
+      
+      <guid>http://odissei-soda.nl/workshops/post-4/</guid>
+      <description>On May 2022, we hosted a workshop about efficient programming for accessing CBS microdata.</description>
+    </item>
+    
+    <item>
+      <title>How to create synthetic data</title>
+      <link>http://odissei-soda.nl/workshops/post-5/</link>
+      <pubDate>Sun, 09 Jan 2022 00:00:00 +0000</pubDate>
+      
+      <guid>http://odissei-soda.nl/workshops/post-5/</guid>
+      <description>On September 2022, we hosed a workshop about synthetic data.</description>
+    </item>
+    
+  </channel>
+</rss>
