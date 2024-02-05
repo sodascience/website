@@ -6,7 +6,16 @@
     <description>Recent content in Workshops on SoDa</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Fri, 20 Oct 2023 00:00:00 +0000</lastBuildDate><atom:link href="http://odissei-soda.nl/workshops/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 26 Feb 2024 00:00:00 +0000</lastBuildDate><atom:link href="http://odissei-soda.nl/workshops/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[UPCOMING] Supercomputing for social scientists with R</title>
+      <link>http://odissei-soda.nl/workshops/post-6/</link>
+      <pubDate>Mon, 26 Feb 2024 00:00:00 +0000</pubDate>
+      
+      <guid>http://odissei-soda.nl/workshops/post-6/</guid>
+      <description>In February 2024, we will host a workshop regarding Cluster Computing for Social Scientists with R.</description>
+    </item>
+    
     <item>
       <title>Data Visualization Bootcamp</title>
       <link>http://odissei-soda.nl/workshops/post-3/</link>
@@ -32,15 +41,6 @@
       
       <guid>http://odissei-soda.nl/workshops/post-1/</guid>
       <description>In May 2023, we hosted a workshop in Causal Impact Assesment focusing on policy interventions.</description>
-    </item>
-    
-    <item>
-      <title>[UPCOMING] Supercomputing for social scientists with R</title>
-      <link>http://odissei-soda.nl/workshops/post-6/</link>
-      <pubDate>Sun, 26 Feb 2023 00:00:00 +0000</pubDate>
-      
-      <guid>http://odissei-soda.nl/workshops/post-6/</guid>
-      <description>In February 2024, we will host a workshop regarding Cluster Computing for Social Scientists with R.</description>
     </item>
     
     <item>
