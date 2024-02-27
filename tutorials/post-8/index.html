@@ -4,7 +4,7 @@
 <head>
 	
 	<meta charset="utf-8">
-<title>Categories</title>
+<title>How to manage your IP address in python</title>
 
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
@@ -325,28 +325,14 @@
 	<main>
 		
 
-<section class="section pb-0">
-  <div class="container text-center">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-6 mx-auto">
-          <h1 class="h2 mb-3">Categories</h1>
-          
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
 
 
-<section class="section mt-4">
+
+<section class="section">
   <div class="container">
-    <div class="row gx-5 gy-6">
-      
-      <div class="col-12 pb-5">
-        <div class="row align-items-center">
-          <div class="col-md-6 mb-4 mb-md-0">
-            
+    <div class="row">
+      <div class="col-lg-8 mx-auto">
+        
 
 
 
@@ -418,52 +404,273 @@
   <source  srcset="/images/tutorial-8/sirup_hu5459c0360c2b0cb7a147d2df0eb350ca_814836_600x0_resize_q100_h2_box.webp"  media="(max-width: 767px)">
   <source  srcset="/images/tutorial-8/sirup_hu5459c0360c2b0cb7a147d2df0eb350ca_814836_700x0_resize_q100_h2_box.webp"  media="(max-width: 991px)">
   <source  srcset="/images/tutorial-8/sirup_hu5459c0360c2b0cb7a147d2df0eb350ca_814836_1110x0_resize_q100_h2_box.webp" >
-  <img  loading="lazy" decoding="async" src="/images/tutorial-8/sirup_hu5459c0360c2b0cb7a147d2df0eb350ca_814836_1110x0_resize_q100_box.jpg"class=" rounded-2 w-100 img-fluid" alt="How to manage your IP address in python" width="4076" height="2712">
+  <img  loading="lazy" decoding="async" src="/images/tutorial-8/sirup_hu5459c0360c2b0cb7a147d2df0eb350ca_814836_1110x0_resize_q100_box.jpg"class=" rounded-2 w-100 mb-5 img-fluid" alt="How to manage your IP address in python" width="4076" height="2712">
 </picture>
  
  
  
 
 
-          </div>
-          <div class="col-md-6">
-            <div class="d-flex align-items-center mb-4">
-              
-              <div class="fw-500"><i class="far fa-calendar-alt text-dark me-1"></i> February 27, 2024</div>
-            </div>
+        
+        
+        
+        <span class="text-muted fw-500"><i class="far fa-calendar-alt text-dark me-1"></i> February 27, 2024 <span class="mx-1 text-dark-50 fw-500">|</span> <i class="far fa-clock text-dark me-1"></i> 6 </span>
 
-            <h2 class="h3 mb-3"><a href="http://odissei-soda.nl/tutorials/post-8/" title="How to manage your IP address in python" class="text-dark d-inline-block">How to manage your IP address in python</a></h2>
-            <p class="mb-4">Author: Flavio Hafner. Post photo from Glenn Carstens-Peters on Unsplash</p>
-            <a href="http://odissei-soda.nl/tutorials/post-8/" title=" - How to manage your IP address in python" class="btn btn-sm btn-primary">read more</a>
-          </div>
-        </div>
-      </div>
-      
+        <h2 class="h3 my-3">How to manage your IP address in python</h2>
+
+        <div class="mt-5 content"><p><em>Author: Flavio Hafner. Post photo from <a href="https://unsplash.com/es/@glenncarstenspeters?utm_source=medium&amp;utm_medium=referral">Glenn Carstens-Peters</a> on <a href="https://unsplash.com/es?utm_source=medium&amp;utm_medium=referral">Unsplash</a></em></p>
+<blockquote>
+<p><em>This post is the first of a series of blogposts arising from a collaboration between the eScience Center and the ODISSEI Social Data Science Team. You can also find this text at the <a href="https://blog.esciencecenter.nl/how-to-manage-your-ip-address-in-python-75a2c9eda648">eScience Center page</a></em>.</p>
+</blockquote>
+<p>Research often relies on accessing novel data, for instance by collecting them from the internet through web scraping. If you have ever tried this, you may have run into your IP address being blocked by the website you scrape. Websites do this with a good reason — to protect themselves against malicious acts, such as <a href="https://en.wikipedia.org/wiki/Denial-of-service_attack">denial-of-service attacks</a> or large-scale scraping by parties with ill intent. This makes sense from the websites’ perspective, but prevents you from answering your research question.</p>
+<p>But this problem can be solved. In this tutorial, we show how you as a researcher can use IP rotation to circumvent certain scraping protections with the <code>sirup</code> package, which works on Linux operating systems.</p>
+<p>Before we jump into it, it is important to highlight that web scraping and IP rotation need to respect the law and should only be a last resort. For instance, before you scrape data from a website, you should ask the data owner whether they are willing to make them available to you through a data sharing agreement. If you nevertheless decide to scrape the data, you should get approval from the ethical review board at your university. Moreover, do only scrape data that are publicly available on the web and do not send excessive number of requests to the website in a given time.</p>
+<p>For rotating the IP address, we will use a VPN service. <a href="https://azure.microsoft.com/en-us/resources/cloud-computing-dictionary/what-is-vpn#:~:text=A%20VPN%2C%20which%20stands%20for,and%20firewalls%20on%20the%20internet.">Here</a> you can read more about what a VPN service is — in short, the service has a bunch of remote servers, and connecting your computer to one of these servers changes your IP address.</p>
+<h3 id="what-you-need">What you need</h3>
+<h5 id="1-openvpn">1. <code>OpenVPN</code></h5>
+<p><a href="https://en.wikipedia.org/wiki/OpenVPN">OpenVPN</a> is a system that allows you to create secure VPN connections. You can install it by following <a href="https://community.openvpn.net/openvpn/wiki/OpenvpnSoftwareRepos">these instructions</a>.</p>
+<h5 id="2-root-access-to-your-computer">2. Root access to your computer</h5>
+<p>Because internet connections are an important security concern, OpenVPN requires root access — this is the equivalent to administrator rights on a Windows computer. If you have root access, you can for instance run the following command on your terminal:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>sudo ls <span style="color:#f92672">-</span>lh <span style="color:#75715e"># will ask you for your root password</span>
+</span></span></code></pre></div><h4 id="installing-and-setting-up-sirup">Installing and setting up <code>sirup</code></h4>
+<p>You can install <code>sirup</code> as follows:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>python <span style="color:#f92672">-</span>m pip install sirup
+</span></span></code></pre></div><p>To use the package and change your IP address, you need an account with a VPN service provider that offers OpenVPN configuration files for your account. At the time of writing, for instance ProtonVPN and Surfshark offer this option — note that these services are not for free. We will use ProtonVPN in this tutorial.</p>
+<p>After creating an account, you need to download two sets of files.</p>
+<p>First, you download credentials that identify your Proton account when using OpenVPN. On the ProtonVPN website, click on “Account” and then you see something like this:</p>
+<div style="width: 70%; margin: auto;">
 
 
 
-      
-      
 
 
-      
-      <div class="col-12 pt-5">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+<figure class="img-center" role="group" aria-describedby="caption-Figure 1. Credentials that identify your Proton account when using OpenVPN">
+  <img title="image title" loading="lazy" decoding="async" class="img-fluid" width="1843" height="1200" src="/images/tutorial-8/username_hu4e92deedb95cfec123d940f45cae79ab_16948_1843x1200_fit_q100_h2_box.webp" alt="zenodo_project" onerror="this.onerror='null';this.src='\/images\/tutorial-8\/username_hu4e92deedb95cfec123d940f45cae79ab_16948_1843x1200_fit_q100_box.jpg'">
+  <figcaption id="caption-Figure 1. Credentials that identify your Proton account when using OpenVPN">Figure 1. <em>Credentials that identify your Proton account when using OpenVPN</em></figcaption>
+</figure>
+
+
+
+
+
+
+
+</div>
+<p>Copy and paste the username and the password into a <code>.txt</code> file that looks like this:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-txt" data-lang="txt"><span style="display:flex;"><span>username
+</span></span><span style="display:flex;"><span>password
+</span></span></code></pre></div><p>Then, save the file as <code>“proton_credentials.txt”</code>. Remember where it is stored — we will need it later.</p>
+<blockquote>
+<p><strong>A first warning on security.</strong> Storing account credentials like this makes it easy for you to use the sirup package. But it also increases the risk that unauthorized persons get a hold on these credentials. Thus, be careful to store the credentials in a safe place on your laptop and do not share them with anyone.</p>
+</blockquote>
+<p>Second, to use OpenVPN we need configuration files, whose names end with <code>.ovpn</code>. The files allow OpenVPN to connect to a server from the VPN service provider. In ProtonVPN, go to the &ldquo;Download&rdquo; section of your account. Select the options as follows:</p>
+<div style="width: 100%; margin: auto;">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+<figure class="img-center" role="group" aria-describedby="caption-Figure 2. Options to download .ovpn configuration files">
+  <img title="image title" loading="lazy" decoding="async" class="img-fluid" width="1843" height="1200" src="/images/tutorial-8/configuration_huf88038e96521132c45d8ec7918b7a6b0_46516_1843x1200_fit_q100_h2_box.webp" alt="zenodo_project" onerror="this.onerror='null';this.src='\/images\/tutorial-8\/configuration_huf88038e96521132c45d8ec7918b7a6b0_46516_1843x1200_fit_q100_box.jpg'">
+  <figcaption id="caption-Figure 2. Options to download .ovpn configuration files">Figure 2. <em>Options to download <code>.ovpn</code> configuration files</em></figcaption>
+</figure>
+
+
+
+
+
+
+
+</div>
+<p>And download the configuration file(s) you want to use. Store the downloaded files on your computer, and remember the location.</p>
+<p>Now you are ready!</p>
+<h4 id="using-sirup">Using <code>sirup</code></h4>
+<p>We start by defining the path to the <code>proton_credentials.txt</code> file. When you execute the code below, you will be asked to enter the root password, which is necessary to make the connection.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> getpass
+</span></span><span style="display:flex;"><span>auth_file <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;proton_credentials.txt&#34;</span>
+</span></span><span style="display:flex;"><span>pwd <span style="color:#f92672">=</span> getpass<span style="color:#f92672">.</span>getpass(<span style="color:#e6db74">&#34;Please enter your root password:&#34;</span>)
+</span></span></code></pre></div><blockquote>
+<p><strong>A second warning on security.</strong> The code above stores your root password during the python session without encrypting it. This is OK to do on your laptop — if someone gets access to your python session, your security has already been compromised — but not recommended on a shared computer such as a cluster or a cloud service.</p>
+</blockquote>
+<h4 id="changing-the-ip-address-with-sirup">Changing the IP address with sirup</h4>
+<p>Now you can use the VPNConnector to change your IP address. We will use the <code>&quot;my_config_file.ovpn&quot;</code> configuration file.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> sirup.VPNConnector <span style="color:#f92672">import</span> VPNConnector
+</span></span><span style="display:flex;"><span>config_file <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;my_config_file.ovpn&#34;</span>
+</span></span></code></pre></div><p>The code below first connects to the server associated with <code>&quot;my_config_file.ovpn&quot;</code> and then disconnects.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>connector <span style="color:#f92672">=</span> VPNConnector(auth_file, config_file)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Let&#39;s see the current IP address when no VPN tunnel is active</span>
+</span></span><span style="display:flex;"><span>print(connector<span style="color:#f92672">.</span>base_ip) 
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>connector<span style="color:#f92672">.</span>connect(pwd<span style="color:#f92672">=</span>pwd)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Now the IP address should differ</span>
+</span></span><span style="display:flex;"><span>print(connector<span style="color:#f92672">.</span>current_ip)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>connector<span style="color:#f92672">.</span>disconnect(pwd<span style="color:#f92672">=</span>pwd)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Now current_ip should be the same as base_ip above</span>
+</span></span><span style="display:flex;"><span>print(connector<span style="color:#f92672">.</span>current_ip)
+</span></span></code></pre></div><h4 id="rotating-the-ip-address-with-sirup">Rotating the IP address with sirup</h4>
+<p>Instead of connecting to a single server, you can also rotate across many different servers — which means you rotate your IP address across a set of potential addresses. Doing so is useful for larger scraping jobs because it will spread your requests across more servers.</p>
+<p>To do this, you need to download multiple configuration files as described above. Store all of the <code>.ovpn</code> configuration files together in a separate directory. Let&rsquo;s say you store them in the <code>&quot;/path/to/config/files/&quot;</code> directory. You need to define this path in your python script:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>config_path <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;/path/to/config/files/&#34;</span>
+</span></span></code></pre></div><p>The following code connects to two different servers before disconnecting again:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> sirup.IPRotator <span style="color:#f92672">import</span> IPRotator
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>rotator <span style="color:#f92672">=</span> IPRotator(auth_file<span style="color:#f92672">=</span>my_auth_file, config_location<span style="color:#f92672">=</span>config_path, seed<span style="color:#f92672">=</span>seed) <span style="color:#75715e"># this will ask for the root password</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>print(rotator<span style="color:#f92672">.</span>connector<span style="color:#f92672">.</span>base_ip) 
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>rotator<span style="color:#f92672">.</span>connect()
+</span></span><span style="display:flex;"><span>print(rotator<span style="color:#f92672">.</span>connector<span style="color:#f92672">.</span>current_ip) 
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>rotator<span style="color:#f92672">.</span>rotate()
+</span></span><span style="display:flex;"><span>print(rotator<span style="color:#f92672">.</span>connector<span style="color:#f92672">.</span>current_ip) 
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>rotator<span style="color:#f92672">.</span>disconnect()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>print(rotator<span style="color:#f92672">.</span>connector<span style="color:#f92672">.</span>current_ip)
+</span></span></code></pre></div><h4 id="conclusion">Conclusion</h4>
+<p>This tutorial has walked you through the steps to manage your IP address in python, using the <code>sirup</code> package. We hope it makes your scraping workflows easier!</p>
+<blockquote>
+<p><code>sirup</code> is an open-source package developed by the Netherlands eScience Center. If you use the tool, you can cite <a href="https://zenodo.org/records/10261949">this zenodo repository</a> with the DOI: <a href="https://doi.org/10.5281/zenodo.10261949">https://doi.org/10.5281/zenodo.10261949</a>.</p>
+</blockquote>
+<p>The source code of the package is <a href="https://github.com/ivory-tower-private-power/sirup?tab=readme-ov-file">here</a>, where you can contribute to it, build on it and submit issues.</p>
+<p>Thanks to Patrick Bos, Peter Kalverla, Kody Moodley and Carlos Gonzalez Poses for comments.</p>
+</div>
+        
+        
         
 
 
 
 
-
-
-
-
-
-
-      </div>
-      
-    </div>
-  </div>
-</section>
 
 
 	</main>
