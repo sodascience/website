@@ -6,7 +6,16 @@
     <description>Recent content on SoDa</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Tue, 27 Feb 2024 00:00:00 +0000</lastBuildDate><atom:link href="http://odissei-soda.nl/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 19 Apr 2024 00:00:00 +0000</lastBuildDate><atom:link href="http://odissei-soda.nl/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[UPCOMING] Efficient and reproducible research with CBS microdata</title>
+      <link>http://odissei-soda.nl/workshops/post-7/</link>
+      <pubDate>Fri, 19 Apr 2024 00:00:00 +0000</pubDate>
+      
+      <guid>http://odissei-soda.nl/workshops/post-7/</guid>
+      <description>About the workshop The workshop will teach how to work efficiently with data from CBS (Statistics Netherlands), using its remote access environment.</description>
+    </item>
+    
     <item>
       <title>How to manage your IP address in python</title>
       <link>http://odissei-soda.nl/tutorials/post-8/</link>
