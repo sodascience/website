@@ -1,0 +1,170 @@
+BEGIN:VCALENDAR
+PRODID:-//Microsoft Corporation//Outlook 16.0 MIMEDIR//EN
+VERSION:2.0
+METHOD:REQUEST
+X-MS-OLK-FORCEINSPECTOROPEN:TRUE
+BEGIN:VTIMEZONE
+TZID:W. Europe Standard Time
+BEGIN:STANDARD
+DTSTART:16011028T030000
+RRULE:FREQ=YEARLY;BYDAY=-1SU;BYMONTH=10
+TZOFFSETFROM:+0200
+TZOFFSETTO:+0100
+END:STANDARD
+BEGIN:DAYLIGHT
+DTSTART:16010325T020000
+RRULE:FREQ=YEARLY;BYDAY=-1SU;BYMONTH=3
+TZOFFSETFROM:+0100
+TZOFFSETTO:+0200
+END:DAYLIGHT
+END:VTIMEZONE
+BEGIN:VEVENT
+ATTENDEE;CN="Kesteren, E. van (Erik-Jan)";RSVP=TRUE:mailto:e.vankesteren1@u
+	u.nl
+ATTENDEE;CN="Garcia Bernardo, J. (Javier)";RSVP=TRUE:mailto:j.garciabernard
+	o@uu.nl
+ATTENDEE;CN="Bruin, J. de (Jonathan)";RSVP=TRUE:mailto:j.debruin1@uu.nl
+ATTENDEE;CN="Gerbrands, P. (Peter)";RSVP=TRUE:mailto:p.gerbrands@uu.nl
+ATTENDEE;CN="Zahedi, P. (Parisa)";RSVP=TRUE:mailto:p.zahedi@uu.nl
+ATTENDEE;CN="Schram, R.D. (Raoul)";RSVP=TRUE:mailto:r.d.schram@uu.nl
+ATTENDEE;CN="Gonzalez Poses, C. (Carlos)";ROLE=OPT-PARTICIPANT;RSVP=TRUE:ma
+	ilto:c.gonzalezposes@uu.nl
+CLASS:PUBLIC
+CREATED:20240415T093413Z
+DESCRIPTION:Hi all\, I just noticed you weren’t all invited to the monthl
+	y data drop-in event in outlook. Here you go!\n\n_________________________
+	_______________________________________________________ \n\nMicrosoft Team
+	s meeting \n\nJoin on your computer or mobile app \n\nClick here to join t
+	he meeting <https://teams.microsoft.com/l/meetup-join/19%3ameeting_YTY3OTU
+	xNTQtMjNlOS00MjM4LWE3YmYtM2M2ZTkyMTNmYjA0%40thread.v2/0?context=%7b%22Tid%
+	22%3a%22d72758a0-a446-4e0f-a0aa-4bf95a4a10e7%22%2c%22Oid%22%3a%2266dde646-
+	ddf9-4ac7-8ad6-cf0edce89f9a%22%7d>  \n\nLearn More <https://aka.ms/JoinTea
+	msMeeting>  | Help <https://support.microsoft.com/en-us/teams>  | Meeting 
+	options <https://teams.microsoft.com/meetingOptions/?organizerId=66dde646-
+	ddf9-4ac7-8ad6-cf0edce89f9a&tenantId=d72758a0-a446-4e0f-a0aa-4bf95a4a10e7&
+	threadId=19_meeting_YTY3OTUxNTQtMjNlOS00MjM4LWE3YmYtM2M2ZTkyMTNmYjA0@threa
+	d.v2&messageId=0&language=en-US>  \n\n____________________________________
+	____________________________________________ \n\n \n\n
+DTEND;TZID="W. Europe Standard Time":20211216T170000
+DTSTAMP:20240415T092030Z
+DTSTART;TZID="W. Europe Standard Time":20211216T160000
+LAST-MODIFIED:20240415T093413Z
+LOCATION:Microsoft Teams Meeting
+ORGANIZER;CN="Kesteren, E. van (Erik-Jan)":mailto:e.vankesteren1@uu.nl
+PRIORITY:5
+RRULE:FREQ=MONTHLY;BYDAY=TH;BYSETPOS=3
+SEQUENCE:4
+SUMMARY:SoDa data drop-in
+TRANSP:OPAQUE
+UID:040000008200E00074C5B7101A82E008000000007078E59B61E7D701000000000000000
+	0100000006643FE5FE84FA74C9A972C6ACC8197F1
+X-ALT-DESC;FMTTYPE=text/html:<html xmlns:v="urn:schemas-microsoft-com:vml" 
+	xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:w="urn:schemas-mic
+	rosoft-com:office:word" xmlns:m="http://schemas.microsoft.com/office/2004/
+	12/omml" xmlns="http://www.w3.org/TR/REC-html40"><head>\n<meta name="Gener
+	ator" content="Microsoft Word 15 (filtered medium)"><style><!--\n/* Font D
+	efinitions */\n@font-face\n	{font-family:"Cambria Math"\;\n	panose-1:2 4 5
+	 3 5 4 6 3 2 4\;}\n@font-face\n	{font-family:Calibri\;\n	panose-1:2 15 5 2
+	 2 2 4 3 2 4\;}\n@font-face\n	{font-family:Aptos\;}\n@font-face\n	{font-fa
+	mily:"Segoe UI"\;\n	panose-1:2 11 5 2 4 2 4 2 2 3\;}\n@font-face\n	{font-f
+	amily:"Segoe UI Semibold"\;\n	panose-1:2 11 7 2 4 2 4 2 2 3\;}\n/* Style D
+	efinitions */\np.MsoNormal\, li.MsoNormal\, div.MsoNormal\n	{margin:0cm\;\
+	n	font-size:11.0pt\;\n	font-family:"Calibri"\,sans-serif\;\n	mso-fareast-l
+	anguage:EN-US\;}\na:link\, span.MsoHyperlink\n	{mso-style-priority:99\;\n	
+	color:#0563C1\;\n	text-decoration:underline\;}\nspan.EmailStyle18\n	{mso-s
+	tyle-type:personal-compose\;}\n.MsoChpDefault\n	{mso-style-type:export-onl
+	y\;\n	font-size:10.0pt\;\n	mso-ligatures:none\;}\n@page WordSection1\n	{si
+	ze:612.0pt 792.0pt\;\n	margin:72.0pt 72.0pt 72.0pt 72.0pt\;}\ndiv.WordSect
+	ion1\n	{page:WordSection1\;}\n--></style><!--[if gte mso 9]><xml>\n<o:shap
+	edefaults v:ext="edit" spidmax="1026" />\n</xml><![endif]--><!--[if gte ms
+	o 9]><xml>\n<o:shapelayout v:ext="edit">\n<o:idmap v:ext="edit" data="1" /
+	>\n</o:shapelayout></xml><![endif]--></head><body lang="en-NL" link="#0563
+	C1" vlink="#954F72" style="word-wrap:break-word"><div class="WordSection1"
+	><p class="MsoNormal"><span lang="EN-US">Hi all\, I just noticed you weren
+	’t all invited to the monthly data drop-in event in outlook. Here you go
+	!<o:p></o:p></span></p><div><p class="MsoNormal"><span lang="en-NL" style=
+	"color:#5F5F5F">__________________________________________________________
+	______________________</span><span lang="en-NL"> <o:p></o:p></span></p></d
+	iv><div><div style="margin-top:18.0pt\;margin-bottom:15.0pt"><p class="Mso
+	Normal"><span lang="EN-US" style="font-size:18.0pt\;font-family:&quot\;Seg
+	oe UI&quot\;\,sans-serif\;color:#252424">Microsoft Teams meeting</span><sp
+	an lang="EN-US" style="font-family:&quot\;Segoe UI&quot\;\,sans-serif\;col
+	or:#252424"> <o:p></o:p></span></p></div><div style="margin-bottom:15.0pt"
+	><div><p class="MsoNormal"><b><span lang="EN-US" style="font-size:10.5pt\;
+	font-family:&quot\;Segoe UI&quot\;\,sans-serif\;color:#252424">Join on you
+	r computer or mobile app</span></b><b><span lang="EN-US" style="font-famil
+	y:&quot\;Segoe UI&quot\;\,sans-serif\;color:#252424"> <o:p></o:p></span></
+	b></p></div><p class="MsoNormal"><span lang="EN-US" style="font-family:&qu
+	ot\;Segoe UI&quot\;\,sans-serif\;color:#252424"><a href="https://teams.mic
+	rosoft.com/l/meetup-join/19%3ameeting_YTY3OTUxNTQtMjNlOS00MjM4LWE3YmYtM2M2
+	ZTkyMTNmYjA0%40thread.v2/0?context=%7b%22Tid%22%3a%22d72758a0-a446-4e0f-a0
+	aa-4bf95a4a10e7%22%2c%22Oid%22%3a%2266dde646-ddf9-4ac7-8ad6-cf0edce89f9a%2
+	2%7d" target="_blank"><span style="font-size:10.5pt\;font-family:&quot\;Se
+	goe UI Semibold&quot\;\,sans-serif\;color:#6264A7">Click here to join the 
+	meeting</span></a> <o:p></o:p></span></p></div><div style="margin-top:15.0
+	pt\;margin-bottom:18.0pt"><p class="MsoNormal"><span lang="EN-US" style="f
+	ont-family:&quot\;Segoe UI&quot\;\,sans-serif\;color:#252424"><a href="htt
+	ps://aka.ms/JoinTeamsMeeting" target="_blank"><span style="font-size:10.5p
+	t\;color:#6264A7">Learn More</span></a> | <a href="https://support.microso
+	ft.com/en-us/teams" target="_blank"><span style="font-size:10.5pt\;color:#
+	6264A7">Help</span></a> | <a href="https://teams.microsoft.com/meetingOpti
+	ons/?organizerId=66dde646-ddf9-4ac7-8ad6-cf0edce89f9a&amp\;tenantId=d72758
+	a0-a446-4e0f-a0aa-4bf95a4a10e7&amp\;threadId=19_meeting_YTY3OTUxNTQtMjNlOS
+	00MjM4LWE3YmYtM2M2ZTkyMTNmYjA0@thread.v2&amp\;messageId=0&amp\;language=en
+	-US" target="_blank"><span style="font-size:10.5pt\;color:#6264A7">Meeting
+	 options</span></a> <o:p></o:p></span></p></div></div><div><p class="MsoNo
+	rmal"><span lang="en-NL" style="color:#5F5F5F">___________________________
+	_____________________________________________________</span><span lang="en
+	-NL"> <o:p></o:p></span></p></div><p class="MsoNormal"><span lang="en-NL">
+	<o:p>&nbsp\;</o:p></span></p></div></body></html>
+X-MICROSOFT-CDO-BUSYSTATUS:BUSY
+X-MICROSOFT-CDO-IMPORTANCE:1
+X-MICROSOFT-CDO-INTENDEDSTATUS:BUSY
+X-MICROSOFT-DISALLOW-COUNTER:FALSE
+X-MS-OLK-APPTLASTSEQUENCE:4
+X-MS-OLK-APPTSEQTIME:20240115T105744Z
+BEGIN:VALARM
+TRIGGER:-PT15M
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+CLASS:PUBLIC
+CREATED:20240415T093413Z
+DTEND:20240118T160000Z
+DTSTAMP:20240415T093413Z
+DTSTART:20240118T150000Z
+LAST-MODIFIED:20240415T093413Z
+PRIORITY:5
+RECURRENCE-ID:20240118T150000Z
+SEQUENCE:0
+UID:040000008200E00074C5B7101A82E008000000007078E59B61E7D701000000000000000
+	0100000006643FE5FE84FA74C9A972C6ACC8197F1
+X-MICROSOFT-CDO-IMPORTANCE:1
+BEGIN:VALARM
+TRIGGER:-PT15M
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+CLASS:PUBLIC
+CREATED:20240415T093413Z
+DTEND:20240215T160000Z
+DTSTAMP:20240415T093413Z
+DTSTART:20240215T150000Z
+LAST-MODIFIED:20240415T093413Z
+PRIORITY:5
+RECURRENCE-ID:20240215T150000Z
+SEQUENCE:0
+UID:040000008200E00074C5B7101A82E008000000007078E59B61E7D701000000000000000
+	0100000006643FE5FE84FA74C9A972C6ACC8197F1
+X-MICROSOFT-CDO-IMPORTANCE:1
+BEGIN:VALARM
+TRIGGER:-PT15M
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+END:VALARM
+END:VEVENT
+END:VCALENDAR
