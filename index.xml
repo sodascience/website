@@ -6,7 +6,16 @@
     <description>Recent content on SoDa</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Fri, 19 Apr 2024 00:00:00 +0000</lastBuildDate><atom:link href="http://odissei-soda.nl/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 26 Apr 2024 00:00:00 +0000</lastBuildDate><atom:link href="http://odissei-soda.nl/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Generating synthetic data in a safe way with metasyn</title>
+      <link>http://odissei-soda.nl/tutorials/generating-synthetic-data-with-metasyn/</link>
+      <pubDate>Fri, 26 Apr 2024 00:00:00 +0000</pubDate>
+      
+      <guid>http://odissei-soda.nl/tutorials/generating-synthetic-data-with-metasyn/</guid>
+      <description>Doing open, reproducible science means doing your best to openly share research data and analysis code.</description>
+    </item>
+    
     <item>
       <title>[UPCOMING] Efficient and reproducible research with CBS microdata</title>
       <link>http://odissei-soda.nl/workshops/post-7/</link>
