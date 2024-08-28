@@ -3,7 +3,13 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>http://odissei-soda.nl/</loc>
-    <lastmod>2024-05-15T00:00:00+00:00</lastmod>
+    <lastmod>2024-09-27T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://odissei-soda.nl/workshops/cluster-computing/</loc>
+    <lastmod>2024-09-27T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://odissei-soda.nl/workshops/</loc>
+    <lastmod>2024-09-27T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://odissei-soda.nl/tutorials/comunity-detection-signed-networks/</loc>
     <lastmod>2024-05-15T00:00:00+00:00</lastmod>
@@ -17,14 +23,8 @@
     <loc>http://odissei-soda.nl/workshops/efficient-reproducible-research-cbs-microdata/</loc>
     <lastmod>2024-04-19T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://odissei-soda.nl/workshops/</loc>
-    <lastmod>2024-04-19T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>http://odissei-soda.nl/tutorials/ip-rotation/</loc>
     <lastmod>2024-02-27T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://odissei-soda.nl/workshops/cluster-computing/</loc>
-    <lastmod>2024-02-26T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://odissei-soda.nl/tutorials/fasttext/</loc>
     <lastmod>2024-01-22T00:00:00+00:00</lastmod>
