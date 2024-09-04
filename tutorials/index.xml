@@ -9,11 +9,11 @@
     <lastBuildDate>Wed, 15 May 2024 00:00:00 +0000</lastBuildDate><atom:link href="http://odissei-soda.nl/tutorials/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Detecting communities in signed networks with Python</title>
-      <link>http://odissei-soda.nl/tutorials/comunity-detection-signed-networks/</link>
+      <link>http://odissei-soda.nl/tutorials/community-detection-signed-networks/</link>
       <pubDate>Wed, 15 May 2024 00:00:00 +0000</pubDate>
       
-      <guid>http://odissei-soda.nl/tutorials/comunity-detection-signed-networks/</guid>
-      <description>Signed networks are a way to represent relationships between entities. This type of netwworks are called &amp;lsquo;signed&amp;rsquo; because the connections between entities are signed: they can be positive (or cooperative) or negative (or conflicting).</description>
+      <guid>http://odissei-soda.nl/tutorials/community-detection-signed-networks/</guid>
+      <description>Signed networks are a way to represent relationships between entities. These types of networks are called &amp;lsquo;signed&amp;rsquo; because the connections between entities are signed: they can be positive (or cooperative) or negative (or conflicting).</description>
     </item>
     
     <item>
