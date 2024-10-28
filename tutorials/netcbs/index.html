@@ -4,7 +4,7 @@
 <head>
 	
 	<meta charset="utf-8">
-<title>Tags</title>
+<title>netCBS: creating network measures using CBS networks (POPNET) in the RA </title>
 
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
@@ -325,28 +325,14 @@
 	<main>
 		
 
-<section class="section pb-0">
-  <div class="container text-center">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-6 mx-auto">
-          <h1 class="h2 mb-3">Tags</h1>
-          
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
 
 
-<section class="section mt-4">
+
+<section class="section">
   <div class="container">
-    <div class="row gx-5 gy-6">
-      
-      <div class="col-12 pb-5">
-        <div class="row align-items-center">
-          <div class="col-md-6 mb-4 mb-md-0">
-            
+    <div class="row">
+      <div class="col-lg-8 mx-auto">
+        
 
 
 
@@ -418,52 +404,64 @@
   <source  srcset="/images/tutorial-2/nantenbo_header_hu48d98726654ff846597d2fe25a58192f_52421_600x0_resize_q100_h2_box.webp"  media="(max-width: 767px)">
   <source  srcset="/images/tutorial-2/nantenbo_header_hu48d98726654ff846597d2fe25a58192f_52421_700x0_resize_q100_h2_box.webp"  media="(max-width: 991px)">
   <source  srcset="/images/tutorial-2/nantenbo_header_hu48d98726654ff846597d2fe25a58192f_52421_1110x0_resize_q100_h2_box.webp" >
-  <img  loading="lazy" decoding="async" src="/images/tutorial-2/nantenbo_header_hu48d98726654ff846597d2fe25a58192f_52421_1110x0_resize_q100_box.jpg"class=" rounded-2 w-100 img-fluid" alt="netCBS: creating network measures using CBS networks (POPNET) in the RA " width="600" height="300">
+  <img  loading="lazy" decoding="async" src="/images/tutorial-2/nantenbo_header_hu48d98726654ff846597d2fe25a58192f_52421_1110x0_resize_q100_box.jpg"class=" rounded-2 w-100 mb-5 img-fluid" alt="netCBS: creating network measures using CBS networks (POPNET) in the RA " width="600" height="300">
 </picture>
  
  
  
 
 
-          </div>
-          <div class="col-md-6">
-            <div class="d-flex align-items-center mb-4">
-              
-              <div class="fw-500"><i class="far fa-calendar-alt text-dark me-1"></i> October 28, 2024</div>
-            </div>
+        
+        
+        
+        <span class="text-muted fw-500"><i class="far fa-calendar-alt text-dark me-1"></i> October 28, 2024 <span class="mx-1 text-dark-50 fw-500">|</span> <i class="far fa-clock text-dark me-1"></i> 3 </span>
 
-            <h2 class="h3 mb-3"><a href="http://odissei-soda.nl/tutorials/netcbs/" title="netCBS: creating network measures using CBS networks (POPNET) in the RA " class="text-dark d-inline-block">netCBS: creating network measures using CBS networks (POPNET) in the RA </a></h2>
-            <p class="mb-4">netCBS A Python library to efficiently create network measures using CBS networks (POPNET) in the RA.</p>
-            <a href="http://odissei-soda.nl/tutorials/netcbs/" title=" - netCBS: creating network measures using CBS networks (POPNET) in the RA " class="btn btn-sm btn-primary">read more</a>
-          </div>
-        </div>
-      </div>
-      
+        <h2 class="h3 my-3">netCBS: creating network measures using CBS networks (POPNET) in the RA </h2>
 
-
-
-      
-      
-
-
-      
-      <div class="col-12 pt-5">
+        <div class="mt-5 content"><h1 id="netcbs">netCBS</h1>
+<p>A Python library to efficiently create network measures using CBS networks (POPNET) in the RA. For example you may be interested in calculating the average income of the parents of the classmates of a student. This package allows you to do this in a fast and efficient way.</p>
+<h2 id="installation">Installation</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>pip install netcbs
+</span></span></code></pre></div><h2 id="usage">Usage</h2>
+<p>See <a href="tutorial_netCBS.ipynb">notebook</a> for accessible information and examples.</p>
+<h3 id="create-network-measures-eg-the-average-income-and-age-of-the-parents-link-type-301-of-the-classmates-of-children-in-the-sample">Create network measures (e.g. the average income and age of the parents (link type 301) of the classmates of children in the sample)</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>query <span style="color:#f92672">=</span>  <span style="color:#e6db74">&#34;[Income, Age] -&gt; Family[301] -&gt; Schoolmates[all] -&gt; Sample&#34;</span>
+</span></span><span style="display:flex;"><span>df <span style="color:#f92672">=</span> netcbs<span style="color:#f92672">.</span>transform(query, 
+</span></span><span style="display:flex;"><span>                     df_sample <span style="color:#f92672">=</span> df_sample,  <span style="color:#75715e"># dataset with the sample to study</span>
+</span></span><span style="display:flex;"><span>                     df_agg <span style="color:#f92672">=</span> df_agg, <span style="color:#75715e"># dataset with the income variable</span>
+</span></span><span style="display:flex;"><span>                     year<span style="color:#f92672">=</span><span style="color:#ae81ff">2021</span>, <span style="color:#75715e"># year to study</span>
+</span></span><span style="display:flex;"><span>                     cbsdata_path<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;G:/Bevolking&#39;</span>, <span style="color:#75715e"># path to the CBS data</span>
+</span></span><span style="display:flex;"><span>                     agg_funcs<span style="color:#f92672">=</span>[pl<span style="color:#f92672">.</span>mean, pl<span style="color:#f92672">.</span>sum, pl<span style="color:#f92672">.</span>count], <span style="color:#75715e"># calculate the average</span>
+</span></span><span style="display:flex;"><span>                     return_pandas<span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>, <span style="color:#75715e"># returns a pandas dataframe instead of a polars dataframe</span>
+</span></span><span style="display:flex;"><span>                     lazy<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span> <span style="color:#75715e"># use polars lazy evaluation (faster/less memory usage)</span>
+</span></span><span style="display:flex;"><span>                     )
+</span></span></code></pre></div><h2 id="how-does-the-library-work">How does the library work?</h2>
+<h3 id="query-system">Query system</h3>
+<p>The library uses a query system to specify the relationships between the main sample dataframe and the context data. The query consists of a series of context types separated by arrows (-&gt;), with optional relationship types in square brackets. For example, the query <code>&quot;[Income] -&gt; Family[301] -&gt; Schoolmates[all] -&gt; Sample&quot;</code> specifies that the income of the parents of the student&rsquo;s classmates should be calculated based on the provided sample dataframe.</p>
+<h3 id="data-used">Data used:</h3>
+<p>The library checks the latest verion of each network file for the year specified in the <code>transform</code> function.</p>
+<p>The library removes duplicate entries from the df_sample and df_agg dataframes, and converts them to polars for efficient.</p>
+<h3 id="transformation-fo-the-query">Transformation fo the query</h3>
+<p>The <code>validate_query</code> function (called automatically by the <code>transform</code> function) ensures that the query string is correctly formatted and that all necessary columns are present in the input dataframes. It splits the query into individual contexts and verifies each part, raising errors for any issues found.</p>
+<p>The different network files (contexts) are merged (inner join) consecutively based on the relationship columns specified in the query. The resulting dataframe is then aggregated based on the aggregation function (e.g., pl.mean, pl.sum) specified in the <code>transform</code> function.</p>
+<p>We recommend to use the polars lazy evaluation (lazy=True) to reduce memory usage and speed up the calculations. For debugging this can be disabled by setting lazy=False.</p>
+<h2 id="contributing">Contributing</h2>
+<p>Contributions are what make the open source community an amazing place to learn, inspire, and create. Any contributions you make are <strong>greatly appreciated</strong>.</p>
+<p>Please refer to the <a href="https://github.com/sodascience/netcbs/blob/main/CONTRIBUTING.md">CONTRIBUTING</a> file for more information on issues and pull requests.</p>
+<h2 id="license-and-citation">License and citation</h2>
+<p>The package <code>netCBS</code> is published under an MIT license. When using <code>netCBS</code> for academic work, please cite:</p>
+<pre tabindex="0"><code>Garcia-Bernardo, Javier (2024). netCBS: A Python library to efficiently create network measures using CBS networks (POPNET) in the RA (0.1). Zenodo. 10.5281/zenodo.13908120
+</code></pre><h2 id="contact">Contact</h2>
+<p>This project is developed and maintained by the <a href="https://odissei-data.nl/nl/soda/">ODISSEI Social Data
+Science (SoDa)</a> team.</p>
+</div>
+        
+        
         
 
 
 
 
-
-
-
-
-
-
-      </div>
-      
-    </div>
-  </div>
-</section>
 
 
 	</main>
