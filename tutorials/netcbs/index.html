@@ -377,7 +377,7 @@
 <h2 id="installation">Installation</h2>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>pip install netcbs
 </span></span></code></pre></div><h2 id="usage">Usage</h2>
-<p>See <a href="tutorial_netCBS.ipynb">notebook</a> for accessible information and examples.</p>
+<p>See <a href="https://github.com/sodascience/netCBS/blob/main/tutorial_netCBS.ipynb">notebook</a> for accessible information and examples.</p>
 <h3 id="create-network-measures-eg-the-average-income-and-age-of-the-parents-link-type-301-of-the-classmates-of-children-in-the-sample">Create network measures (e.g. the average income and age of the parents (link type 301) of the classmates of children in the sample)</h3>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>query <span style="color:#f92672">=</span>  <span style="color:#e6db74">&#34;[Income, Age] -&gt; Family[301] -&gt; Schoolmates[all] -&gt; Sample&#34;</span>
 </span></span><span style="display:flex;"><span>df <span style="color:#f92672">=</span> netcbs<span style="color:#f92672">.</span>transform(query, 
