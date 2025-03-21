@@ -362,6 +362,52 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+<picture>
+  <source  srcset="/images/tutorial_llm_batch/technology_huef89d45b35a9f2c146030a05a321cde8_32859_545x0_resize_q100_h2_box_3.webp"  media="(max-width: 575px)">
+  <source  srcset="/images/tutorial_llm_batch/technology_huef89d45b35a9f2c146030a05a321cde8_32859_600x0_resize_q100_h2_box_3.webp"  media="(max-width: 767px)">
+  <source  srcset="/images/tutorial_llm_batch/technology_huef89d45b35a9f2c146030a05a321cde8_32859_700x0_resize_q100_h2_box_3.webp"  media="(max-width: 991px)">
+  <source  srcset="/images/tutorial_llm_batch/technology_huef89d45b35a9f2c146030a05a321cde8_32859_1110x0_resize_q100_h2_box_3.webp" >
+  <img  loading="lazy" decoding="async" src="/images/tutorial_llm_batch/technology_huef89d45b35a9f2c146030a05a321cde8_32859_1110x0_resize_box_3.png"class=" rounded-2 w-100 mb-5 img-fluid" alt="The Best of Both Worlds: Saving Costs and Time When Using OpenAI&#39;s API" width="512" height="512">
+</picture>
+ 
+ 
  
 
 
@@ -372,7 +418,8 @@
 
         <h2 class="h3 my-3">The Best of Both Worlds: Saving Costs and Time When Using OpenAI&#39;s API</h2>
 
-        <div class="mt-5 content"><p>When working with OpenAI&rsquo;s API for large language models (LLMs) in research projects, there are two techniques that can help save both time and costs.</p>
+        <div class="mt-5 content"><p><em>Header image from <a href="https://www.flaticon.com/free-icon/technology_14029977?term=chatgpt&amp;page=1&amp;position=11&amp;origin=tag&amp;related_id=14029977">Roundicons Premium on FlatIcons</a></em></p>
+<p>When working with OpenAI&rsquo;s API for large language models (LLMs) in research projects, there are two techniques that can help save both time and costs.</p>
 <p>The first is the <a href="https://platform.openai.com/docs/guides/batch">Batch API</a>, which allows you to submit multiple prompt requests in batches rather than one request at a time. This means you can process all (or a subset of) your requests asynchronously, rather than waiting for each request to complete sequentially. Once processing is complete, the API returns a file containing all the responses. The Batch API offers great advantages, including <em>cost efficiency</em> (a 50% discount compared to synchronous API calls), <em>higher rate limits</em>, and <em>faster processing times</em>, particularly for large-scale requests (each batch typically completes within 24 hours, often sooner).</p>
 <p>The second technique is using <a href="https://platform.openai.com/docs/guides/structured-outputs">structured outputs</a>, which ensures that the model generates responses in a predefined schema (JSON format). This eliminates concerns about invalid or inconsistent outputs, such as incorrect formatting and missing information. Structured outputs are particularly useful for researchers using LLMs for dataset annotation. By enforcing a structured format, the model can return annotations and explanations as separate fields, reducing the need for manual extraction of annotations and post-processing. This not only improves efficiency but also minimises the costs associated with manual effort.</p>
 <p>You can find tutorials for each of these two techniques via their respective links above. However, a key challenge remains: how to effectively combine these two techniques. OpenAI’s website does not provide a tutorial for this, and online discussions on the topic tend to be technical and/or overwhelming, making them difficult for applied researchers to follow.</p>
@@ -422,7 +469,7 @@
 </table>
 <p>In this csv file, each row is a new API request, containing a unique ID, the location and method of the request, the model which will be used, the actual content of the request, and the maximum number of tokens of the response. The messages column contains both a system prompt, which provides instructions to the model as to how to respond to the input, and the user input itself.</p>
 <blockquote>
-<p>[!TIP]</p>
+<p>TIP:</p>
 <ol>
 <li>Make sure the column names are exactly the same as shown above.</li>
 <li>All the calls in a single input file must use the same model.</li>
@@ -502,7 +549,7 @@
 </span></span><span style="display:flex;"><span>)
 </span></span><span style="display:flex;"><span>print(submitted_job<span style="color:#f92672">.</span>id)
 </span></span></code></pre></div><blockquote>
-<p>[!NOTE]<br>
+<p>NOTE:
 Currently the only time window available with the Batch API is 24 hours. However, depending on the size of your job it will likely be completed in significantly less time.</p>
 </blockquote>
 <h2 id="step-4-checking-and-downloading-the-output">Step 4: Checking and Downloading the Output</h2>
