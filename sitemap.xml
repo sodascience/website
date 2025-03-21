@@ -3,12 +3,15 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>http://odissei-soda.nl/</loc>
-    <lastmod>2024-10-28T00:00:00+00:00</lastmod>
+    <lastmod>2025-03-03T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://odissei-soda.nl/tutorials/netcbs/</loc>
-    <lastmod>2024-10-28T00:00:00+00:00</lastmod>
+    <loc>http://odissei-soda.nl/tutorials/llm_batch_structured_output/</loc>
+    <lastmod>2025-03-03T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://odissei-soda.nl/tutorials/</loc>
+    <lastmod>2025-03-03T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://odissei-soda.nl/tutorials/netcbs/</loc>
     <lastmod>2024-10-28T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://odissei-soda.nl/workshops/cluster-computing/</loc>

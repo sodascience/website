@@ -4,7 +4,7 @@
 <head>
 	
 	<meta charset="utf-8">
-<title>Tags</title>
+<title>The Best of Both Worlds: Saving Costs and Time When Using OpenAI&#39;s API</title>
 
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
@@ -325,28 +325,14 @@
 	<main>
 		
 
-<section class="section pb-0">
-  <div class="container text-center">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-6 mx-auto">
-          <h1 class="h2 mb-3">Tags</h1>
-          
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
 
 
-<section class="section mt-4">
+
+<section class="section">
   <div class="container">
-    <div class="row gx-5 gy-6">
-      
-      <div class="col-12 pb-5">
-        <div class="row align-items-center">
-          <div class="col-md-6 mb-4 mb-md-0">
-            
+    <div class="row">
+      <div class="col-lg-8 mx-auto">
+        
 
 
 
@@ -379,45 +365,202 @@
  
 
 
-          </div>
-          <div class="col-md-6">
-            <div class="d-flex align-items-center mb-4">
-              
-              <div class="fw-500"><i class="far fa-calendar-alt text-dark me-1"></i> March 3, 2025</div>
-            </div>
+        
+        
+        
+        <span class="text-muted fw-500"><i class="far fa-calendar-alt text-dark me-1"></i> March 3, 2025 <span class="mx-1 text-dark-50 fw-500">|</span> <i class="far fa-clock text-dark me-1"></i> 9 </span>
 
-            <h2 class="h3 mb-3"><a href="http://odissei-soda.nl/tutorials/llm_batch_structured_output/" title="The Best of Both Worlds: Saving Costs and Time When Using OpenAI&#39;s API" class="text-dark d-inline-block">The Best of Both Worlds: Saving Costs and Time When Using OpenAI&#39;s API</a></h2>
-            <p class="mb-4">When working with OpenAI&rsquo;s API for large language models (LLMs) in research projects, there are two techniques that can help save both time and costs.</p>
-            <a href="http://odissei-soda.nl/tutorials/llm_batch_structured_output/" title=" - The Best of Both Worlds: Saving Costs and Time When Using OpenAI&#39;s API" class="btn btn-sm btn-primary">read more</a>
-          </div>
-        </div>
-      </div>
-      
+        <h2 class="h3 my-3">The Best of Both Worlds: Saving Costs and Time When Using OpenAI&#39;s API</h2>
 
-
-
-      
-      
-
-
-      
-      <div class="col-12 pt-5">
+        <div class="mt-5 content"><p>When working with OpenAI&rsquo;s API for large language models (LLMs) in research projects, there are two techniques that can help save both time and costs.</p>
+<p>The first is the <a href="https://platform.openai.com/docs/guides/batch">Batch API</a>, which allows you to submit multiple prompt requests in batches rather than one request at a time. This means you can process all (or a subset of) your requests asynchronously, rather than waiting for each request to complete sequentially. Once processing is complete, the API returns a file containing all the responses. The Batch API offers great advantages, including <em>cost efficiency</em> (a 50% discount compared to synchronous API calls), <em>higher rate limits</em>, and <em>faster processing times</em>, particularly for large-scale requests (each batch typically completes within 24 hours, often sooner).</p>
+<p>The second technique is using <a href="https://platform.openai.com/docs/guides/structured-outputs">structured outputs</a>, which ensures that the model generates responses in a predefined schema (JSON format). This eliminates concerns about invalid or inconsistent outputs, such as incorrect formatting and missing information. Structured outputs are particularly useful for researchers using LLMs for dataset annotation. By enforcing a structured format, the model can return annotations and explanations as separate fields, reducing the need for manual extraction of annotations and post-processing. This not only improves efficiency but also minimises the costs associated with manual effort.</p>
+<p>You can find tutorials for each of these two techniques via their respective links above. However, a key challenge remains: how to effectively combine these two techniques. OpenAI’s website does not provide a tutorial for this, and online discussions on the topic tend to be technical and/or overwhelming, making them difficult for applied researchers to follow.</p>
+<p>At the SoDa team, we encountered this problem firsthand while working with <a href="https://gabriellemartins.com/#home">Gabrielle Martins van Jaarsveld</a>, a participant in our SoDa Fellowship Programme. In her project, she used OpenAI&rsquo;s API to annotate educational chatbot conversations for markers of self-regulated learning. Given the complexity of her prompt requests — including long and detailed instructions, thousands of prompt calls, and a large annotation space — we opted to leverage both the Batch API and structured outputs to optimize cost and efficiency.</p>
+<p>After multiple iterations, we developed a solution that, to the best of our knowledge, is not yet readily available online. To help others facing similar challenges, we are using this blog post to share our approach.</p>
+<h2 id="step-1-prepare-your-data">Step 1: Prepare Your Data</h2>
+<p>The first step is to prepare your input data in the required format. The OpenAI Batch API requires that your input is formatted as a very specifically structured JSON lines file. In the first step, we will create a csv file containing all the requests we want to make in the correct structure. Then, we will convert it into a .jsonl file in the next step.</p>
+<p>The csv file needs to include (at least) the following columns, which specify the details of a prompt request:</p>
+<ul>
+<li><code>custom_id</code>: An identifier unique to each request, defined by user.</li>
+<li><code>method</code>: The HTTP method to be used for the request. Currently only POST is supported.</li>
+<li><code>url</code>: The OpenAI API relative URL to be used for the request. Currently /v1/chat/completions, /v1/embeddings, and /v1/completions are supported.</li>
+<li><code>model</code>: The name of the model requested. See available models <a href="https://platform.openai.com/docs/models">here</a>.</li>
+<li><code>messages</code>: The system prompt and the user prompt.</li>
+<li><code>max_tokens</code>: The maximum number of tokens that can be generated in the chat completion. This value can be used to control costs for text generated via API.</li>
+</ul>
+<p>Here&rsquo;s a csv file with two examples:</p>
+<table>
+<thead>
+<tr>
+<th>custom_id</th>
+<th>method</th>
+<th>url</th>
+<th>model</th>
+<th>messages</th>
+<th>max_tokens</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>request_1</td>
+<td>POST</td>
+<td>/v1/chat/completions</td>
+<td>gpt-4o</td>
+<td>[{&ldquo;role&rdquo;: &ldquo;system&rdquo;, &ldquo;content&rdquo;: &ldquo;You are a researcher who is examining the sentiment of reviews left by students after completing a university course. Score reviews on a scale of 1-10, with 1 being highly negative, and 10 being highly positive.&rdquo;}, {&ldquo;role&rdquo;: &ldquo;user&rdquo;, &ldquo;content&rdquo;: &ldquo;This course was really interesting, and I enjoyed it a lot. The exam was a little difficult, but the lectures prepared us really well for it.&rdquo;}]</td>
+<td>1000</td>
+</tr>
+<tr>
+<td>request_2</td>
+<td>POST</td>
+<td>/v1/chat/completions</td>
+<td>gpt-4o</td>
+<td>[{&ldquo;role&rdquo;: &ldquo;system&rdquo;, &ldquo;content&rdquo;: &ldquo;You are a researcher who is examining the sentiment of reviews left by students after completing a university course. Score reviews on a scale of 1-10, with 1 being highly negative, and 10 being highly positive.&rdquo;}, {&ldquo;role&rdquo;: &ldquo;user&rdquo;, &ldquo;content&rdquo;: &ldquo;This course was a nightmare. The professor was late, the course was boring, and the exam was so difficult I barely got through half of it in the time.&rdquo;}]</td>
+<td>1000</td>
+</tr>
+</tbody>
+</table>
+<p>In this csv file, each row is a new API request, containing a unique ID, the location and method of the request, the model which will be used, the actual content of the request, and the maximum number of tokens of the response. The messages column contains both a system prompt, which provides instructions to the model as to how to respond to the input, and the user input itself.</p>
+<blockquote>
+<p>[!TIP]</p>
+<ol>
+<li>Make sure the column names are exactly the same as shown above.</li>
+<li>All the calls in a single input file must use the same model.</li>
+<li>Make sure your text data is cleaned before inputting it into the csv file. Characters such as &quot; ; \ or / can cause errors when converting the file to jsonl or when being processed by OpenAI&rsquo;s API.</li>
+</ol>
+</blockquote>
+<h2 id="step-2-create-your-input-file">Step 2: Create Your Input File</h2>
+<p>Once you have a csv file with each line specifying a new request, you can generate the properly formatted JSON lines input file. First, make sure you have the python installed on your machine, and then install the following packages:</p>
+<pre tabindex="0"><code>pip install pandas jsonschema pydantic openai
+</code></pre><p>The packages <code>pandas</code>, <code>jsonschema</code>, and <code>pydantic</code> will all be used to prepare and general the input file. The <code>openai</code> package will be used in the following steps to create the batch request. Once all the relevant packages are installed, the following pieces of code will implement the desired format of your structured input, and then generate a .jsonl file which can be uploaded to OpenAI.</p>
+<p>First, import all the relevant packages, and set your OpenAI API key. If you don&rsquo;t already have one, you can generate an API key from your <a href="https://platform.openai.com/api-keys">OpenAI account</a>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> pandas <span style="color:#66d9ef">as</span> pd
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> json
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> pydantic <span style="color:#f92672">import</span> BaseModel
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> openai.lib._pydantic <span style="color:#f92672">import</span> to_strict_json_schema
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> openai <span style="color:#f92672">import</span> OpenAI
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> pprint <span style="color:#f92672">import</span> pprint
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>api_key <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;YOUR-API-KEY-HERE&#34;</span> <span style="color:#75715e">#CHANGE ME</span>
+</span></span></code></pre></div><p>Then, decide on the desired structure of your output, and use the code below to set this. The structure of this formatting will be <code>Name: Data Type</code>. Make sure the names are intuitive, and describe what data needs to be outputted as part of this variable. If a name consists of more than one word, you can concatenate them with the underscore sign <code>_</code>. A variety of data formats are supported including: <code>String</code>, <code>Number</code>, <code>Boolean</code>, <code>Integer</code>, <code>Object</code>, <code>Array</code>, <code>Enum</code>, <code>anyOf</code>. Make sure the structure is logical following from the instructions given to the LLM in the system prompt section of your input file.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Structured_Response</span>(BaseModel): 
+</span></span><span style="display:flex;"><span>    Score: int
+</span></span><span style="display:flex;"><span>    Reason: str
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Structured_Response <span style="color:#f92672">=</span> to_strict_json_schema(Structured_Response)
+</span></span><span style="display:flex;"><span>pprint(Structured_Response, sort_dicts<span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>)
+</span></span></code></pre></div><p>The <code>to_strict_json_schema</code> function is necessary (credits to  <code>karthik.shivaram</code> under this <a href="https://community.openai.com/t/using-pydantic-structured-outputs-in-batch-mode/955756/4">post</a>). Otherwise OpenAI&rsquo;s API will have trouble processing your structured output schema.</p>
+<p>Once your structured output format is set, the following code combines this information with your csv input file, to create a single .jsonl file which is ready for batch processing. This is the stage of the process where you&rsquo;re most likely to run into errors, often due to unexpected characters in your csv file. If you are getting errors at this phase, double check your text data for any characters which may be causing issues during the conversion process (i.e., ; &quot; \ / ).</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>df <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>read_csv(<span style="color:#e6db74">&#34;batchinput.csv&#34;</span>, encoding<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;ISO-8859-1&#34;</span>) 
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>jsonl_lines <span style="color:#f92672">=</span> []
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> _, row <span style="color:#f92672">in</span> df<span style="color:#f92672">.</span>iterrows():
+</span></span><span style="display:flex;"><span>    json_obj <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;custom_id&#34;</span>: row[<span style="color:#e6db74">&#34;custom_id&#34;</span>],
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;method&#34;</span>: row[<span style="color:#e6db74">&#34;method&#34;</span>],
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;url&#34;</span>: row[<span style="color:#e6db74">&#34;url&#34;</span>],
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;body&#34;</span>: {
+</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#34;model&#34;</span>: row[<span style="color:#e6db74">&#34;model&#34;</span>],
+</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#34;messages&#34;</span>: json<span style="color:#f92672">.</span>loads(row[<span style="color:#e6db74">&#34;messages&#34;</span>], strict<span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>), 
+</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#34;max_tokens&#34;</span>: row[<span style="color:#e6db74">&#34;max_tokens&#34;</span>],
+</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#34;response_format&#34;</span>: {
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;type&#34;</span>: <span style="color:#e6db74">&#34;json_schema&#34;</span>,
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;json_schema&#34;</span>: {
+</span></span><span style="display:flex;"><span>                  <span style="color:#e6db74">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;structured_response&#34;</span>,
+</span></span><span style="display:flex;"><span>                  <span style="color:#e6db74">&#34;schema&#34;</span>: Structured_Response,
+</span></span><span style="display:flex;"><span>                  <span style="color:#e6db74">&#34;strict&#34;</span>: <span style="color:#66d9ef">True</span>
+</span></span><span style="display:flex;"><span>                }
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    jsonl_lines<span style="color:#f92672">.</span>append(json<span style="color:#f92672">.</span>dumps(json_obj))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">with</span> open(<span style="color:#e6db74">&#34;batchinput.jsonl&#34;</span>, <span style="color:#e6db74">&#34;w&#34;</span>) <span style="color:#66d9ef">as</span> f: 
+</span></span><span style="display:flex;"><span>    f<span style="color:#f92672">.</span>write(<span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span><span style="color:#f92672">.</span>join(jsonl_lines))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">&#34;JSONL file created: batchinput.jsonl&#34;</span>) 
+</span></span></code></pre></div><p>You should now have a formatted file called batchinput.jsonl, and are ready to create a batch using the OpenAI API.</p>
+<h2 id="step-3-creating-and-submitting-a-batch-job">Step 3: Creating and Submitting a Batch Job</h2>
+<p>Now that you have a properly formatted .jsonl file, you can upload this file via the OpenAI API using the code below.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>client <span style="color:#f92672">=</span> OpenAI(api_key <span style="color:#f92672">=</span> api_key)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>batch_input_file <span style="color:#f92672">=</span> client<span style="color:#f92672">.</span>files<span style="color:#f92672">.</span>create(
+</span></span><span style="display:flex;"><span>    file<span style="color:#f92672">=</span>open(<span style="color:#e6db74">&#34;batchinput.jsonl&#34;</span>, <span style="color:#e6db74">&#34;rb&#34;</span>), 
+</span></span><span style="display:flex;"><span>    purpose<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;batch&#34;</span>
+</span></span><span style="display:flex;"><span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>print(batch_input_file)
+</span></span></code></pre></div><p>Then, use the following code to create and submit a batch job. It also prints the submitted batch ID, which you should save, as you will need it to check the status of this job and download the output file later.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>submitted_job <span style="color:#f92672">=</span> client<span style="color:#f92672">.</span>batches<span style="color:#f92672">.</span>create(
+</span></span><span style="display:flex;"><span>    input_file_id<span style="color:#f92672">=</span>batch_input_file<span style="color:#f92672">.</span>id,
+</span></span><span style="display:flex;"><span>    endpoint<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/v1/chat/completions&#34;</span>,
+</span></span><span style="display:flex;"><span>    completion_window<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;24h&#34;</span>,
+</span></span><span style="display:flex;"><span>    metadata<span style="color:#f92672">=</span>{
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;description&#34;</span>: <span style="color:#e6db74">&#34;BATCH JOB DISCRIPTION HERE&#34;</span> 
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>)
+</span></span><span style="display:flex;"><span>print(submitted_job<span style="color:#f92672">.</span>id)
+</span></span></code></pre></div><blockquote>
+<p>[!NOTE]<br>
+Currently the only time window available with the Batch API is 24 hours. However, depending on the size of your job it will likely be completed in significantly less time.</p>
+</blockquote>
+<h2 id="step-4-checking-and-downloading-the-output">Step 4: Checking and Downloading the Output</h2>
+<p>The time needed to complete all requests in your batch will differ, but you can check the status at any time. This can be done from the <a href="https://platform.openai.com/batches">OpenAI web portal</a>, where you can also directly download the output file, or via the API. The code below can be used to check the completion status of your batch job using the batch job ID you previously saved. If the job is completed, this will return the output file ID, which can be used to download the output file.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> openai <span style="color:#f92672">import</span> OpenAI
+</span></span><span style="display:flex;"><span>client <span style="color:#f92672">=</span> OpenAI(api_key <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;API-KEY-HERE&#34;</span>) <span style="color:#75715e"># CHANGE ME</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>batch <span style="color:#f92672">=</span> client<span style="color:#f92672">.</span>batches<span style="color:#f92672">.</span>retrieve(<span style="color:#e6db74">&#34;OUTPUT-BATCH-ID-HERE&#34;</span>) <span style="color:#75715e"># CHANGE ME</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> batch<span style="color:#f92672">.</span>status <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;completed&#39;</span> : 
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">&#34;Batch completed, ouput file ID:&#34;</span>, batch<span style="color:#f92672">.</span>output_file_id)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">else</span>:
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">&#34;Batch in progress&#34;</span>, batch)
+</span></span></code></pre></div><p>Once the job is completed you can download the output, which will be in the form of another jsonl file. Each line in this file will be for a separate request, marked by the unique ID you used in your original data file.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> openai <span style="color:#f92672">import</span> OpenAI
+</span></span><span style="display:flex;"><span>client <span style="color:#f92672">=</span> OpenAI(api_key <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;API-KEY-HERE&#34;</span>) <span style="color:#75715e"># CHANGE ME</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>file_response <span style="color:#f92672">=</span> client<span style="color:#f92672">.</span>files<span style="color:#f92672">.</span>content(<span style="color:#e6db74">&#34;FILE-ID-HERE&#34;</span>) <span style="color:#75715e"># CHANGE ME</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>file_path <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;batchoutput.jsonl&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">with</span> open(file_path, <span style="color:#e6db74">&#34;wb&#34;</span>) <span style="color:#66d9ef">as</span> f:
+</span></span><span style="display:flex;"><span>    f<span style="color:#f92672">.</span>write(file_response<span style="color:#f92672">.</span>read())  
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;File saved as: </span><span style="color:#e6db74">{</span>file_path<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
+</span></span></code></pre></div><h2 id="bonus-step-converting-back-to-csv">Bonus Step: Converting Back to .csv</h2>
+<p>This final step is for those who are unsure of how to work with the .jsonl file which is output by the API, and would like to convert it back into a csv file so they can work with the results. The following code can be used to convert your file back to a readable .csv:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> json
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> csv
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> sys
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">jsonl_to_csv</span>(input_jsonl_path, output_csv_path):
+</span></span><span style="display:flex;"><span>    records <span style="color:#f92672">=</span> []
+</span></span><span style="display:flex;"><span>    all_keys <span style="color:#f92672">=</span> set()
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">with</span> open(input_jsonl_path, mode<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;r&#34;</span>, encoding<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;utf-8&#34;</span>) <span style="color:#66d9ef">as</span> fin: 
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> line <span style="color:#f92672">in</span> fin:
+</span></span><span style="display:flex;"><span>            line <span style="color:#f92672">=</span> line<span style="color:#f92672">.</span>strip()
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> line:
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">continue</span>  
+</span></span><span style="display:flex;"><span>            obj <span style="color:#f92672">=</span> json<span style="color:#f92672">.</span>loads(line)
+</span></span><span style="display:flex;"><span>            records<span style="color:#f92672">.</span>append(obj)
+</span></span><span style="display:flex;"><span>            all_keys<span style="color:#f92672">.</span>update(obj<span style="color:#f92672">.</span>keys())  
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    fieldnames <span style="color:#f92672">=</span> list(all_keys)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">with</span> open(output_csv_path, mode<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;w&#34;</span>, encoding<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;utf-8&#34;</span>, newline<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&#34;</span>) <span style="color:#66d9ef">as</span> fout: 
+</span></span><span style="display:flex;"><span>        writer <span style="color:#f92672">=</span> csv<span style="color:#f92672">.</span>DictWriter(fout, fieldnames<span style="color:#f92672">=</span>fieldnames)
+</span></span><span style="display:flex;"><span>        writer<span style="color:#f92672">.</span>writeheader()
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> record <span style="color:#f92672">in</span> records:
+</span></span><span style="display:flex;"><span>            writer<span style="color:#f92672">.</span>writerow(record)
+</span></span></code></pre></div></div>
+        
+        
         
 
 
 
 
-
-
-
-
-
-
-      </div>
-      
-    </div>
-  </div>
-</section>
 
 
 	</main>
