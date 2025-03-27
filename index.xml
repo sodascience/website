@@ -5,206 +5,162 @@
     <link>http://odissei-soda.nl/</link>
     <description>Recent content on SoDa</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Mon, 03 Mar 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://odissei-soda.nl/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-US</language>
+    <lastBuildDate>Mon, 03 Mar 2025 00:00:00 +0100</lastBuildDate>
+    <atom:link href="http://odissei-soda.nl/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>The Best of Both Worlds: Saving Costs and Time When Using OpenAI&#39;s API</title>
       <link>http://odissei-soda.nl/tutorials/llm_batch_structured_output/</link>
-      <pubDate>Mon, 03 Mar 2025 00:00:00 +0000</pubDate>
-      
+      <pubDate>Mon, 03 Mar 2025 00:00:00 +0100</pubDate>
       <guid>http://odissei-soda.nl/tutorials/llm_batch_structured_output/</guid>
       <description>When working with OpenAI&amp;rsquo;s API for large language models (LLMs) in research projects, there are two techniques that can help save both time and costs.</description>
     </item>
-    
     <item>
       <title>NetCBS: creating network measures using CBS networks (POPNET) in the RA </title>
       <link>http://odissei-soda.nl/tutorials/netcbs/</link>
-      <pubDate>Mon, 28 Oct 2024 00:00:00 +0000</pubDate>
-      
+      <pubDate>Mon, 28 Oct 2024 00:00:00 +0100</pubDate>
       <guid>http://odissei-soda.nl/tutorials/netcbs/</guid>
       <description>Registry data from the Central Bureau of Statistics (CBS) in the Netherlands contains information on the social context of individuals: family, friends, schoolmates, neighbors, housemates and colleagues.</description>
     </item>
-    
     <item>
       <title>Supercomputing for social scientists with R</title>
       <link>http://odissei-soda.nl/workshops/cluster-computing/</link>
-      <pubDate>Fri, 27 Sep 2024 00:00:00 +0000</pubDate>
-      
+      <pubDate>Fri, 27 Sep 2024 00:00:00 +0200</pubDate>
       <guid>http://odissei-soda.nl/workshops/cluster-computing/</guid>
       <description>In this course, you will learn the basics of cluster computing with R for social science workloads.</description>
     </item>
-    
     <item>
       <title>Detecting communities in signed networks with Python</title>
       <link>http://odissei-soda.nl/tutorials/community-detection-signed-networks/</link>
-      <pubDate>Wed, 15 May 2024 00:00:00 +0000</pubDate>
-      
+      <pubDate>Wed, 15 May 2024 00:00:00 +0200</pubDate>
       <guid>http://odissei-soda.nl/tutorials/community-detection-signed-networks/</guid>
       <description>In this tutorial, we will guide you through applying two popular community detection algorithms to signed networks, using Python.</description>
     </item>
-    
     <item>
       <title>Generating synthetic data in a safe way with metasyn</title>
       <link>http://odissei-soda.nl/tutorials/generating-synthetic-data-with-metasyn/</link>
-      <pubDate>Fri, 26 Apr 2024 00:00:00 +0000</pubDate>
-      
+      <pubDate>Fri, 26 Apr 2024 00:00:00 +0200</pubDate>
       <guid>http://odissei-soda.nl/tutorials/generating-synthetic-data-with-metasyn/</guid>
-      <description>In this post, we show how to create synthetic data in an auditable, transparent way with the software package &lt;a href=&#34;https://github.com/sodascience/metasyn&#34;&gt;metasyn&lt;/a&gt;.</description>
+      <description>In this post, we show how to create synthetic data in an auditable, transparent way with the software package &lt;a href=&#34;https://github.com/sodascience/metasyn&#34;&#xA;&#xA;&#xA;&#xA;&#xA; target=&#34;_blank&#34;&#xA; &#xA;&#xA;&#xA;&gt;metasyn&lt;/a&gt;.</description>
     </item>
-    
     <item>
       <title>Efficient and reproducible research with CBS microdata</title>
       <link>http://odissei-soda.nl/workshops/efficient-reproducible-research-cbs-microdata/</link>
-      <pubDate>Fri, 19 Apr 2024 00:00:00 +0000</pubDate>
-      
+      <pubDate>Fri, 19 Apr 2024 00:00:00 +0200</pubDate>
       <guid>http://odissei-soda.nl/workshops/efficient-reproducible-research-cbs-microdata/</guid>
       <description>About the workshop The workshop will teach how to work efficiently with data from CBS (Statistics Netherlands), using its remote access environment.</description>
     </item>
-    
     <item>
       <title>How to manage your IP address in python</title>
       <link>http://odissei-soda.nl/tutorials/ip-rotation/</link>
-      <pubDate>Tue, 27 Feb 2024 00:00:00 +0000</pubDate>
-      
+      <pubDate>Tue, 27 Feb 2024 00:00:00 +0100</pubDate>
       <guid>http://odissei-soda.nl/tutorials/ip-rotation/</guid>
       <description>Author: Flavio Hafner. Post photo from Glenn Carstens-Peters on Unsplash</description>
     </item>
-    
     <item>
       <title>Training a fastText model from scratch using Python</title>
       <link>http://odissei-soda.nl/tutorials/fasttext/</link>
-      <pubDate>Mon, 22 Jan 2024 00:00:00 +0000</pubDate>
-      
+      <pubDate>Mon, 22 Jan 2024 00:00:00 +0100</pubDate>
       <guid>http://odissei-soda.nl/tutorials/fasttext/</guid>
       <description>In this tutorial, we explain how to train a natural language processing model using fastText</description>
     </item>
-    
     <item>
       <title>Visualizing international flows with Geoflow visualizer</title>
       <link>http://odissei-soda.nl/tutorials/geoflow-visualizer/</link>
-      <pubDate>Mon, 11 Dec 2023 00:00:00 +0000</pubDate>
-      
+      <pubDate>Mon, 11 Dec 2023 00:00:00 +0100</pubDate>
       <guid>http://odissei-soda.nl/tutorials/geoflow-visualizer/</guid>
       <description>In this tutorial we present Geoflow, a newly created tool designed to visualize international flows in an interactive way.</description>
     </item>
-    
     <item>
       <title>Data Visualization Bootcamp</title>
       <link>http://odissei-soda.nl/workshops/data-visualization/</link>
-      <pubDate>Fri, 20 Oct 2023 00:00:00 +0000</pubDate>
-      
+      <pubDate>Fri, 20 Oct 2023 00:00:00 +0200</pubDate>
       <guid>http://odissei-soda.nl/workshops/data-visualization/</guid>
       <description>In October 2023, we hosted a workshop about data visualization.</description>
     </item>
-    
     <item>
       <title>Wrangling interval data using lubridate</title>
       <link>http://odissei-soda.nl/tutorials/lubridate/</link>
-      <pubDate>Fri, 29 Sep 2023 00:00:00 +0000</pubDate>
-      
+      <pubDate>Fri, 29 Sep 2023 00:00:00 +0200</pubDate>
       <guid>http://odissei-soda.nl/tutorials/lubridate/</guid>
       <description>One common issue we encounter in helping researchers work with the housing register data of Statistics Netherlands is its transactional nature: each row in the housing register table contains data on when someone registered and deregistered at an address (more info in Dutch here).</description>
     </item>
-    
     <item>
       <title>Collecting online platforms data for science: an example using WhatsApp</title>
       <link>http://odissei-soda.nl/tutorials/collect-online-data-whatsapp/</link>
-      <pubDate>Fri, 08 Sep 2023 00:00:00 +0000</pubDate>
-      
+      <pubDate>Fri, 08 Sep 2023 00:00:00 +0200</pubDate>
       <guid>http://odissei-soda.nl/tutorials/collect-online-data-whatsapp/</guid>
-      <description>In this tutorial, we use &lt;a href=&#34;https://datadonation.eu&#34;&gt;data donation&lt;/a&gt;  and the &lt;a href=&#34;https://github.com/eyra/port&#34;&gt;Port software&lt;/a&gt; to get access to WhatsApp group-chat data in a way that completely preserves privacy of research participants.</description>
+      <description>In this tutorial, we use &lt;a href=&#34;https://datadonation.eu&#34;&#xA;&#xA;&#xA;&#xA;&#xA; target=&#34;_blank&#34;&#xA; &#xA;&#xA;&#xA;&gt;data donation&lt;/a&gt;  and the &lt;a href=&#34;https://github.com/eyra/port&#34;&#xA;&#xA;&#xA;&#xA;&#xA; target=&#34;_blank&#34;&#xA; &#xA;&#xA;&#xA;&gt;Port software&lt;/a&gt; to get access to WhatsApp group-chat data in a way that completely preserves privacy of research participants.</description>
     </item>
-    
     <item>
       <title>Network science</title>
       <link>http://odissei-soda.nl/workshops/network-science/</link>
-      <pubDate>Thu, 22 Jun 2023 00:00:00 +0000</pubDate>
-      
+      <pubDate>Thu, 22 Jun 2023 00:00:00 +0200</pubDate>
       <guid>http://odissei-soda.nl/workshops/network-science/</guid>
       <description>In June 2023, we hosted a workshop about Network Science.</description>
     </item>
-    
     <item>
       <title>Causal Impact Assesment</title>
       <link>http://odissei-soda.nl/workshops/causal-inference-for-policy-evaluation/</link>
-      <pubDate>Fri, 26 May 2023 00:00:00 +0000</pubDate>
-      
+      <pubDate>Fri, 26 May 2023 00:00:00 +0200</pubDate>
       <guid>http://odissei-soda.nl/workshops/causal-inference-for-policy-evaluation/</guid>
       <description>In May 2023, we hosted a workshop in Causal Impact Assesment focusing on policy interventions.</description>
     </item>
-    
     <item>
       <title>ArtScraper: A Python library to scrape online artworks</title>
       <link>http://odissei-soda.nl/tutorials/artscraper/</link>
-      <pubDate>Tue, 04 Oct 2022 00:00:00 +0000</pubDate>
-      
+      <pubDate>Tue, 04 Oct 2022 00:00:00 +0200</pubDate>
       <guid>http://odissei-soda.nl/tutorials/artscraper/</guid>
-      <description>ArtScraper is a Python library to download images and metadata for artworks
-available on &lt;a href=&#34;www.wikiart.org/&#34;&gt;WikiArt&lt;/a&gt; and &lt;a href=&#34;artsandculture.google.com/&#34;&gt;Google Arts &amp;amp; Culture&lt;/a&gt;.</description>
+      <description>ArtScraper is a Python library to download images and metadata for artworks&#xA;available on &lt;a href=&#34;www.wikiart.org/&#34;&#xA;&#xA;&#xA;&#xA; &#xA;&#xA;&#xA;&gt;WikiArt&lt;/a&gt; and &lt;a href=&#34;artsandculture.google.com/&#34;&#xA;&#xA;&#xA;&#xA; &#xA;&#xA;&#xA;&gt;Google Arts &amp;amp; Culture&lt;/a&gt;.</description>
     </item>
-    
     <item>
       <title>How to share your research code</title>
       <link>http://odissei-soda.nl/tutorials/share-your-reserarch-code/</link>
-      <pubDate>Mon, 05 Sep 2022 00:00:00 +0000</pubDate>
-      
+      <pubDate>Mon, 05 Sep 2022 00:00:00 +0200</pubDate>
       <guid>http://odissei-soda.nl/tutorials/share-your-reserarch-code/</guid>
       <description>With the increasing popularity of open science practices, it is now more and more common to openly share code along with more traditional scientific objects such as papers.</description>
     </item>
-    
     <item>
       <title>Efficient programming with CBS microdata</title>
       <link>http://odissei-soda.nl/workshops/accesing-cbs-microdata/</link>
-      <pubDate>Mon, 16 May 2022 00:00:00 +0000</pubDate>
-      
+      <pubDate>Mon, 16 May 2022 00:00:00 +0200</pubDate>
       <guid>http://odissei-soda.nl/workshops/accesing-cbs-microdata/</guid>
       <description>In May 2022, we hosted a workshop about efficient programming for accessing CBS microdata.</description>
     </item>
-    
     <item>
       <title>How to create synthetic data</title>
       <link>http://odissei-soda.nl/workshops/creating-synthetic-data/</link>
-      <pubDate>Sun, 09 Jan 2022 00:00:00 +0000</pubDate>
-      
+      <pubDate>Sun, 09 Jan 2022 00:00:00 +0100</pubDate>
       <guid>http://odissei-soda.nl/workshops/creating-synthetic-data/</guid>
       <description>In September 2022, we hosted a workshop about synthetic data.</description>
     </item>
-    
     <item>
       <title>Fellowship</title>
       <link>http://odissei-soda.nl/fellowship/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>http://odissei-soda.nl/fellowship/</guid>
-      <description>During your time as a fellow:
-you will spend between 3-5 months full-time* working on a social science research project.</description>
+      <description>During your time as a fellow:&#xA;you will spend between 3-5 months full-time* working on a social science research project.</description>
     </item>
-    
     <item>
       <title>Principles</title>
       <link>http://odissei-soda.nl/principles/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>http://odissei-soda.nl/principles/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Projects</title>
       <link>http://odissei-soda.nl/projects/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>http://odissei-soda.nl/projects/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>The SoDa Team</title>
       <link>http://odissei-soda.nl/team/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>http://odissei-soda.nl/team/</guid>
       <description></description>
     </item>
-    
   </channel>
 </rss>
