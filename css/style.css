@@ -17420,6 +17420,18 @@ body.dark {
   .dark #TableOfContents a {
     color: #fff !important; }
 
+pre {
+  font-family: monospace;
+  line-height: 1.2rem;
+  font-size: 1rem; }
+
+code {
+  font-family: monospace;
+  font-size: 1rem; }
+
+code > span {
+  margin-bottom: 0 !important; }
+
 .table-center {
   text-align: center; }
 
