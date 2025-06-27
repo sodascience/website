@@ -1,39 +1,16 @@
-# SoDa Website
+# ODISSEI SoDa Team Website
 
-This is the website for the Social Data Science Team - SoDa.  
-SoDa is part of ODISSEI and aims on helping social scientists with data intensive & computational research.
+This repository contains the SoDa website and its assets. It is based on a Hugo template called "Bigspring", licensed and distributed through GetHugoThemes (https://gethugothemes.com/products/bigspring).
 
-Link to website: https://odissei-soda.nl/
+SoDa is part of ODISSEI and aims to help social scientists with data intensive & computational research.
 
-## Description
-
-This repository contains the SoDa website and its assets.  
-It is based on a Hugo template called 'Bigspring', licensed and distributed through GetHugoThemes (https://gethugothemes.com/products/bigspring).
-
+Link to website: [https://odissei-soda.nl/](https://odissei-soda.nl)
 
 ## Contact
 
-For contacting us about a project or consultation, use this contact form:
-https://docs.google.com/forms/d/e/1FAIpQLSfTVvJgMs6teGUltv9ZAI3GC_w8PQvLDGx6tqUqfFcTEyTm-A/viewform
+This is a project by the [ODISSEI Social Data Science team](https://odissei-soda.nl/). Do you have questions, suggestions, or remarks on the technical implementation? Create an issue in the issue tracker or feel free to contact [Erik-Jan van Kesteren](https://github.com/vankesteren). 
 
-
-For other questions, you can contact
-
-#### Erik-Jan van Kesteren, Team-Leader
-
-E-Mail: e.vankesteren1@uu.nl
-
-GitHub: https://github.com/vankesteren
-
-
-#### Javier Garcia-Bernardo, Computational Scientist
-
-E-Mail: j.garciabernardo@uu.nl
-
-GitHub: https://github.com/jgarciab/
-
-
-or go to the Teams page on our website: https://odissei-soda.nl/team/
+<img src="https://odissei-soda.nl/images/logos/soda_logo.svg" alt="SoDa logo" width="250px"/> 
 
 
 ----
