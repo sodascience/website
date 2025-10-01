@@ -3,7 +3,13 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://odissei-soda.nl/</loc>
-    <lastmod>2025-03-03T00:00:00+01:00</lastmod>
+    <lastmod>2025-10-01T00:00:00+02:00</lastmod>
+  </url><url>
+    <loc>https://odissei-soda.nl/workshops/nlp_cpss/</loc>
+    <lastmod>2025-10-01T00:00:00+02:00</lastmod>
+  </url><url>
+    <loc>https://odissei-soda.nl/workshops/</loc>
+    <lastmod>2025-10-01T00:00:00+02:00</lastmod>
   </url><url>
     <loc>https://odissei-soda.nl/tutorials/presidio/</loc>
     <lastmod>2025-03-03T00:00:00+01:00</lastmod>
@@ -18,9 +24,6 @@
     <lastmod>2024-10-28T00:00:00+01:00</lastmod>
   </url><url>
     <loc>https://odissei-soda.nl/workshops/cluster-computing/</loc>
-    <lastmod>2024-09-27T00:00:00+02:00</lastmod>
-  </url><url>
-    <loc>https://odissei-soda.nl/workshops/</loc>
     <lastmod>2024-09-27T00:00:00+02:00</lastmod>
   </url><url>
     <loc>https://odissei-soda.nl/tutorials/community-detection-signed-networks/</loc>
