@@ -6,15 +6,8 @@
     <description>Recent content in Workshops on SoDa</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Wed, 01 Oct 2025 00:00:00 +0200</lastBuildDate>
+    <lastBuildDate>Fri, 27 Sep 2024 00:00:00 +0200</lastBuildDate>
     <atom:link href="https://odissei-soda.nl/workshops/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>From Theory to Practice: Enhancing validity in interdisciplinary NLP research</title>
-      <link>https://odissei-soda.nl/workshops/nlp_cpss/</link>
-      <pubDate>Wed, 01 Oct 2025 00:00:00 +0200</pubDate>
-      <guid>https://odissei-soda.nl/workshops/nlp_cpss/</guid>
-      <description>In September 2025, Qixiang Fang gave a keynote speech on The 5th Workshop on Computational Linguistics for the Political and Social Sciences (CPSS) in Germany.</description>
-    </item>
     <item>
       <title>Supercomputing for social scientists with R</title>
       <link>https://odissei-soda.nl/workshops/cluster-computing/</link>
