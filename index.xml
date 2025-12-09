@@ -9,6 +9,13 @@
     <lastBuildDate>Mon, 03 Mar 2025 00:00:00 +0100</lastBuildDate>
     <atom:link href="https://odissei-soda.nl/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Map explorer</title>
+      <link>https://odissei-soda.nl/tutorials/map-explorer/</link>
+      <pubDate>Mon, 03 Mar 2025 00:00:00 +0100</pubDate>
+      <guid>https://odissei-soda.nl/tutorials/map-explorer/</guid>
+      <description>Ever wanted to create stunning, interactive maps without dealing with servers, databases, or complicated backends?</description>
+    </item>
+    <item>
       <title>Streamlining Data Anonymisation for Research</title>
       <link>https://odissei-soda.nl/tutorials/presidio/</link>
       <pubDate>Mon, 03 Mar 2025 00:00:00 +0100</pubDate>
