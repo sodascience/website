@@ -535,8 +535,7 @@
   <div class="container">
     <div class="row">
       <div class="col-lg-10 mx-auto">
-        <div class="content"><p>Registry data from the Central Bureau of Statistics (CBS) in the Netherlands contains information on the social context of individuals: family, friends, schoolmates, neighbors, housemates and colleagues. These data allow researchers to study how a person&rsquo;s embeddedment in the network of social contexts affect their outcomes in health, education, and labor market. For example, the characteristics of the parents of a student&rsquo;s classmates can be used to study the relationship between social networks and educational outcomes. CBS makes available these data through the <em>POPNET</em> network files.</p>
-<p>If you are interested in using these data please refer to the <a href="https://www.cbs.nl/microdata"
+        <div class="content"><p>Registry data from the Central Bureau of Statistics (CBS) in the Netherlands contains rich information on the social context of individuals: family, classmates, neighbors, housemates, and colleagues. These data allow researchers to study how a person’s embeddedness in social networks affects outcomes in health, education, and labor markets. CBS makes these data available through the network files. Access requires permission; see the <a href="https://www.cbs.nl/microdata"
 
 
 
@@ -545,66 +544,129 @@
  
 
 
->CBS website</a> for more information on how to access the data.</p>
-<p><strong>How to work with the <em>POPNET</em> network files?</strong>
-Analyzing the network files is not straightforward, as the size of the files is extremely large (hundreds of millions of observations) and studying them  requires merging multiple files and aggregating the data in a specific way. The <code>netCBS</code> library is designed to simplify this process by providing a simple query system to specify the relationships between the main sample dataframe and the context data. The library then merges the network files and aggregates the data based on the query, returning the desired network measures.</p>
-<p>First, you will need to install it in your RA environment:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>pip install netcbs
-</span></span></code></pre></div><p>Let&rsquo;s imagine you are interested in understanding how educational attainment depends on the income and age of parents of the other children in the classroom.</p>
-<p>We will need the following data:</p>
+>CBS microdata website</a> for details.</p>
+<h2 id="why-netcbs">Why <code>netcbs</code>?</h2>
+<p>Analyzing POPNET files directly is difficult because:</p>
 <ul>
-<li>
-<p>Your sample <code>df_sample</code>: in this case the children</p>
-<pre><code>RINPERSOON     RINPERSOONS
-1312231231     R           
-2234523452     R           
-2345234333     R         
-4425345234     R    
+<li>files are extremely large (hundreds of millions of rows),</li>
+<li>multiple network tables must be merged,</li>
+<li>relationship filtering and aggregation logic is complex.</li>
+</ul>
+<h2 id="why-netcbs-1">Why <code>netcbs</code>?</h2>
+<p>Analyzing POPNET files directly is difficult because:</p>
+<ul>
+<li>files are extremely large (hundreds of millions of rows),</li>
+<li>multiple network tables must be merged,</li>
+<li>relationship filtering and aggregation logic is complex.</li>
+</ul>
+<p>The <code>netcbs</code> library simplifies this by providing a <strong>query language</strong> that describes network paths declaratively. The library handles file loading, joins, and aggregation automatically.</p>
+<h2 id="installation">Installation</h2>
+<p>Install the package inside the RA environment (see <a href="https://github.com/sodascience/cbs_python"
+
+
+
+
+ target="_blank"
+ 
+
+
+>here</a> instructions on setting up an RA environment):</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>pip install netcbs
+</span></span></code></pre></div><h2 id="example-use-case">Example use case</h2>
+<p>Suppose you want to study how a child’s educational outcomes relate to the <strong>average income and age of the parents of their classmates</strong>.</p>
+<h3 id="required-input-data">Required input data</h3>
+<h4 id="1-sample-data-df_sample">1. Sample data (<code>df_sample</code>)</h4>
+<p>Your main population of interest (children):</p>
+<pre><code>RINPERSOON
+-----------
+1312231231
+2234523452
+2345234333
+4425345234
 ...
 </code></pre>
+<h4 id="2-aggregation-data-df_agg">2. Aggregation data (<code>df_agg</code>)</h4>
+<p>Characteristics of alters (parents):</p>
+<pre><code>RINPERSOON   Income   Age
+------------------------
+2435235880   30000    45
+8438423423   40000    32
+2345234333   50000    41
+</code></pre>
+<p>This must contain:</p>
+<ul>
+<li><code>RINPERSOON</code></li>
+<li>all variables listed in the query (<code>Income</code>, <code>Age</code>)</li>
+</ul>
+<h3 id="network-data">Network data</h3>
+<p>You <strong>do not</strong> need to load network files yourself.</p>
+<p><code>netcbs</code> automatically uses:</p>
+<ul>
+<li><code>FAMILIENETWERKTAB</code> (parent–child links)</li>
+<li><code>KLASGENOTENNETWERKTAB</code> (schoolmate links)</li>
+</ul>
+<h2 id="running-the-analysis">Running the analysis</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>    <span style="color:#f92672">import</span> netcbs
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    query <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;[Income, Age] -&gt; Family[301] -&gt; Schoolmates[all] -&gt; sample&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    df_result <span style="color:#f92672">=</span> netcbs<span style="color:#f92672">.</span>transform(
+</span></span><span style="display:flex;"><span>        query,
+</span></span><span style="display:flex;"><span>        df_sample<span style="color:#f92672">=</span>df_sample,
+</span></span><span style="display:flex;"><span>        df_agg<span style="color:#f92672">=</span>df_agg,
+</span></span><span style="display:flex;"><span>        year<span style="color:#f92672">=</span><span style="color:#ae81ff">2021</span>,
+</span></span><span style="display:flex;"><span>        cbsdata_path<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;G:/Bevolking&#34;</span>,
+</span></span><span style="display:flex;"><span>        return_pandas<span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>,
+</span></span><span style="display:flex;"><span>        agg_funcs<span style="color:#f92672">=</span>(<span style="color:#e6db74">&#34;avg&#34;</span>, <span style="color:#e6db74">&#34;sum&#34;</span>, <span style="color:#e6db74">&#34;count&#34;</span>),
+</span></span><span style="display:flex;"><span>        format_file<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;parquet&#34;</span>, <span style="color:#75715e">#for faster loading, but requires CBS to keep updating the parquet files, use &#34;csv&#34; otherwise</span>
+</span></span><span style="display:flex;"><span>    )
+</span></span></code></pre></div><h3 id="output">Output</h3>
+<p>The result is a <strong>Polars DataFrame</strong> with one row per person in <code>df_sample</code>. All sample rows are preserved; if no network links are found, aggregated values are <code>null</code>. Use <code>return_pandas=True</code> to get a Pandas DataFrame instead.</p>
+<h2 id="understanding-the-query">Understanding the query</h2>
+<pre tabindex="0"><code>    [Income, Age] -&gt; Family[301] -&gt; Schoolmates[all] -&gt; sample
+</code></pre><ul>
+<li>
+<p><code>[Income, Age]</code><br>
+Variables to aggregate (from <code>df_agg</code>).</p>
 </li>
 <li>
-<p>The characteristics of the partents  <code>df_agg</code>: in this case income and age</p>
-<pre><code>RINPERSOON     RINPERSOONS    Income  Age
-2435235880     30000          23321   45          
-8438423423     40000          74329   32
-2345234333     50000          63123   41  
+<p><code>Family[301]</code><br>
+Parent–child relationship (code <code>301</code>).<br>
+Valid codes are available via:</p>
+<pre><code>netcbs.context2types
+netcbs.codebook
 </code></pre>
 </li>
 <li>
-<p>The link between the children and the paretns (dataset <code>FAMILIENETWERTAB</code>), and between children and schoolmates (dataset <code>KLASGENOTENNETWERKTAB</code>): <code>netCBS</code> will take care of this for you.</p>
+<p><code>Schoolmates[all]</code><br>
+Include all schoolmate relationship types.</p>
+</li>
+<li>
+<p><code>sample</code><br>
+Must always be the final segment.</p>
 </li>
 </ul>
-<p>You can then use the <code>netcbs</code> library to calculate the average income and age of the parents of the children&rsquo;s classmates.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> netcbs
-</span></span><span style="display:flex;"><span>query <span style="color:#f92672">=</span>  <span style="color:#e6db74">&#34;[Income, Age] -&gt; Family[301] -&gt; Schoolmates[all] -&gt; Sample&#34;</span>
-</span></span><span style="display:flex;"><span>df <span style="color:#f92672">=</span> netcbs<span style="color:#f92672">.</span>transform(query, 
-</span></span><span style="display:flex;"><span>                      df_sample <span style="color:#f92672">=</span> df_sample,  <span style="color:#75715e"># dataset with the sample to study</span>
-</span></span><span style="display:flex;"><span>                      df_agg <span style="color:#f92672">=</span> df_agg, <span style="color:#75715e"># dataset with the income variable</span>
-</span></span><span style="display:flex;"><span>                      year<span style="color:#f92672">=</span><span style="color:#ae81ff">2021</span>, <span style="color:#75715e"># year to study</span>
-</span></span><span style="display:flex;"><span>                      cbsdata_path<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;G:/Bevolking&#39;</span>, <span style="color:#75715e"># path to the CBS data</span>
-</span></span><span style="display:flex;"><span>                      agg_funcs<span style="color:#f92672">=</span>[pl<span style="color:#f92672">.</span>mean, pl<span style="color:#f92672">.</span>sum, pl<span style="color:#f92672">.</span>count], <span style="color:#75715e"># calculate the average</span>
-</span></span><span style="display:flex;"><span>                      return_pandas<span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>, <span style="color:#75715e"># returns a pandas dataframe instead of a polars dataframe</span>
-</span></span><span style="display:flex;"><span>                      lazy<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span> <span style="color:#75715e"># use polars lazy evaluation (faster/less memory usage)</span>
-</span></span><span style="display:flex;"><span>                      )
-</span></span></code></pre></div><p><strong>How does the query works</strong>
-The library uses a query system to specify the relationships between the main sample dataframe and the context data. The query consists of a series of context types separated by arrows (-&gt;), with optional relationship types in square brackets. For example, the query <code>&quot;[Income, Age] -&gt; Family[301] -&gt; Schoolmates[all] -&gt; Sample&quot;</code> specifies that the income and age of the parents of the student&rsquo;s classmates should be calculated based on the provided sample dataframe. Let&rsquo;s break the query down:</p>
+<h2 id="parameters-overview">Parameters overview</h2>
 <ul>
-<li><code>[Income, Age]</code> specifies the columns to be aggregated. In this case, we are interested in the income and age of the parents of the children&rsquo;s classmates.</li>
-<li><code>Family[301]</code> specifies the relationship between the children and their parents. The number in square brackets indicates the relationship type, which is 301 for the parent-child relationship. The relationship types are specified in the CBS data documentation, or by printing the <code>netcbs.context2types</code> and <code>netcbs.codebook</code>.</li>
-<li><code>Schoolmates[all]</code> specifies the relationship between the children and their classmates. The keyword <code>all</code> indicates that all classmates should be included in the calculation.</li>
-<li><code>Sample</code> is always the end of the query</li>
+<li>
+<p><code>agg_funcs</code><br>
+Supported values: <code>&quot;avg&quot;</code>, <code>&quot;sum&quot;</code>, <code>&quot;count&quot;</code>, <code>&quot;min&quot;</code>, <code>&quot;max&quot;</code>, <code>&quot;stddev_samp&quot;</code>.</p>
+</li>
+<li>
+<p><code>year</code><br>
+CBS data year.</p>
+</li>
+<li>
+<p><code>cbsdata_path</code><br>
+Base directory of CBS microdata. No need to specify</p>
+</li>
+<li>
+<p><code>format_file</code><br>
+<code>&quot;parquet&quot;</code> (recommended) or <code>&quot;csv&quot;</code>.</p>
+</li>
 </ul>
-<p>The library has several parameters:</p>
-<ul>
-<li>The aggregation functions are specified in the <code>agg_funcs</code> parameter. In this case, we are calculating the average (pl.mean), sum (pl.mean) and number (pl.count) for the income and age of the parents of the children&rsquo;s classmates. The number allow us to distinguish parents with 0, 1 or 2 parents alive.</li>
-<li><code>year</code> specifies the year of the CBS data to be used.</li>
-<li><code>cbsdata_path</code> specifies the path to the CBS data. Leave this unchanged</li>
-<li><code>return_pandas</code> specifies whether to return a pandas dataframe instead of a polars dataframe. This can be useful for further analysis in pandas.</li>
-<li><code>lazy</code> specifies whether to use polars lazy evaluation. We recommend to use the polars lazy evaluation (lazy=True) to reduce memory usage and speed up the calculations. For debugging this can be disabled by setting lazy=False.</li>
-</ul>
-<p><strong>More examples</strong>
-See this Jupyter <a href="https://github.com/sodascience/netCBS/blob/main/tutorial_netCBS.ipynb"
+<h2 id="more-examples">More examples</h2>
+<p>See the Jupyter notebook with additional examples: <a href="https://github.com/sodascience/netCBS/blob/main/tutorial_netCBS.ipynb"
 
 
 
@@ -613,10 +675,11 @@ See this Jupyter <a href="https://github.com/sodascience/netCBS/blob/main/tutori
  
 
 
->notebook</a> for accessible information and examples.</p>
-<p><strong>Citation</strong>
-The package <code>netCBS</code> is published under an MIT license. When using <code>netCBS</code> for academic work, please cite:</p>
-<pre tabindex="0"><code>Garcia-Bernardo, Javier (2024). netCBS: A Python library to efficiently create network measures using CBS networks (POPNET) in the RA (0.1). Zenodo. 10.5281/zenodo.13908120
+>https://github.com/sodascience/netCBS/blob/main/tutorial_netCBS.ipynb</a></p>
+<h2 id="citation">Citation</h2>
+<pre tabindex="0"><code>    Garcia-Bernardo, Javier (2025).
+    netCBS: A Python library to efficiently create network measures using CBS networks in the RA.
+    Zenodo. https://doi.org/10.5281/zenodo.17992329
 </code></pre></div>
       </div>
     </div>
