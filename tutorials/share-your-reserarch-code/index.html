@@ -536,27 +536,38 @@
     <div class="row">
       <div class="col-lg-10 mx-auto">
         <div class="content"><p>With the increasing popularity of open science practices, it is now more and more common to openly share code along with more traditional scientific objects such as papers. But what are the best ways to create an understandable, openly accessible, findable, citable, and stable archive of your code? In this post, we look at what you need to do to prepare your code folder and then how to upload it to Zenodo.</p>
-<hr>
 <h4 id="prepare-your-code-folder">Prepare your code folder</h4>
 <p>To make code available, you will be uploading it to the internet as a single folder. The code you will upload will be openly accessible, and it will stay that way indefinitely. Therefore, it is necessary that you prepare your code folder (also called a “repository”) for publication. This requires time and effort, and for every project the requirements are different. Think about the following checklist:</p>
 <h6 id="must-haves">Must-haves</h6>
 <ul>
-<li>Make a logical, understandable folder structure. For example, for a research project with data processing, visualization, and analysis I like the following structure:</li>
+<li>Make a logical, understandable folder structure. For example, for a research project with data processing, visualization, and analysis I like the following <a href="https://github.com/J535D165/scitree"
+
+
+
+
+ target="_blank"
+ 
+
+
+>structure</a>:</li>
 </ul>
-<pre tabindex="0"><code>my_project/&lt;br/&gt;
-├─ raw_data/&lt;br/&gt;
-│  ├─ questionnaire_data.csv&lt;br/&gt;
-├─ processed_data/&lt;br/&gt;
-│  ├─ questionnaire_processed.rds&lt;br/&gt;
-│  ├─ analysis_object.rds&lt;br/&gt;
-├─ img/&lt;br/&gt;
-│  ├─ plot.png&lt;br/&gt;
-├─ 01_load_and_process_data.R&lt;br/&gt;
-├─ 02_create_visualisations.R&lt;br/&gt;
-├─ 03_main_analysis.R&lt;br/&gt;
-├─ 04_output_results.R&lt;br/&gt;
-├─ my_project.Rproj&lt;br/&gt;
-├─ readme.md
+<pre tabindex="0"><code>📁 my_project/
+├── 📖 readme.md
+├── 📄 01_load_and_process_data.R
+├── 📄 02_create_visualisations.R
+├── 📄 03_main_analysis.R
+├── 📄 04_output_results.R
+├── my_project.Rproj
+├── 📁 raw_data/
+│   └── 📜 questionnaire_data.csv
+├── 📁 img/
+│   └── 📊 plot.png
+└── 📁 processed_data/
+    ├── 📦 analysis_object.rds
+    └── 📦 questionnaire_processed.rds
+
+3 directories , 10 files
+📖README 📜Data 📄Code 📊Figures 📦Serial Data 📁Folder
 </code></pre><ul>
 <li>Make sure no privacy-sensitive information is leaked. Remove non-shareable data objects (raw and processed!), passwords hardcoded in your scripts, comments containing private information, and so on.</li>
 <li>Create a legible readme file in the folder that describes what the code does, where to find which parts of the code, and what needs to be done to run the code. You can choose how elaborate to make this! It could be a simple text file, a word document, a pdf, or a markdown document with images describing the structure. It is best if someone who does not know the project can understand the entire folder based on the readme – this includes yourself in a few years from now!</li>
@@ -564,15 +575,24 @@
 <h6 id="strong-recommendations">Strong recommendations</h6>
 <ul>
 <li>Reformat the code so that it is portable and easily reproducible. This means that when someone else downloads the folder, they do not need to change the code to run it. For example this means that you do not read data with absolute paths (e.g., C:/my_name/Documents/PhD/projects/project_title/raw_data/questionnaire_data.csv) on your computer, but only to relative paths on the project (e.g., raw_data/questionnaire_data.csv). For example, if you use the R programming language it is good practice to use an RStudio project.</li>
-<li>Format your code so that it is legible by others. Write informative comments, split up your scripts in logical chunks, and use a consistent style (for R I like the tidyverse style)</li>
+<li>Format your code so that it is legible by others. Write informative comments, split up your scripts in logical chunks, and use a consistent style (for R we like the tidyverse style)</li>
 </ul>
 <h6 id="nice-to-have">Nice to have</h6>
 <ul>
 <li>Record the software packages that you used to run the projects, including their versions. If a package gets updated, your code may no longer run! Your package manager may already do this, e.g., for python you can use pip freeze &gt; requirements.txt. In R, you can use the renv package for this.</li>
-<li>If you have privacy-sensitive data, it may still be possible to create a synthetic or fake version of this data for others to run the code on. This ensures maximum reproducibility.</li>
+<li>If you have privacy-sensitive data, it may still be possible to create a <a href="https://doi.org/10.1016/j.patter.2024.101049"
+
+
+
+
+ target="_blank"
+ 
+
+
+>synthetic or fake version</a> of this data for others to run the code on. This ensures maximum reproducibility.</li>
 </ul>
 <h6 id="compressing-the-code-folder">Compressing the code folder</h6>
-<p>The last step before uploading the code repository to Zenodo is to compress the folder. This can be done in Windows 11 by right-clicking the folder and pressing “compress to zip file”. It’s a good idea to go into the compressed folder afterwards, and checking if everything is there and also removing any unnecessary files (such as .Rhistory files for R).</p>
+<p>The last step before uploading the code repository to Zenodo is to compress the folder. This can be done in Windows by right-clicking the folder and pressing “compress to zip file”. It’s a good idea to go into the compressed folder afterwards, and checking if everything is there and also removing any unnecessary files (such as .Rhistory files for R).</p>
 
 
 
@@ -1166,7 +1186,7 @@
 
 
 <h6 id="publish">Publish!</h6>
-<p>The last step is to click “publish”. Your research code is now findable, citable, understandable, reproducible, and archived until the end of times! You can now show it to all your colleagues and easily cite it in your manuscript. If you get feedback and you want to change your code, you can also upload a new version of the same project on the Zenodo website.</p>
+<p>The last step is to click &ldquo;publish&rdquo;. Your research code is now findable, citable, understandable, reproducible, and archived until the end of times! You can now show it to all your colleagues and easily cite it in your manuscript. If you get feedback and you want to change your code, you can also upload a new version of the same project on the Zenodo website.</p>
 <hr>
 <h4 id="conclusion">Conclusion</h4>
 <p>In this post, I described a checklist for preparing your code folder for publication with a focus on understandability, and I have described one way in which you can upload your prepared code repository to an open access archive. Zenodo is an easy, dependable and well-built option, but of course there are many alternatives, such as hosting it on your own website, using the Open Science Framework, GitHub, or using a publisher’s website; each has its own advantages and disadvantages.</p>

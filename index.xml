@@ -20,7 +20,7 @@
       <link>https://odissei-soda.nl/tutorials/presidio/</link>
       <pubDate>Mon, 03 Mar 2025 00:00:00 +0100</pubDate>
       <guid>https://odissei-soda.nl/tutorials/presidio/</guid>
-      <description>When working with text data in research projects, privacy is extremely important, especially when that data includes potentially personal or sensitive information.</description>
+      <description>Whether you&amp;rsquo;re dealing with interview transcripts, survey responses, or scraped online content, failing to properly anonymise your data can have serious ethical consequences for researchers.</description>
     </item>
     <item>
       <title>The Best of Both Worlds: Saving Costs and Time When Using OpenAI&#39;s API</title>
@@ -34,7 +34,7 @@
       <link>https://odissei-soda.nl/tutorials/netcbs/</link>
       <pubDate>Mon, 28 Oct 2024 00:00:00 +0100</pubDate>
       <guid>https://odissei-soda.nl/tutorials/netcbs/</guid>
-      <description>Registry data from the Central Bureau of Statistics (CBS) in the Netherlands contains rich information on the social context of individuals: family, classmates, neighbors, housemates, and colleagues.</description>
+      <description>The netcbs library provides an easy-to-use query language for networks at Statistics Netherlands.</description>
     </item>
     <item>
       <title>Supercomputing for social scientists with R</title>
@@ -69,7 +69,7 @@
       <link>https://odissei-soda.nl/tutorials/ip-rotation/</link>
       <pubDate>Tue, 27 Feb 2024 00:00:00 +0100</pubDate>
       <guid>https://odissei-soda.nl/tutorials/ip-rotation/</guid>
-      <description>Author: Flavio Hafner. Post photo from Glenn Carstens-Peters on Unsplash</description>
+      <description>If you have ever tried web scraping, you may have run into your IP address being blocked by the website you scrape.</description>
     </item>
     <item>
       <title>Training a fastText model from scratch using Python</title>
@@ -83,7 +83,7 @@
       <link>https://odissei-soda.nl/tutorials/geoflow-visualizer/</link>
       <pubDate>Mon, 11 Dec 2023 00:00:00 +0100</pubDate>
       <guid>https://odissei-soda.nl/tutorials/geoflow-visualizer/</guid>
-      <description>In this tutorial we present Geoflow, a newly created tool designed to visualize international flows in an interactive way.</description>
+      <description>A new free and open-source tool designed to visualize international flows in an interactive way.</description>
     </item>
     <item>
       <title>Data Visualization Bootcamp</title>
@@ -97,7 +97,7 @@
       <link>https://odissei-soda.nl/tutorials/lubridate/</link>
       <pubDate>Fri, 29 Sep 2023 00:00:00 +0200</pubDate>
       <guid>https://odissei-soda.nl/tutorials/lubridate/</guid>
-      <description>One common issue we encounter in helping researchers work with the housing register data of Statistics Netherlands is its transactional nature: each row in the housing register table contains data on when someone registered and deregistered at an address (more info in Dutch here).</description>
+      <description>Using time interval objects to robustly extract data from transactions.</description>
     </item>
     <item>
       <title>Collecting online platforms data for science: an example using WhatsApp</title>
@@ -132,7 +132,7 @@
       <link>https://odissei-soda.nl/tutorials/share-your-reserarch-code/</link>
       <pubDate>Mon, 05 Sep 2022 00:00:00 +0200</pubDate>
       <guid>https://odissei-soda.nl/tutorials/share-your-reserarch-code/</guid>
-      <description>With the increasing popularity of open science practices, it is now more and more common to openly share code along with more traditional scientific objects such as papers.</description>
+      <description>What are the best ways to create an understandable, openly accessible, findable, citable, and stable archive of your code?</description>
     </item>
     <item>
       <title>Efficient programming with CBS microdata</title>
