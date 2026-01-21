@@ -13,49 +13,49 @@
       <link>https://odissei-soda.nl/workshops/cluster-computing/</link>
       <pubDate>Fri, 27 Sep 2024 00:00:00 +0200</pubDate>
       <guid>https://odissei-soda.nl/workshops/cluster-computing/</guid>
-      <description>In this course, you will learn the basics of cluster computing with R for social science workloads.</description>
+      <description>In this course, you will learn the basics of cluster computing with R for social science workloads. The day starts with an introduction to supercomputer architecture, including a hands-on session focused on running jobs on a supercomputer.&#xA;The second half of the programme focuses on translating your R workflow from a GUI (Rstudio) workflow on your desktop to a scripting/batch environment on the supercomputer. Topics covered here include: efficient programming, parallel computing, and using the SLURM job manager to send your job/analysis to the supercomputer.</description>
     </item>
     <item>
       <title>Efficient and reproducible research with CBS microdata</title>
       <link>https://odissei-soda.nl/workshops/efficient-reproducible-research-cbs-microdata/</link>
       <pubDate>Fri, 19 Apr 2024 00:00:00 +0200</pubDate>
       <guid>https://odissei-soda.nl/workshops/efficient-reproducible-research-cbs-microdata/</guid>
-      <description>About the workshop The workshop will teach how to work efficiently with data from CBS (Statistics Netherlands), using its remote access environment.</description>
+      <description>About the workshop The workshop will teach how to work efficiently with data from CBS (Statistics Netherlands), using its remote access environment. It is designed for people getting acces to the remote environment for the first time, or people who want to improve the efficiency and reproducibility of their workflows. Topics covered include project organization, principles for writing legible programs (in R, but people using other languages are encouraged to join as well; the principles apply to all languages), and to retrieve, store and configure data pipelines in a reproducible and understandable way.</description>
     </item>
     <item>
       <title>Data Visualization Bootcamp</title>
       <link>https://odissei-soda.nl/workshops/data-visualization/</link>
       <pubDate>Fri, 20 Oct 2023 00:00:00 +0200</pubDate>
       <guid>https://odissei-soda.nl/workshops/data-visualization/</guid>
-      <description>In October 2023, we hosted a workshop about data visualization.</description>
+      <description>In October 2023, we hosted a workshop about data visualization.&#xA;About the workshop A key aspect of data science is turning data into a story that anyone can understand at a glance. In this Data Visualization Bootcamp, you will learn how to represent data in visual formats like pictures, charts and graphs.&#xA;In this workshop you will:&#xA;learn the most important principles of data visualization,&#xA;learn how to use data visualization libraries in Python (with Bokeh and Pyodide),</description>
     </item>
     <item>
       <title>Network science</title>
       <link>https://odissei-soda.nl/workshops/network-science/</link>
       <pubDate>Thu, 22 Jun 2023 00:00:00 +0200</pubDate>
       <guid>https://odissei-soda.nl/workshops/network-science/</guid>
-      <description>In June 2023, we hosted a workshop about Network Science.</description>
+      <description>In June 2023, we hosted a workshop about Network Science.&#xA;About the workshop How can networks at Statistics Netherlands (CBS) help us understand and predict social systems? In this workshop, we provide participants with the conceptual and practical skills necessary to use network science tools to answer social, economic and biological questions.&#xA;This workshop introduces concepts and tools in network science. The objective of the course is that participants acquire hands-on knowledge on how to analyze CBS network data.</description>
     </item>
     <item>
       <title>Causal Impact Assesment</title>
       <link>https://odissei-soda.nl/workshops/causal-inference-for-policy-evaluation/</link>
       <pubDate>Fri, 26 May 2023 00:00:00 +0200</pubDate>
       <guid>https://odissei-soda.nl/workshops/causal-inference-for-policy-evaluation/</guid>
-      <description>In May 2023, we hosted a workshop in Causal Impact Assesment focusing on policy interventions.</description>
+      <description>In May 2023, we hosted a workshop in Causal Impact Assesment focusing on policy interventions.&#xA;About the workshop How do we assess whether a school policy intervention has had the desired effect on student performance? How do we estimate the impact a natural disaster has had on the inhabitants of affected regions? How can we determine whether a change in the maximum speed on highways has led to fewer accidents? These types of questions are at the core of many social scientific research problems.</description>
     </item>
     <item>
       <title>Efficient programming with CBS microdata</title>
       <link>https://odissei-soda.nl/workshops/accesing-cbs-microdata/</link>
       <pubDate>Mon, 16 May 2022 00:00:00 +0200</pubDate>
       <guid>https://odissei-soda.nl/workshops/accesing-cbs-microdata/</guid>
-      <description>In May 2022, we hosted a workshop about efficient programming for accessing CBS microdata.</description>
+      <description>In May 2022, we hosted a workshop about efficient programming for accessing CBS microdata.&#xA;About the workshop What to do when your CBS microdata analysis takes too many computational resources to run on the remote access environment? In this workshop we covered solutions to this problem. It will be an accessible introduction to a variety of ways in which you can programme more efficiently when using microdata in your research. Furthermore, it will discuss when you should and should not move your project to the ODISSEI Secure Supercomputer.</description>
     </item>
     <item>
       <title>How to create synthetic data</title>
       <link>https://odissei-soda.nl/workshops/creating-synthetic-data/</link>
       <pubDate>Sun, 09 Jan 2022 00:00:00 +0100</pubDate>
       <guid>https://odissei-soda.nl/workshops/creating-synthetic-data/</guid>
-      <description>In September 2022, we hosted a workshop about synthetic data.</description>
+      <description>In September 2022, we hosted a workshop about synthetic data.&#xA;About the workshop Open data is one of the pillars of open science. However, there are often barriers in the way of making research data openly available, relating to consent, privacy, or organisational boundaries. In such cases, synthetic data is an excellent solution: the real data is kept secret, but a &amp;ldquo;fake&amp;rdquo; version of the data is available. The promise of the synthetic dataset is that others can then investigate the data structure, rerun scripts, use the data in educational materials, or even run a completely different analysis on their own.</description>
     </item>
   </channel>
 </rss>
