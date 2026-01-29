@@ -6,8 +6,15 @@
     <description>Recent content in Workshops on SoDa</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Fri, 27 Sep 2024 00:00:00 +0200</lastBuildDate>
+    <lastBuildDate>Thu, 20 Nov 2025 00:00:00 +0100</lastBuildDate>
     <atom:link href="https://odissei-soda.nl/workshops/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>LLMs for Data Collection Annotation</title>
+      <link>https://odissei-soda.nl/workshops/llms-for-data-collection-annotation/</link>
+      <pubDate>Thu, 20 Nov 2025 00:00:00 +0100</pubDate>
+      <guid>https://odissei-soda.nl/workshops/llms-for-data-collection-annotation/</guid>
+      <description>About the workshop Large language models (LLMs) have become an essential tool for social scientists and humanities (SSH) researchers who work with textual data. One particularly valuable use case is automating text annotation, traditionally a time-consuming step in preparing data for empirical analysis. Yet, many SSH researchers face two challenges: getting started with LLMs, and understanding how to evaluate and correct for their limitations. The rapid pace of model development can make LLMs appear inaccessible or intimidating, while even experienced users may overlook how annotation errors can bias results from downstream analyses (e.</description>
+    </item>
     <item>
       <title>Supercomputing for social scientists with R</title>
       <link>https://odissei-soda.nl/workshops/cluster-computing/</link>
