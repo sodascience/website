@@ -3,7 +3,13 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://odissei-soda.nl/</loc>
-    <lastmod>2025-11-20T00:00:00+01:00</lastmod>
+    <lastmod>2026-03-24T00:00:00+01:00</lastmod>
+  </url><url>
+    <loc>https://odissei-soda.nl/tutorials/</loc>
+    <lastmod>2026-03-24T00:00:00+01:00</lastmod>
+  </url><url>
+    <loc>https://odissei-soda.nl/tutorials/websweep_tutorial/</loc>
+    <lastmod>2026-03-24T00:00:00+01:00</lastmod>
   </url><url>
     <loc>https://odissei-soda.nl/workshops/llms-for-data-collection-annotation/</loc>
     <lastmod>2025-11-20T00:00:00+01:00</lastmod>
@@ -18,9 +24,6 @@
     <lastmod>2025-03-03T00:00:00+01:00</lastmod>
   </url><url>
     <loc>https://odissei-soda.nl/tutorials/llm_batch_structured_output/</loc>
-    <lastmod>2025-03-03T00:00:00+01:00</lastmod>
-  </url><url>
-    <loc>https://odissei-soda.nl/tutorials/</loc>
     <lastmod>2025-03-03T00:00:00+01:00</lastmod>
   </url><url>
     <loc>https://odissei-soda.nl/tutorials/netcbs/</loc>
