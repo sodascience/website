@@ -25,11 +25,11 @@
 
 
 
-<link rel="shortcut icon" href="/images/logos/logo_small_wb_hu68a4318163ff8e011babdec4caf974c7_3412_96x0_resize_lanczos_3.png" type="image/x-icon">
-<link rel="icon" href="/images/logos/logo_small_wb_hu68a4318163ff8e011babdec4caf974c7_3412_96x0_resize_lanczos_3.png" type="image/x-icon">
-<link rel="icon" type="image/png" sizes="48x48" href="/images/logos/logo_small_wb_hu68a4318163ff8e011babdec4caf974c7_3412_48x0_resize_lanczos_3.png">
-<link rel="icon" type="image/png" sizes="96x96" href="/images/logos/logo_small_wb_hu68a4318163ff8e011babdec4caf974c7_3412_96x0_resize_lanczos_3.png">
-<link rel="apple-touch-icon" sizes="144x144" href="/images/logos/logo_small_wb_hu68a4318163ff8e011babdec4caf974c7_3412_144x0_resize_lanczos_3.png">
+<link rel="shortcut icon" href="/images/logos/logo_small_wb_hu_a9331ed94db35663.png" type="image/x-icon">
+<link rel="icon" href="/images/logos/logo_small_wb_hu_a9331ed94db35663.png" type="image/x-icon">
+<link rel="icon" type="image/png" sizes="48x48" href="/images/logos/logo_small_wb_hu_88ce2efb8e2851f7.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/images/logos/logo_small_wb_hu_a9331ed94db35663.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/images/logos/logo_small_wb_hu_bf6340b74362cbec.png">
 
 
 
@@ -310,7 +310,7 @@
 	
 
 	
-	
+
 	
 	
 <header class="navigation">
@@ -550,19 +550,19 @@
 <li><code>Consolidator</code>: merges page-level records into one row per domain, which is usually the easiest format for downstream analysis</li>
 </ul>
 <h4 id="step-1-install-websweep">Step 1: Install WebSweep</h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>pip install websweep pandas
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>pip install websweep pandas
 </span></span></code></pre></div><h4 id="step-2-prepare-a-website-list">Step 2: Prepare a website list</h4>
 <p>Create a file called <code>company_websites.csv</code>.</p>
-<pre tabindex="0"><code class="language-csv" data-lang="csv">url,identifier
-https://www.akzonobel.com/,akzonobel
-https://www.randstad.com/,randstad
-https://www.wolterskluwer.com/,wolters_kluwer
-https://www.signify.com/,signify
-https://www.aholddelhaize.com/,ahold_delhaize
-</code></pre><p>This is only one concrete example. For a real project, replace these URLs with the websites in your own sample.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-csv" data-lang="csv"><span style="display:flex;"><span><span style="color:#e6db74">url</span>,<span style="color:#e6db74">identifier</span>
+</span></span><span style="display:flex;"><span><span style="color:#e6db74">https://www.akzonobel.com/</span>,<span style="color:#e6db74">akzonobel</span>
+</span></span><span style="display:flex;"><span><span style="color:#e6db74">https://www.randstad.com/</span>,<span style="color:#e6db74">randstad</span>
+</span></span><span style="display:flex;"><span><span style="color:#e6db74">https://www.wolterskluwer.com/</span>,<span style="color:#e6db74">wolters_kluwer</span>
+</span></span><span style="display:flex;"><span><span style="color:#e6db74">https://www.signify.com/</span>,<span style="color:#e6db74">signify</span>
+</span></span><span style="display:flex;"><span><span style="color:#e6db74">https://www.aholddelhaize.com/</span>,<span style="color:#e6db74">ahold_delhaize</span>
+</span></span></code></pre></div><p>This is only one concrete example. For a real project, replace these URLs with the websites in your own sample.</p>
 <h4 id="step-3-run-the-workflow">Step 3: Run the workflow</h4>
 <p>The example below uses five corporate websites. It crawls one level deep, caps the crawl at 5 pages per domain.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> pathlib <span style="color:#f92672">import</span> Path
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> pathlib <span style="color:#f92672">import</span> Path
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> pandas <span style="color:#66d9ef">as</span> pd
 </span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> websweep <span style="color:#f92672">import</span> Crawler, Extractor, Consolidator
@@ -583,7 +583,7 @@ https://www.aholddelhaize.com/,ahold_delhaize
 </span></span><span style="display:flex;"><span>Consolidator(target_folder_path<span style="color:#f92672">=</span>output_folder)<span style="color:#f92672">.</span>consolidate()
 </span></span></code></pre></div><h4 id="step-4-inspect-the-output-and-archive-structure">Step 4: Inspect the output and archive structure</h4>
 <p>After the run, you will find files like these:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>company_sweep/
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>company_sweep/
 </span></span><span style="display:flex;"><span>├── overview_urls.duckdb
 </span></span><span style="display:flex;"><span>├── consolidated_data/
 </span></span><span style="display:flex;"><span>│   └── consolidated.ndjson
@@ -597,24 +597,24 @@ https://www.aholddelhaize.com/,ahold_delhaize
 </span></span><span style="display:flex;"><span>    └── extracted_data_2026-03-20_0-1000000.ndjson
 </span></span></code></pre></div><p>The two  <code>.ndjson</code> (newline delimited JSON) files contain the extraced and consolidated data.</p>
 <p>If you unzip one domain archive, you can also inspect the saved page layout:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>wolterskluwer.com/
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>wolterskluwer.com/
 </span></span><span style="display:flex;"><span>└── 2026-03-20/
 </span></span><span style="display:flex;"><span>    └── www.wolterskluwer.com
 </span></span></code></pre></div><p>That raw archive is valuable for reproducibility: you keep the downloaded HTML, not only the cleaned text.</p>
 <h4 id="step-5-inspect-the-extracted-and-consolidated-output">Step 5: Inspect the extracted and consolidated output</h4>
 <p><code>extracted_data_2026-03-20_0-1000000.ndjson</code> contains page-level rows. One domain can contribute multiple page-level observations. <code>consolidated.ndjson</code> contains one row per domain.</p>
 <p>To make the page-level structure clear, in our example, extracted_date would look like:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>extracted_data_2026-03-20_0-1000000.ndjson
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>extracted_data_2026-03-20_0-1000000.ndjson
 </span></span><span style="display:flex;"><span>http://127.0.0.1:8765/index.html    | Research Lab Demo Research Lab Demo This d...
 </span></span><span style="display:flex;"><span>http://127.0.0.1:8765/methods.html  | Methods Methods We collect public web page...
 </span></span><span style="display:flex;"><span>http://127.0.0.1:8765/projects.html | Projects Projects Example projects include...
 </span></span></code></pre></div><p>For the five-site corporate example above, the domain-level output looks like this:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>consolidated.ndjson
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>consolidated.ndjson
 </span></span><span style="display:flex;"><span>ahold_delhaize | aholddelhaize.com | we are Ahold Delhaize We published...
 </span></span><span style="display:flex;"><span>akzonobel      | akzonobel.com     | AkzoNobel | AkzoNobel Skip to main...
 </span></span><span style="display:flex;"><span>randstad       | randstad.com      | The global leader in the HR servic...
 </span></span></code></pre></div><p>You can read <code>.ndjson</code> (newline delimited JSON) files as:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> pandas <span style="color:#66d9ef">as</span> pd
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> pandas <span style="color:#66d9ef">as</span> pd
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>results <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>read_json(
 </span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;company_sweep/consolidated_data/consolidated.ndjson&#34;</span>,
@@ -638,7 +638,7 @@ https://www.aholddelhaize.com/,ahold_delhaize
 <p>If a site returns very little text or repeated errors, inspect that domain manually before scaling up.</p>
 <h2 id="optional-cli-workflow">Optional: CLI workflow</h2>
 <p>If you prefer the command line, WebSweep also supports a CLI workflow:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>websweep init --headless
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>websweep init --headless
 </span></span><span style="display:flex;"><span>websweep crawl
 </span></span><span style="display:flex;"><span>websweep extract
 </span></span><span style="display:flex;"><span>websweep consolidate
@@ -835,7 +835,7 @@ https://www.aholddelhaize.com/,ahold_delhaize
 
 
 
-<script crossorigin="anonymous" defer  integrity="sha512-dCIZHcmW8pL&#43;DPLWQFFEYQLuqKBywPohaIj0FJKVrrlZ6iljjXafVk&#43;5hh&#43;sRe8ffzZ6Hh9AK4OC6NcwxyEyNQ==" type="application/javascript">(() => {
+<script crossorigin="anonymous" defer  integrity="sha512-ViniUxt4SXT/zp/QUEsaapP5q49gJyiD3w26VBvYXN1FTJjsC2Ph9o72hD04ywD7dojnLvMVHHsUESthRC8q3Q==" type="application/javascript">(() => {
   var __create = Object.create;
   var __defProp = Object.defineProperty;
   var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
@@ -862,9 +862,9 @@ https://www.aholddelhaize.com/,ahold_delhaize
     mod
   ));
 
-  // ns-hugo:/tmp/hugo_cache/modules/filecache/modules/pkg/mod/github.com/gohugoio/hugo-mod-jslibs-dist/popperjs/v2@v2.21100.20000/package/dist/cjs/popper.js
+  // ns-hugo-imp:/tmp/hugo_cache/modules/filecache/modules/pkg/mod/github.com/gohugoio/hugo-mod-jslibs-dist/popperjs/v2@v2.21100.20000/package/dist/cjs/popper.js
   var require_popper = __commonJS({
-    "ns-hugo:/tmp/hugo_cache/modules/filecache/modules/pkg/mod/github.com/gohugoio/hugo-mod-jslibs-dist/popperjs/v2@v2.21100.20000/package/dist/cjs/popper.js"(exports) {
+    "ns-hugo-imp:/tmp/hugo_cache/modules/filecache/modules/pkg/mod/github.com/gohugoio/hugo-mod-jslibs-dist/popperjs/v2@v2.21100.20000/package/dist/cjs/popper.js"(exports) {
       "use strict";
       Object.defineProperty(exports, "__esModule", { value: true });
       function getWindow(node) {
@@ -2072,8 +2072,7 @@ https://www.aholddelhaize.com/,ahold_delhaize
           };
           for (var _i = numberOfChecks; _i > 0; _i--) {
             var _ret = _loop(_i);
-            if (_ret === "break")
-              break;
+            if (_ret === "break") break;
           }
         }
         if (state.placement !== firstFittingPlacement) {
@@ -2338,7 +2337,7 @@ https://www.aholddelhaize.com/,ahold_delhaize
     }
   });
 
-  // ns-hugo:/tmp/hugo_cache/modules/filecache/modules/pkg/mod/github.com/twbs/bootstrap@v5.3.2+incompatible/js/src/dom/data.js
+  // ns-hugo-imp:/tmp/hugo_cache/modules/filecache/modules/pkg/mod/github.com/twbs/bootstrap@v5.3.2+incompatible/js/src/dom/data.js
   var elementMap = /* @__PURE__ */ new Map();
   var data_default = {
     set(element, key, instance) {
@@ -2370,7 +2369,7 @@ https://www.aholddelhaize.com/,ahold_delhaize
     }
   };
 
-  // ns-hugo:/tmp/hugo_cache/modules/filecache/modules/pkg/mod/github.com/twbs/bootstrap@v5.3.2+incompatible/js/src/util/index.js
+  // ns-hugo-imp:/tmp/hugo_cache/modules/filecache/modules/pkg/mod/github.com/twbs/bootstrap@v5.3.2+incompatible/js/src/util/index.js
   var MILLISECONDS_MULTIPLIER = 1e3;
   var TRANSITION_END = "transitionend";
   var parseSelector = (selector) => {
@@ -2533,7 +2532,7 @@ https://www.aholddelhaize.com/,ahold_delhaize
     return list[Math.max(0, Math.min(index, listLength - 1))];
   };
 
-  // ns-hugo:/tmp/hugo_cache/modules/filecache/modules/pkg/mod/github.com/twbs/bootstrap@v5.3.2+incompatible/js/src/dom/event-handler.js
+  // ns-hugo-imp:/tmp/hugo_cache/modules/filecache/modules/pkg/mod/github.com/twbs/bootstrap@v5.3.2+incompatible/js/src/dom/event-handler.js
   var namespaceRegex = /[^.]*(?=\..*)\.|.*/;
   var stripNameRegex = /\..*/;
   var stripUidRegex = /::\d+$/;
@@ -2772,7 +2771,7 @@ https://www.aholddelhaize.com/,ahold_delhaize
   }
   var event_handler_default = EventHandler;
 
-  // ns-hugo:/tmp/hugo_cache/modules/filecache/modules/pkg/mod/github.com/twbs/bootstrap@v5.3.2+incompatible/js/src/dom/manipulator.js
+  // ns-hugo-imp:/tmp/hugo_cache/modules/filecache/modules/pkg/mod/github.com/twbs/bootstrap@v5.3.2+incompatible/js/src/dom/manipulator.js
   function normalizeData(value) {
     if (value === "true") {
       return true;
@@ -2824,7 +2823,7 @@ https://www.aholddelhaize.com/,ahold_delhaize
   };
   var manipulator_default = Manipulator;
 
-  // ns-hugo:/tmp/hugo_cache/modules/filecache/modules/pkg/mod/github.com/twbs/bootstrap@v5.3.2+incompatible/js/src/util/config.js
+  // ns-hugo-imp:/tmp/hugo_cache/modules/filecache/modules/pkg/mod/github.com/twbs/bootstrap@v5.3.2+incompatible/js/src/util/config.js
   var Config = class {
     // Getters
     static get Default() {
@@ -2868,7 +2867,7 @@ https://www.aholddelhaize.com/,ahold_delhaize
   };
   var config_default = Config;
 
-  // ns-hugo:/tmp/hugo_cache/modules/filecache/modules/pkg/mod/github.com/twbs/bootstrap@v5.3.2+incompatible/js/src/base-component.js
+  // ns-hugo-imp:/tmp/hugo_cache/modules/filecache/modules/pkg/mod/github.com/twbs/bootstrap@v5.3.2+incompatible/js/src/base-component.js
   var VERSION = "5.3.2";
   var BaseComponent = class extends config_default {
     constructor(element, config) {
@@ -2920,7 +2919,7 @@ https://www.aholddelhaize.com/,ahold_delhaize
   };
   var base_component_default = BaseComponent;
 
-  // ns-hugo:/tmp/hugo_cache/modules/filecache/modules/pkg/mod/github.com/twbs/bootstrap@v5.3.2+incompatible/js/src/dom/selector-engine.js
+  // ns-hugo-imp:/tmp/hugo_cache/modules/filecache/modules/pkg/mod/github.com/twbs/bootstrap@v5.3.2+incompatible/js/src/dom/selector-engine.js
   var getSelector = (element) => {
     let selector = element.getAttribute("data-bs-target");
     if (!selector || selector === "#") {
@@ -3006,7 +3005,7 @@ https://www.aholddelhaize.com/,ahold_delhaize
   };
   var selector_engine_default = SelectorEngine;
 
-  // ns-hugo:/tmp/hugo_cache/modules/filecache/modules/pkg/mod/github.com/twbs/bootstrap@v5.3.2+incompatible/js/src/collapse.js
+  // ns-hugo-imp:/tmp/hugo_cache/modules/filecache/modules/pkg/mod/github.com/twbs/bootstrap@v5.3.2+incompatible/js/src/collapse.js
   var NAME = "collapse";
   var DATA_KEY = "bs.collapse";
   var EVENT_KEY = `.${DATA_KEY}`;
@@ -3202,7 +3201,7 @@ https://www.aholddelhaize.com/,ahold_delhaize
   });
   defineJQueryPlugin(Collapse);
 
-  // ns-hugo:/tmp/hugo_cache/modules/filecache/modules/pkg/mod/github.com/twbs/bootstrap@v5.3.2+incompatible/js/src/dropdown.js
+  // ns-hugo-imp:/tmp/hugo_cache/modules/filecache/modules/pkg/mod/github.com/twbs/bootstrap@v5.3.2+incompatible/js/src/dropdown.js
   var Popper = __toESM(require_popper());
   var NAME2 = "dropdown";
   var DATA_KEY2 = "bs.dropdown";
@@ -3511,7 +3510,7 @@ https://www.aholddelhaize.com/,ahold_delhaize
   });
   defineJQueryPlugin(Dropdown);
 
-  // ns-hugo:/tmp/hugo_cache/modules/filecache/modules/pkg/mod/github.com/twbs/bootstrap@v5.3.2+incompatible/js/src/util/backdrop.js
+  // ns-hugo-imp:/tmp/hugo_cache/modules/filecache/modules/pkg/mod/github.com/twbs/bootstrap@v5.3.2+incompatible/js/src/util/backdrop.js
   var NAME3 = "backdrop";
   var CLASS_NAME_FADE = "fade";
   var CLASS_NAME_SHOW3 = "show";
@@ -3617,7 +3616,7 @@ https://www.aholddelhaize.com/,ahold_delhaize
   };
   var backdrop_default = Backdrop;
 
-  // ns-hugo:/tmp/hugo_cache/modules/filecache/modules/pkg/mod/github.com/twbs/bootstrap@v5.3.2+incompatible/js/src/util/component-functions.js
+  // ns-hugo-imp:/tmp/hugo_cache/modules/filecache/modules/pkg/mod/github.com/twbs/bootstrap@v5.3.2+incompatible/js/src/util/component-functions.js
   var enableDismissTrigger = (component, method = "hide") => {
     const clickEvent = `click.dismiss${component.EVENT_KEY}`;
     const name = component.NAME;
@@ -3634,7 +3633,7 @@ https://www.aholddelhaize.com/,ahold_delhaize
     });
   };
 
-  // ns-hugo:/tmp/hugo_cache/modules/filecache/modules/pkg/mod/github.com/twbs/bootstrap@v5.3.2+incompatible/js/src/util/focustrap.js
+  // ns-hugo-imp:/tmp/hugo_cache/modules/filecache/modules/pkg/mod/github.com/twbs/bootstrap@v5.3.2+incompatible/js/src/util/focustrap.js
   var NAME4 = "focustrap";
   var DATA_KEY3 = "bs.focustrap";
   var EVENT_KEY3 = `.${DATA_KEY3}`;
@@ -3713,7 +3712,7 @@ https://www.aholddelhaize.com/,ahold_delhaize
   };
   var focustrap_default = FocusTrap;
 
-  // ns-hugo:/tmp/hugo_cache/modules/filecache/modules/pkg/mod/github.com/twbs/bootstrap@v5.3.2+incompatible/js/src/util/scrollbar.js
+  // ns-hugo-imp:/tmp/hugo_cache/modules/filecache/modules/pkg/mod/github.com/twbs/bootstrap@v5.3.2+incompatible/js/src/util/scrollbar.js
   var SELECTOR_FIXED_CONTENT = ".fixed-top, .fixed-bottom, .is-fixed, .sticky-top";
   var SELECTOR_STICKY_CONTENT = ".sticky-top";
   var PROPERTY_PADDING = "padding-right";
@@ -3790,7 +3789,7 @@ https://www.aholddelhaize.com/,ahold_delhaize
   };
   var scrollbar_default = ScrollBarHelper;
 
-  // ns-hugo:/tmp/hugo_cache/modules/filecache/modules/pkg/mod/github.com/twbs/bootstrap@v5.3.2+incompatible/js/src/modal.js
+  // ns-hugo-imp:/tmp/hugo_cache/modules/filecache/modules/pkg/mod/github.com/twbs/bootstrap@v5.3.2+incompatible/js/src/modal.js
   var NAME5 = "modal";
   var DATA_KEY4 = "bs.modal";
   var EVENT_KEY4 = `.${DATA_KEY4}`;
@@ -4057,7 +4056,7 @@ https://www.aholddelhaize.com/,ahold_delhaize
   enableDismissTrigger(Modal);
   defineJQueryPlugin(Modal);
 
-  // ns-hugo:/tmp/hugo_cache/modules/filecache/modules/pkg/mod/github.com/twbs/bootstrap@v5.3.2+incompatible/js/src/tab.js
+  // ns-hugo-imp:/tmp/hugo_cache/modules/filecache/modules/pkg/mod/github.com/twbs/bootstrap@v5.3.2+incompatible/js/src/tab.js
   var NAME6 = "tab";
   var DATA_KEY5 = "bs.tab";
   var EVENT_KEY5 = `.${DATA_KEY5}`;
@@ -4306,8 +4305,8 @@ https://www.aholddelhaize.com/,ahold_delhaize
 
 <script
   crossorigin="anonymous"
-  integrity="sha256-SyT6nS49vJ1/Zx1siX9mn5ItqSp7UqeLYc/nzkEpijg="
-  src="/js/scripts.min.4b24fa9d2e3dbc9d7f671d6c897f669f922da92a7b52a78b61cfe7ce41298a38.js"></script>
+  integrity="sha256-GbV8tt3Br424vpm8wFXcEegeMsaMyouy3Q6aqbmdy/c="
+  src="/js/scripts.min.19b57cb6ddc1af8db8be99bcc055dc11e81e32c68cca8bb2dd0e9aa9b99dcbf7.js"></script>
 
 
 

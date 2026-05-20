@@ -25,11 +25,11 @@
 
 
 
-<link rel="shortcut icon" href="/images/logos/logo_small_wb_hu68a4318163ff8e011babdec4caf974c7_3412_96x0_resize_lanczos_3.png" type="image/x-icon">
-<link rel="icon" href="/images/logos/logo_small_wb_hu68a4318163ff8e011babdec4caf974c7_3412_96x0_resize_lanczos_3.png" type="image/x-icon">
-<link rel="icon" type="image/png" sizes="48x48" href="/images/logos/logo_small_wb_hu68a4318163ff8e011babdec4caf974c7_3412_48x0_resize_lanczos_3.png">
-<link rel="icon" type="image/png" sizes="96x96" href="/images/logos/logo_small_wb_hu68a4318163ff8e011babdec4caf974c7_3412_96x0_resize_lanczos_3.png">
-<link rel="apple-touch-icon" sizes="144x144" href="/images/logos/logo_small_wb_hu68a4318163ff8e011babdec4caf974c7_3412_144x0_resize_lanczos_3.png">
+<link rel="shortcut icon" href="/images/logos/logo_small_wb_hu_a9331ed94db35663.png" type="image/x-icon">
+<link rel="icon" href="/images/logos/logo_small_wb_hu_a9331ed94db35663.png" type="image/x-icon">
+<link rel="icon" type="image/png" sizes="48x48" href="/images/logos/logo_small_wb_hu_88ce2efb8e2851f7.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/images/logos/logo_small_wb_hu_a9331ed94db35663.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/images/logos/logo_small_wb_hu_bf6340b74362cbec.png">
 
 
 
@@ -310,7 +310,7 @@
 	
 
 	
-	
+
 	
 	
 <header class="navigation">
@@ -557,7 +557,7 @@
 
 
 >fasttext-wheel PyPI module</a>. To verify the installation succeeded, you have to importat the package in a Python script.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">&gt;&gt;&gt;</span> <span style="color:#f92672">import</span> fasttext
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">&gt;&gt;&gt;</span> <span style="color:#f92672">import</span> fasttext
 </span></span></code></pre></div><p>If there are no error messages, you have succeeded and we can move to the training part.</p>
 <h4 id="training-the-model">Training the model</h4>
 <h5 id="training-data">Training data</h5>
@@ -585,14 +585,14 @@
 >here</a> the full list of tuning parameters available.</p>
 <h5 id="fitting-model">Fitting model</h5>
 <p>We fit the model with the following command:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">&gt;&gt;&gt;</span> model <span style="color:#f92672">=</span> fasttext<span style="color:#f92672">.</span>train_unsupervised(<span style="color:#e6db74">&#39;internet_archive_scifi_v3.txt&#39;</span>, dim <span style="color:#f92672">=</span> <span style="color:#ae81ff">300</span>)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">&gt;&gt;&gt;</span> model <span style="color:#f92672">=</span> fasttext<span style="color:#f92672">.</span>train_unsupervised(<span style="color:#e6db74">&#39;internet_archive_scifi_v3.txt&#39;</span>, dim <span style="color:#f92672">=</span> <span style="color:#ae81ff">300</span>)
 </span></span></code></pre></div><p>Then, you can save the trained model, so that you do not have to train it again. For this, you need to feed the save_model() method a path to which to save the file. Make sure to add &lsquo;.bin&rsquo; to save the model as a .bin file.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">&gt;&gt;&gt;</span> model<span style="color:#f92672">.</span>save_model(<span style="color:#e6db74">&#39;scifi_fasttext_model.bin&#39;</span>)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">&gt;&gt;&gt;</span> model<span style="color:#f92672">.</span>save_model(<span style="color:#e6db74">&#39;scifi_fasttext_model.bin&#39;</span>)
 </span></span></code></pre></div><p>Re-opening a saved model is done with the load_model() method:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">&gt;&gt;&gt;</span> model <span style="color:#f92672">=</span> fasttext<span style="color:#f92672">.</span>load_model(<span style="color:#e6db74">&#39;scifi_fasttext_model.bin&#39;</span>)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">&gt;&gt;&gt;</span> model <span style="color:#f92672">=</span> fasttext<span style="color:#f92672">.</span>load_model(<span style="color:#e6db74">&#39;scifi_fasttext_model.bin&#39;</span>)
 </span></span></code></pre></div><h3 id="using-word-embeddings">Using word embeddings</h3>
 <p>Now we have trained the model, we have the word embeddings ready to be used. And, luckily, fastText comes with some nice functions to work with word embeddings!  Here we highlight two of possible uses of word embeddings: obtaining most similar words, and analogies - but remember there are more possible uses. We start by simply retrieving the word embeddings. This can be done with any of the two following commands.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">&gt;&gt;&gt;</span> model<span style="color:#f92672">.</span>get_word_vector(<span style="color:#e6db74">&#39;villain&#39;</span>)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">&gt;&gt;&gt;</span> model<span style="color:#f92672">.</span>get_word_vector(<span style="color:#e6db74">&#39;villain&#39;</span>)
 </span></span><span style="display:flex;"><span><span style="color:#f92672">&gt;&gt;&gt;</span> model[<span style="color:#e6db74">&#39;villain&#39;</span>]
 </span></span><span style="display:flex;"><span>array([ <span style="color:#ae81ff">0.01417591</span>, <span style="color:#f92672">-</span><span style="color:#ae81ff">0.06866349</span>,  <span style="color:#ae81ff">0.09390495</span>, <span style="color:#f92672">-</span><span style="color:#ae81ff">0.04146367</span>,  <span style="color:#ae81ff">0.10481305</span>,
 </span></span><span style="display:flex;"><span>       <span style="color:#f92672">-</span><span style="color:#ae81ff">0.2541916</span> ,  <span style="color:#ae81ff">0.26757774</span>, <span style="color:#f92672">-</span><span style="color:#ae81ff">0.04365376</span>, <span style="color:#f92672">-</span><span style="color:#ae81ff">0.02336818</span>,  <span style="color:#ae81ff">0.07684527</span>,
@@ -603,7 +603,7 @@
 </span></span><span style="display:flex;"><span>        <span style="color:#ae81ff">0.02247835</span>,  <span style="color:#ae81ff">0.05518318</span>,  <span style="color:#ae81ff">0.04844297</span>, <span style="color:#f92672">-</span><span style="color:#ae81ff">0.2925061</span> , <span style="color:#f92672">-</span><span style="color:#ae81ff">0.05710272</span>],
 </span></span><span style="display:flex;"><span>      dtype<span style="color:#f92672">=</span>float32)
 </span></span></code></pre></div><p>Since fastText does not only train an embedding for the full word, but also so for the ngrams in each word as well, subwords and their embeddings can be accessed as follows:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">&gt;&gt;&gt;</span> ngrams, hashes <span style="color:#f92672">=</span> model<span style="color:#f92672">.</span>get_subwords(<span style="color:#e6db74">&#39;villain&#39;</span>)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">&gt;&gt;&gt;</span> ngrams, hashes <span style="color:#f92672">=</span> model<span style="color:#f92672">.</span>get_subwords(<span style="color:#e6db74">&#39;villain&#39;</span>)
 </span></span><span style="display:flex;"><span><span style="color:#f92672">&gt;&gt;&gt;</span> 
 </span></span><span style="display:flex;"><span><span style="color:#f92672">&gt;&gt;&gt;</span> <span style="color:#66d9ef">for</span> ngram, hash <span style="color:#f92672">in</span> zip(ngrams, hashes):
 </span></span><span style="display:flex;"><span><span style="color:#f92672">&gt;&gt;&gt;</span>     print(ngram, model<span style="color:#f92672">.</span>get_input_vector(hash))
@@ -611,7 +611,7 @@
 <p>Note: using the get_subwords() method returns two lists, one with the ngrams of type string, the other with hashes. These hashes are not the same as embeddings, but rather are the identifier that fastText uses to store and retrieve embeddings. Therefore, to get the (sub-)word embedding using a hash, the get_input_vector() method has to be used.</p>
 </blockquote>
 <p>Furthermore, vectors can be created for full sentences as well:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">&gt;&gt;&gt;</span> model<span style="color:#f92672">.</span>get_sentence_vector(<span style="color:#e6db74">&#39;the villain defeated the hero, tyrrany reigned throughout the galaxy for a thousand eons.&#39;</span>)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">&gt;&gt;&gt;</span> model<span style="color:#f92672">.</span>get_sentence_vector(<span style="color:#e6db74">&#39;the villain defeated the hero, tyrrany reigned throughout the galaxy for a thousand eons.&#39;</span>)
 </span></span><span style="display:flex;"><span>array([<span style="color:#f92672">-</span><span style="color:#ae81ff">2.73631997e-02</span>,  <span style="color:#ae81ff">7.83981197e-03</span>, <span style="color:#f92672">-</span><span style="color:#ae81ff">1.97590180e-02</span>, <span style="color:#f92672">-</span><span style="color:#ae81ff">1.42770987e-02</span>,
 </span></span><span style="display:flex;"><span>        <span style="color:#ae81ff">6.88663125e-03</span>, <span style="color:#f92672">-</span><span style="color:#ae81ff">1.63909234e-02</span>,  <span style="color:#ae81ff">5.72902411e-02</span>,  <span style="color:#ae81ff">1.44126266e-02</span>,
 </span></span><span style="display:flex;"><span>       <span style="color:#f92672">-</span><span style="color:#ae81ff">1.64726824e-02</span>,  <span style="color:#ae81ff">8.55281111e-03</span>, <span style="color:#f92672">-</span><span style="color:#ae81ff">5.33024594e-02</span>,  <span style="color:#ae81ff">4.74718548e-02</span>,
@@ -622,17 +622,17 @@
 </span></span><span style="display:flex;"><span>      dtype<span style="color:#f92672">=</span>float32)
 </span></span></code></pre></div><h4 id="most-similar-words">Most similar words</h4>
 <p>A nice usecase of fastText is to retrieve similar words. For instance, you can retrieve the set of 10 words with the most similar meaning (i.e., most similar word vector) to a target word using a nearest neighbours algorithm based on the cosine distance.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">&gt;&gt;&gt;</span> model<span style="color:#f92672">.</span>get_nearest_neighbors(<span style="color:#e6db74">&#39;villain&#39;</span>)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">&gt;&gt;&gt;</span> model<span style="color:#f92672">.</span>get_nearest_neighbors(<span style="color:#e6db74">&#39;villain&#39;</span>)
 </span></span><span style="display:flex;"><span>[(<span style="color:#ae81ff">0.9379335641860962</span>, <span style="color:#e6db74">&#39;villainy&#39;</span>), (<span style="color:#ae81ff">0.9019550681114197</span>, <span style="color:#e6db74">&#39;villain,&#39;</span>), (<span style="color:#ae81ff">0.890184223651886</span>, <span style="color:#e6db74">&#39;villain.&#39;</span>), (<span style="color:#ae81ff">0.8709720969200134</span>, <span style="color:#e6db74">&#39;villains&#39;</span>), (<span style="color:#ae81ff">0.8297745585441589</span>, <span style="color:#e6db74">&#39;villains.&#39;</span>), (<span style="color:#ae81ff">0.8225630521774292</span>, <span style="color:#e6db74">&#39;villainous&#39;</span>), (<span style="color:#ae81ff">0.8214142918586731</span>, <span style="color:#e6db74">&#39;villains,&#39;</span>), (<span style="color:#ae81ff">0.6485553979873657</span>, <span style="color:#e6db74">&#39;Villains&#39;</span>), (<span style="color:#ae81ff">0.6020095944404602</span>, <span style="color:#e6db74">&#39;heroine&#39;</span>), (<span style="color:#ae81ff">0.5941146612167358</span>, <span style="color:#e6db74">&#39;villa,&#39;</span>)]
 </span></span></code></pre></div><p>Interestingly, this also works for words not in the model corpus, including misspelled words!</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">&gt;&gt;&gt;</span> model<span style="color:#f92672">.</span>get_nearest_neighbors(<span style="color:#e6db74">&#39;vilain&#39;</span>)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">&gt;&gt;&gt;</span> model<span style="color:#f92672">.</span>get_nearest_neighbors(<span style="color:#e6db74">&#39;vilain&#39;</span>)
 </span></span><span style="display:flex;"><span>[(<span style="color:#ae81ff">0.6722341179847717</span>, <span style="color:#e6db74">&#39;villain&#39;</span>), (<span style="color:#ae81ff">0.619519829750061</span>, <span style="color:#e6db74">&#39;villain.&#39;</span>), (<span style="color:#ae81ff">0.6137816309928894</span>, <span style="color:#e6db74">&#39;lain&#39;</span>), (<span style="color:#ae81ff">0.6128077507019043</span>, <span style="color:#e6db74">&#39;villainous&#39;</span>), (<span style="color:#ae81ff">0.609745979309082</span>, <span style="color:#e6db74">&#39;villainy&#39;</span>), (<span style="color:#ae81ff">0.6089878678321838</span>, <span style="color:#e6db74">&#39;Glain&#39;</span>), (<span style="color:#ae81ff">0.5980470180511475</span>, <span style="color:#e6db74">&#39;slain&#39;</span>), (<span style="color:#ae81ff">0.5925296545028687</span>, <span style="color:#e6db74">&#39;villain,&#39;</span>), (<span style="color:#ae81ff">0.5779100060462952</span>, <span style="color:#e6db74">&#39;villains&#39;</span>), (<span style="color:#ae81ff">0.5764451622962952</span>, <span style="color:#e6db74">&#39;chaplain&#39;</span>)]
 </span></span></code></pre></div><h4 id="analogies">Analogies</h4>
 <p>Another nice use for fastText is creating analogies. Since the word embedding vectors are created in relation to every other word in the corpus, these relations should be preserved in the vector space so that analogies can be created. For analogies, a triplet of words is required according to the formula &lsquo;A is to B as C is to [output]&rsquo;. For example, if we take the formula &lsquo;Men is to Father as [output] is to Mother&rsquo;, we get the expected answer of Women.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">&gt;&gt;&gt;</span> model<span style="color:#f92672">.</span>get_analogies(<span style="color:#e6db74">&#39;men&#39;</span>, <span style="color:#e6db74">&#39;father&#39;</span>, <span style="color:#e6db74">&#39;mother&#39;</span>)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">&gt;&gt;&gt;</span> model<span style="color:#f92672">.</span>get_analogies(<span style="color:#e6db74">&#39;men&#39;</span>, <span style="color:#e6db74">&#39;father&#39;</span>, <span style="color:#e6db74">&#39;mother&#39;</span>)
 </span></span><span style="display:flex;"><span>[(<span style="color:#ae81ff">0.6985629200935364</span>, <span style="color:#e6db74">&#39;women&#39;</span>), (<span style="color:#ae81ff">0.6015384793281555</span>, <span style="color:#e6db74">&#39;all&#39;</span>), (<span style="color:#ae81ff">0.5977899432182312</span>, <span style="color:#e6db74">&#39;man&#39;</span>), (<span style="color:#ae81ff">0.5835891366004944</span>, <span style="color:#e6db74">&#39;out&#39;</span>), (<span style="color:#ae81ff">0.5830296874046326</span>, <span style="color:#e6db74">&#39;now&#39;</span>), (<span style="color:#ae81ff">0.5767865180969238</span>, <span style="color:#e6db74">&#39;one&#39;</span>), (<span style="color:#ae81ff">0.5711579322814941</span>, <span style="color:#e6db74">&#39;in&#39;</span>), (<span style="color:#ae81ff">0.5671708583831787</span>, <span style="color:#e6db74">&#39;wingmen&#39;</span>), (<span style="color:#ae81ff">0.567089855670929</span>, <span style="color:#e6db74">&#39;women&#34;&#39;</span>), (<span style="color:#ae81ff">0.5663136839866638</span>, <span style="color:#e6db74">&#39;were&#39;</span>)]
 </span></span></code></pre></div><p>However, since the model that we have created was done using uncleaned data from a relatively small corpus, our output is not perfect. For example, with the following analogy triplets, the correct answer of <strong>bad</strong> comes fourth, after <em>villainy</em>, <em>villain.</em> and <em>villain,</em> showing that for a better model, we should do some additional cleaning of our data (e.g., removing punctuation).</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">&gt;&gt;&gt;</span> model<span style="color:#f92672">.</span>get_analogies(<span style="color:#e6db74">&#39;good&#39;</span>, <span style="color:#e6db74">&#39;hero&#39;</span>, <span style="color:#e6db74">&#39;villain&#39;</span>)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">&gt;&gt;&gt;</span> model<span style="color:#f92672">.</span>get_analogies(<span style="color:#e6db74">&#39;good&#39;</span>, <span style="color:#e6db74">&#39;hero&#39;</span>, <span style="color:#e6db74">&#39;villain&#39;</span>)
 </span></span><span style="display:flex;"><span>[(<span style="color:#ae81ff">0.5228292942047119</span>, <span style="color:#e6db74">&#39;villainy&#39;</span>), (<span style="color:#ae81ff">0.5205934047698975</span>, <span style="color:#e6db74">&#39;villain.&#39;</span>), (<span style="color:#ae81ff">0.5122538208961487</span>, <span style="color:#e6db74">&#39;villain,&#39;</span>), (<span style="color:#ae81ff">0.5047158598899841</span>, <span style="color:#e6db74">&#39;bad&#39;</span>), (<span style="color:#ae81ff">0.483129620552063</span>, <span style="color:#e6db74">&#39;villains.&#39;</span>), (<span style="color:#ae81ff">0.4676515460014343</span>, <span style="color:#e6db74">&#39;good&#34;&#39;</span>), (<span style="color:#ae81ff">0.4662466049194336</span>, <span style="color:#e6db74">&#39;vill&#39;</span>), (<span style="color:#ae81ff">0.46115875244140625</span>, <span style="color:#e6db74">&#39;villains&#39;</span>), (<span style="color:#ae81ff">0.4569159746170044</span>, <span style="color:#e6db74">&#34;good&#39;&#34;</span>), (<span style="color:#ae81ff">0.4529685974121094</span>, <span style="color:#e6db74">&#39;excellent.&#34;&#39;</span>)]
 </span></span></code></pre></div><h3 id="conclusion">Conclusion</h3>
 <p>In this blogpost we have shown how to train a lightweight, efficient natural language processing model using fastText. After installing it, we have shown how to use some of the fastText functions to train the model, retrieve word embeddings, and usem them for different questions. While this was a toy example, we hope you found it inspiring for your own research! And remember, if you have a research idea that entails using natural language models and are stuck or do not know how to start - you can contact us!</p>
@@ -822,7 +822,7 @@
 
 
 
-<script crossorigin="anonymous" defer  integrity="sha512-dCIZHcmW8pL&#43;DPLWQFFEYQLuqKBywPohaIj0FJKVrrlZ6iljjXafVk&#43;5hh&#43;sRe8ffzZ6Hh9AK4OC6NcwxyEyNQ==" type="application/javascript">(() => {
+<script crossorigin="anonymous" defer  integrity="sha512-ViniUxt4SXT/zp/QUEsaapP5q49gJyiD3w26VBvYXN1FTJjsC2Ph9o72hD04ywD7dojnLvMVHHsUESthRC8q3Q==" type="application/javascript">(() => {
   var __create = Object.create;
   var __defProp = Object.defineProperty;
   var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
@@ -849,9 +849,9 @@
     mod
   ));
 
-  // ns-hugo:/tmp/hugo_cache/modules/filecache/modules/pkg/mod/github.com/gohugoio/hugo-mod-jslibs-dist/popperjs/v2@v2.21100.20000/package/dist/cjs/popper.js
+  // ns-hugo-imp:/tmp/hugo_cache/modules/filecache/modules/pkg/mod/github.com/gohugoio/hugo-mod-jslibs-dist/popperjs/v2@v2.21100.20000/package/dist/cjs/popper.js
   var require_popper = __commonJS({
-    "ns-hugo:/tmp/hugo_cache/modules/filecache/modules/pkg/mod/github.com/gohugoio/hugo-mod-jslibs-dist/popperjs/v2@v2.21100.20000/package/dist/cjs/popper.js"(exports) {
+    "ns-hugo-imp:/tmp/hugo_cache/modules/filecache/modules/pkg/mod/github.com/gohugoio/hugo-mod-jslibs-dist/popperjs/v2@v2.21100.20000/package/dist/cjs/popper.js"(exports) {
       "use strict";
       Object.defineProperty(exports, "__esModule", { value: true });
       function getWindow(node) {
@@ -2059,8 +2059,7 @@
           };
           for (var _i = numberOfChecks; _i > 0; _i--) {
             var _ret = _loop(_i);
-            if (_ret === "break")
-              break;
+            if (_ret === "break") break;
           }
         }
         if (state.placement !== firstFittingPlacement) {
@@ -2325,7 +2324,7 @@
     }
   });
 
-  // ns-hugo:/tmp/hugo_cache/modules/filecache/modules/pkg/mod/github.com/twbs/bootstrap@v5.3.2+incompatible/js/src/dom/data.js
+  // ns-hugo-imp:/tmp/hugo_cache/modules/filecache/modules/pkg/mod/github.com/twbs/bootstrap@v5.3.2+incompatible/js/src/dom/data.js
   var elementMap = /* @__PURE__ */ new Map();
   var data_default = {
     set(element, key, instance) {
@@ -2357,7 +2356,7 @@
     }
   };
 
-  // ns-hugo:/tmp/hugo_cache/modules/filecache/modules/pkg/mod/github.com/twbs/bootstrap@v5.3.2+incompatible/js/src/util/index.js
+  // ns-hugo-imp:/tmp/hugo_cache/modules/filecache/modules/pkg/mod/github.com/twbs/bootstrap@v5.3.2+incompatible/js/src/util/index.js
   var MILLISECONDS_MULTIPLIER = 1e3;
   var TRANSITION_END = "transitionend";
   var parseSelector = (selector) => {
@@ -2520,7 +2519,7 @@
     return list[Math.max(0, Math.min(index, listLength - 1))];
   };
 
-  // ns-hugo:/tmp/hugo_cache/modules/filecache/modules/pkg/mod/github.com/twbs/bootstrap@v5.3.2+incompatible/js/src/dom/event-handler.js
+  // ns-hugo-imp:/tmp/hugo_cache/modules/filecache/modules/pkg/mod/github.com/twbs/bootstrap@v5.3.2+incompatible/js/src/dom/event-handler.js
   var namespaceRegex = /[^.]*(?=\..*)\.|.*/;
   var stripNameRegex = /\..*/;
   var stripUidRegex = /::\d+$/;
@@ -2759,7 +2758,7 @@
   }
   var event_handler_default = EventHandler;
 
-  // ns-hugo:/tmp/hugo_cache/modules/filecache/modules/pkg/mod/github.com/twbs/bootstrap@v5.3.2+incompatible/js/src/dom/manipulator.js
+  // ns-hugo-imp:/tmp/hugo_cache/modules/filecache/modules/pkg/mod/github.com/twbs/bootstrap@v5.3.2+incompatible/js/src/dom/manipulator.js
   function normalizeData(value) {
     if (value === "true") {
       return true;
@@ -2811,7 +2810,7 @@
   };
   var manipulator_default = Manipulator;
 
-  // ns-hugo:/tmp/hugo_cache/modules/filecache/modules/pkg/mod/github.com/twbs/bootstrap@v5.3.2+incompatible/js/src/util/config.js
+  // ns-hugo-imp:/tmp/hugo_cache/modules/filecache/modules/pkg/mod/github.com/twbs/bootstrap@v5.3.2+incompatible/js/src/util/config.js
   var Config = class {
     // Getters
     static get Default() {
@@ -2855,7 +2854,7 @@
   };
   var config_default = Config;
 
-  // ns-hugo:/tmp/hugo_cache/modules/filecache/modules/pkg/mod/github.com/twbs/bootstrap@v5.3.2+incompatible/js/src/base-component.js
+  // ns-hugo-imp:/tmp/hugo_cache/modules/filecache/modules/pkg/mod/github.com/twbs/bootstrap@v5.3.2+incompatible/js/src/base-component.js
   var VERSION = "5.3.2";
   var BaseComponent = class extends config_default {
     constructor(element, config) {
@@ -2907,7 +2906,7 @@
   };
   var base_component_default = BaseComponent;
 
-  // ns-hugo:/tmp/hugo_cache/modules/filecache/modules/pkg/mod/github.com/twbs/bootstrap@v5.3.2+incompatible/js/src/dom/selector-engine.js
+  // ns-hugo-imp:/tmp/hugo_cache/modules/filecache/modules/pkg/mod/github.com/twbs/bootstrap@v5.3.2+incompatible/js/src/dom/selector-engine.js
   var getSelector = (element) => {
     let selector = element.getAttribute("data-bs-target");
     if (!selector || selector === "#") {
@@ -2993,7 +2992,7 @@
   };
   var selector_engine_default = SelectorEngine;
 
-  // ns-hugo:/tmp/hugo_cache/modules/filecache/modules/pkg/mod/github.com/twbs/bootstrap@v5.3.2+incompatible/js/src/collapse.js
+  // ns-hugo-imp:/tmp/hugo_cache/modules/filecache/modules/pkg/mod/github.com/twbs/bootstrap@v5.3.2+incompatible/js/src/collapse.js
   var NAME = "collapse";
   var DATA_KEY = "bs.collapse";
   var EVENT_KEY = `.${DATA_KEY}`;
@@ -3189,7 +3188,7 @@
   });
   defineJQueryPlugin(Collapse);
 
-  // ns-hugo:/tmp/hugo_cache/modules/filecache/modules/pkg/mod/github.com/twbs/bootstrap@v5.3.2+incompatible/js/src/dropdown.js
+  // ns-hugo-imp:/tmp/hugo_cache/modules/filecache/modules/pkg/mod/github.com/twbs/bootstrap@v5.3.2+incompatible/js/src/dropdown.js
   var Popper = __toESM(require_popper());
   var NAME2 = "dropdown";
   var DATA_KEY2 = "bs.dropdown";
@@ -3498,7 +3497,7 @@
   });
   defineJQueryPlugin(Dropdown);
 
-  // ns-hugo:/tmp/hugo_cache/modules/filecache/modules/pkg/mod/github.com/twbs/bootstrap@v5.3.2+incompatible/js/src/util/backdrop.js
+  // ns-hugo-imp:/tmp/hugo_cache/modules/filecache/modules/pkg/mod/github.com/twbs/bootstrap@v5.3.2+incompatible/js/src/util/backdrop.js
   var NAME3 = "backdrop";
   var CLASS_NAME_FADE = "fade";
   var CLASS_NAME_SHOW3 = "show";
@@ -3604,7 +3603,7 @@
   };
   var backdrop_default = Backdrop;
 
-  // ns-hugo:/tmp/hugo_cache/modules/filecache/modules/pkg/mod/github.com/twbs/bootstrap@v5.3.2+incompatible/js/src/util/component-functions.js
+  // ns-hugo-imp:/tmp/hugo_cache/modules/filecache/modules/pkg/mod/github.com/twbs/bootstrap@v5.3.2+incompatible/js/src/util/component-functions.js
   var enableDismissTrigger = (component, method = "hide") => {
     const clickEvent = `click.dismiss${component.EVENT_KEY}`;
     const name = component.NAME;
@@ -3621,7 +3620,7 @@
     });
   };
 
-  // ns-hugo:/tmp/hugo_cache/modules/filecache/modules/pkg/mod/github.com/twbs/bootstrap@v5.3.2+incompatible/js/src/util/focustrap.js
+  // ns-hugo-imp:/tmp/hugo_cache/modules/filecache/modules/pkg/mod/github.com/twbs/bootstrap@v5.3.2+incompatible/js/src/util/focustrap.js
   var NAME4 = "focustrap";
   var DATA_KEY3 = "bs.focustrap";
   var EVENT_KEY3 = `.${DATA_KEY3}`;
@@ -3700,7 +3699,7 @@
   };
   var focustrap_default = FocusTrap;
 
-  // ns-hugo:/tmp/hugo_cache/modules/filecache/modules/pkg/mod/github.com/twbs/bootstrap@v5.3.2+incompatible/js/src/util/scrollbar.js
+  // ns-hugo-imp:/tmp/hugo_cache/modules/filecache/modules/pkg/mod/github.com/twbs/bootstrap@v5.3.2+incompatible/js/src/util/scrollbar.js
   var SELECTOR_FIXED_CONTENT = ".fixed-top, .fixed-bottom, .is-fixed, .sticky-top";
   var SELECTOR_STICKY_CONTENT = ".sticky-top";
   var PROPERTY_PADDING = "padding-right";
@@ -3777,7 +3776,7 @@
   };
   var scrollbar_default = ScrollBarHelper;
 
-  // ns-hugo:/tmp/hugo_cache/modules/filecache/modules/pkg/mod/github.com/twbs/bootstrap@v5.3.2+incompatible/js/src/modal.js
+  // ns-hugo-imp:/tmp/hugo_cache/modules/filecache/modules/pkg/mod/github.com/twbs/bootstrap@v5.3.2+incompatible/js/src/modal.js
   var NAME5 = "modal";
   var DATA_KEY4 = "bs.modal";
   var EVENT_KEY4 = `.${DATA_KEY4}`;
@@ -4044,7 +4043,7 @@
   enableDismissTrigger(Modal);
   defineJQueryPlugin(Modal);
 
-  // ns-hugo:/tmp/hugo_cache/modules/filecache/modules/pkg/mod/github.com/twbs/bootstrap@v5.3.2+incompatible/js/src/tab.js
+  // ns-hugo-imp:/tmp/hugo_cache/modules/filecache/modules/pkg/mod/github.com/twbs/bootstrap@v5.3.2+incompatible/js/src/tab.js
   var NAME6 = "tab";
   var DATA_KEY5 = "bs.tab";
   var EVENT_KEY5 = `.${DATA_KEY5}`;
@@ -4293,8 +4292,8 @@
 
 <script
   crossorigin="anonymous"
-  integrity="sha256-SyT6nS49vJ1/Zx1siX9mn5ItqSp7UqeLYc/nzkEpijg="
-  src="/js/scripts.min.4b24fa9d2e3dbc9d7f671d6c897f669f922da92a7b52a78b61cfe7ce41298a38.js"></script>
+  integrity="sha256-GbV8tt3Br424vpm8wFXcEegeMsaMyouy3Q6aqbmdy/c="
+  src="/js/scripts.min.19b57cb6ddc1af8db8be99bcc055dc11e81e32c68cca8bb2dd0e9aa9b99dcbf7.js"></script>
 
 
 

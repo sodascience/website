@@ -25,11 +25,11 @@
 
 
 
-<link rel="shortcut icon" href="/images/logos/logo_small_wb_hu68a4318163ff8e011babdec4caf974c7_3412_96x0_resize_lanczos_3.png" type="image/x-icon">
-<link rel="icon" href="/images/logos/logo_small_wb_hu68a4318163ff8e011babdec4caf974c7_3412_96x0_resize_lanczos_3.png" type="image/x-icon">
-<link rel="icon" type="image/png" sizes="48x48" href="/images/logos/logo_small_wb_hu68a4318163ff8e011babdec4caf974c7_3412_48x0_resize_lanczos_3.png">
-<link rel="icon" type="image/png" sizes="96x96" href="/images/logos/logo_small_wb_hu68a4318163ff8e011babdec4caf974c7_3412_96x0_resize_lanczos_3.png">
-<link rel="apple-touch-icon" sizes="144x144" href="/images/logos/logo_small_wb_hu68a4318163ff8e011babdec4caf974c7_3412_144x0_resize_lanczos_3.png">
+<link rel="shortcut icon" href="/images/logos/logo_small_wb_hu_a9331ed94db35663.png" type="image/x-icon">
+<link rel="icon" href="/images/logos/logo_small_wb_hu_a9331ed94db35663.png" type="image/x-icon">
+<link rel="icon" type="image/png" sizes="48x48" href="/images/logos/logo_small_wb_hu_88ce2efb8e2851f7.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/images/logos/logo_small_wb_hu_a9331ed94db35663.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/images/logos/logo_small_wb_hu_bf6340b74362cbec.png">
 
 
 
@@ -310,7 +310,7 @@
 	
 
 	
-	
+
 	
 	
 <header class="navigation">
@@ -543,30 +543,30 @@
 <li><strong>SPONGE</strong>: This spectral clustering technique identifies communities by analyzing the eigenvectors of the signed adjacency matrix.</li>
 </ul>
 <p>They are implemented in Python. First, you need install the necessary libraries (pandas is not strictly necessary to implement the algorithms, but we&rsquo;ll use it throught the tutorial).</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>pip install igraph
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>pip install igraph
 </span></span><span style="display:flex;"><span>pip install git<span style="color:#f92672">+</span>https:<span style="color:#f92672">//</span>github<span style="color:#f92672">.</span>com<span style="color:#f92672">/</span>alan<span style="color:#f92672">-</span>turing<span style="color:#f92672">-</span>institute<span style="color:#f92672">/</span>SigNet<span style="color:#f92672">.</span>git 
 </span></span><span style="display:flex;"><span>pip install pandas
 </span></span></code></pre></div><p>Once installed, you can import the libraries and start working with the algorithms.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> igraph <span style="color:#66d9ef">as</span> ig
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> igraph <span style="color:#66d9ef">as</span> ig
 </span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> signet.cluster <span style="color:#f92672">import</span> Cluster 
 </span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> pandas <span style="color:#66d9ef">as</span> pd
 </span></span></code></pre></div><h4 id="construct-and-visualize-a-signed-network-from-data">Construct and visualize a signed network from data</h4>
 <p>To begin, we&rsquo;ll construct an example network. This network will be constructed from a series of signed interactions among agents: the edgelist. We can use <code>pandas</code> to read the edgelist from a file or from a list of tuples. In this network, 1 means a positive interaction, and -1 means a negative interaction.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>edgelist <span style="color:#f92672">=</span> [(<span style="color:#e6db74">&#39;A&#39;</span>, <span style="color:#e6db74">&#39;B&#39;</span>, <span style="color:#ae81ff">1</span>),
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>edgelist <span style="color:#f92672">=</span> [(<span style="color:#e6db74">&#39;A&#39;</span>, <span style="color:#e6db74">&#39;B&#39;</span>, <span style="color:#ae81ff">1</span>),
 </span></span><span style="display:flex;"><span>            (<span style="color:#e6db74">&#39;A&#39;</span>, <span style="color:#e6db74">&#39;C&#39;</span>, <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>),
 </span></span><span style="display:flex;"><span>            (<span style="color:#e6db74">&#39;B&#39;</span>, <span style="color:#e6db74">&#39;C&#39;</span>, <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>) ]
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># create DataFrame using edgelist</span>
 </span></span><span style="display:flex;"><span>edgelist_df <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>DataFrame(edgelist, columns <span style="color:#f92672">=</span>[<span style="color:#e6db74">&#39;source&#39;</span>, <span style="color:#e6db74">&#39;target&#39;</span>, <span style="color:#e6db74">&#39;weight&#39;</span>])
 </span></span></code></pre></div><p>To construct the signed network, we use  <code>igraph</code>. In the network, the nodes (agents) will be A, B, C, and the edges (interactions) are the ones listed in the edgelist -with their corresponding weights.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>g <span style="color:#f92672">=</span> ig<span style="color:#f92672">.</span>Graph<span style="color:#f92672">.</span>TupleList(edgelist_df<span style="color:#f92672">.</span>itertuples(index<span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>), directed<span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>, weights<span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>, edge_attrs<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;weight&#34;</span>)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>g <span style="color:#f92672">=</span> ig<span style="color:#f92672">.</span>Graph<span style="color:#f92672">.</span>TupleList(edgelist_df<span style="color:#f92672">.</span>itertuples(index<span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>), directed<span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>, weights<span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>, edge_attrs<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;weight&#34;</span>)
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>ig<span style="color:#f92672">.</span>summary(g)
 </span></span></code></pre></div><pre><code>IGRAPH UNW- 3 3 -- 
 + attr: name (v), weight (e)
 </code></pre>
 <p>Then, we can plot our network, still using <code>igraph</code>.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># color the edges based on their weight</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># color the edges based on their weight</span>
 </span></span><span style="display:flex;"><span>g<span style="color:#f92672">.</span>es[<span style="color:#e6db74">&#34;color&#34;</span>] <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#34;#00BFB3&#34;</span> <span style="color:#66d9ef">if</span> edge[<span style="color:#e6db74">&#39;weight&#39;</span>] <span style="color:#f92672">&gt;</span><span style="color:#ae81ff">0</span>  <span style="color:#66d9ef">else</span> <span style="color:#e6db74">&#34;#F05D5E&#34;</span>
 </span></span><span style="display:flex;"><span>                 <span style="color:#66d9ef">for</span> edge <span style="color:#f92672">in</span> g<span style="color:#f92672">.</span>es]
 </span></span><span style="display:flex;"><span>ig<span style="color:#f92672">.</span>plot(g, vertex_color<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;grey&#34;</span>, edge_color<span style="color:#f92672">=</span>g<span style="color:#f92672">.</span>es[<span style="color:#e6db74">&#34;color&#34;</span>], edge_width<span style="color:#f92672">=</span><span style="color:#ae81ff">5</span>, vertex_label<span style="color:#f92672">=</span>g<span style="color:#f92672">.</span>vs[<span style="color:#e6db74">&#34;name&#34;</span>])
@@ -658,9 +658,9 @@
             class="img "
             width="293"
             height="379"
-            src="/images/tutorials/community-detection/graph_hu3977a4b2f6b09f42f58f5ed87501152e_266667_367x379_fit_q100_h2_lanczos_3.webp"
+            src="/images/tutorials/community-detection/graph_hu_44571e1a082f5afa.webp"
             alt="zenodo_project"
-            onerror="this.onerror='null';this.src='\/images\/tutorials\/community-detection\/graph_hu3977a4b2f6b09f42f58f5ed87501152e_266667_367x379_fit_q100_lanczos_3.png'" />
+            onerror="this.onerror='null';this.src='\/images\/tutorials\/community-detection\/graph_hu_64d30178a92df495.png'" />
       
         <figcaption id="caption-Figure 1. A signed network" class="caption-Figure-1-A-signed-network">
           Figure 1. <em>A signed network</em>
@@ -686,7 +686,7 @@
 <h4 id="detect-communities">Detect communities</h4>
 <h5 id="spinglass">Spinglass</h5>
 <p>The <code>community-spinglass</code> method is a community detection approach grounded in statistical mechanics. Initially proposed by Reichardt and Bornholdt for unsigned networks, it was later extended by Traag and Bruggeman later extended to signed networks. This algorithm is implemented in the <code>igraph</code> package.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>spinglass <span style="color:#f92672">=</span> g<span style="color:#f92672">.</span>community_spinglass(weights<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;weight&#34;</span>, spins<span style="color:#f92672">=</span><span style="color:#ae81ff">50</span>, gamma<span style="color:#f92672">=</span> <span style="color:#ae81ff">0.5</span>, lambda_<span style="color:#f92672">=</span> <span style="color:#ae81ff">0.5</span>, implementation<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;neg&#39;</span>)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>spinglass <span style="color:#f92672">=</span> g<span style="color:#f92672">.</span>community_spinglass(weights<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;weight&#34;</span>, spins<span style="color:#f92672">=</span><span style="color:#ae81ff">50</span>, gamma<span style="color:#f92672">=</span> <span style="color:#ae81ff">0.5</span>, lambda_<span style="color:#f92672">=</span> <span style="color:#ae81ff">0.5</span>, implementation<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;neg&#39;</span>)
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> i, node <span style="color:#f92672">in</span> enumerate(g<span style="color:#f92672">.</span>vs):
 </span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#39;node </span><span style="color:#e6db74">{</span>node[<span style="color:#e6db74">&#34;name&#34;</span>]<span style="color:#e6db74">}</span><span style="color:#e6db74">: community </span><span style="color:#e6db74">{</span>spinglass<span style="color:#f92672">.</span>membership[i]<span style="color:#e6db74">}</span><span style="color:#e6db74">&#39;</span>) 
 </span></span></code></pre></div><pre><code>node A: community 0
@@ -696,7 +696,7 @@ node C: community 1
 <p>Changing the parameters <code>gamma</code> and <code>lambda_</code> gives more or less importance to positive or negative ties within a community, depending on whether we want agents with negative interactions to be found in the same group of agents.</p>
 <h5 id="sponge">SPONGE</h5>
 <p>The <code>SPONGE</code> method (Signed Positive Over Negative Generalized Eigenproblem), introduced by Cucuringu et al. (2019) is based on minimizing the number of violations. These &ldquo;violations&rdquo; consist of positive edges between communities and negative edges within communities. An open-source Python implementation of the <code>SPONGE</code> algorithm is available on GitHub.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># get the adjacency matrix of the network (only signs, not weights)</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># get the adjacency matrix of the network (only signs, not weights)</span>
 </span></span><span style="display:flex;"><span>A <span style="color:#f92672">=</span> g<span style="color:#f92672">.</span>get_adjacency_sparse(attribute<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;weight&#39;</span>)<span style="color:#f92672">.</span>sign()
 </span></span><span style="display:flex;"><span>c <span style="color:#f92672">=</span> Cluster((A<span style="color:#f92672">.</span>multiply(A<span style="color:#f92672">&gt;</span><span style="color:#ae81ff">0</span>), <span style="color:#f92672">-</span>A<span style="color:#f92672">.</span>multiply(A<span style="color:#f92672">&lt;</span><span style="color:#ae81ff">0</span>)))
 </span></span><span style="display:flex;"><span>sponge <span style="color:#f92672">=</span> c<span style="color:#f92672">.</span>SPONGE(k<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span>)
@@ -952,7 +952,7 @@ node C: community 1
 
 
 
-<script crossorigin="anonymous" defer  integrity="sha512-dCIZHcmW8pL&#43;DPLWQFFEYQLuqKBywPohaIj0FJKVrrlZ6iljjXafVk&#43;5hh&#43;sRe8ffzZ6Hh9AK4OC6NcwxyEyNQ==" type="application/javascript">(() => {
+<script crossorigin="anonymous" defer  integrity="sha512-ViniUxt4SXT/zp/QUEsaapP5q49gJyiD3w26VBvYXN1FTJjsC2Ph9o72hD04ywD7dojnLvMVHHsUESthRC8q3Q==" type="application/javascript">(() => {
   var __create = Object.create;
   var __defProp = Object.defineProperty;
   var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
@@ -979,9 +979,9 @@ node C: community 1
     mod
   ));
 
-  // ns-hugo:/tmp/hugo_cache/modules/filecache/modules/pkg/mod/github.com/gohugoio/hugo-mod-jslibs-dist/popperjs/v2@v2.21100.20000/package/dist/cjs/popper.js
+  // ns-hugo-imp:/tmp/hugo_cache/modules/filecache/modules/pkg/mod/github.com/gohugoio/hugo-mod-jslibs-dist/popperjs/v2@v2.21100.20000/package/dist/cjs/popper.js
   var require_popper = __commonJS({
-    "ns-hugo:/tmp/hugo_cache/modules/filecache/modules/pkg/mod/github.com/gohugoio/hugo-mod-jslibs-dist/popperjs/v2@v2.21100.20000/package/dist/cjs/popper.js"(exports) {
+    "ns-hugo-imp:/tmp/hugo_cache/modules/filecache/modules/pkg/mod/github.com/gohugoio/hugo-mod-jslibs-dist/popperjs/v2@v2.21100.20000/package/dist/cjs/popper.js"(exports) {
       "use strict";
       Object.defineProperty(exports, "__esModule", { value: true });
       function getWindow(node) {
@@ -2189,8 +2189,7 @@ node C: community 1
           };
           for (var _i = numberOfChecks; _i > 0; _i--) {
             var _ret = _loop(_i);
-            if (_ret === "break")
-              break;
+            if (_ret === "break") break;
           }
         }
         if (state.placement !== firstFittingPlacement) {
@@ -2455,7 +2454,7 @@ node C: community 1
     }
   });
 
-  // ns-hugo:/tmp/hugo_cache/modules/filecache/modules/pkg/mod/github.com/twbs/bootstrap@v5.3.2+incompatible/js/src/dom/data.js
+  // ns-hugo-imp:/tmp/hugo_cache/modules/filecache/modules/pkg/mod/github.com/twbs/bootstrap@v5.3.2+incompatible/js/src/dom/data.js
   var elementMap = /* @__PURE__ */ new Map();
   var data_default = {
     set(element, key, instance) {
@@ -2487,7 +2486,7 @@ node C: community 1
     }
   };
 
-  // ns-hugo:/tmp/hugo_cache/modules/filecache/modules/pkg/mod/github.com/twbs/bootstrap@v5.3.2+incompatible/js/src/util/index.js
+  // ns-hugo-imp:/tmp/hugo_cache/modules/filecache/modules/pkg/mod/github.com/twbs/bootstrap@v5.3.2+incompatible/js/src/util/index.js
   var MILLISECONDS_MULTIPLIER = 1e3;
   var TRANSITION_END = "transitionend";
   var parseSelector = (selector) => {
@@ -2650,7 +2649,7 @@ node C: community 1
     return list[Math.max(0, Math.min(index, listLength - 1))];
   };
 
-  // ns-hugo:/tmp/hugo_cache/modules/filecache/modules/pkg/mod/github.com/twbs/bootstrap@v5.3.2+incompatible/js/src/dom/event-handler.js
+  // ns-hugo-imp:/tmp/hugo_cache/modules/filecache/modules/pkg/mod/github.com/twbs/bootstrap@v5.3.2+incompatible/js/src/dom/event-handler.js
   var namespaceRegex = /[^.]*(?=\..*)\.|.*/;
   var stripNameRegex = /\..*/;
   var stripUidRegex = /::\d+$/;
@@ -2889,7 +2888,7 @@ node C: community 1
   }
   var event_handler_default = EventHandler;
 
-  // ns-hugo:/tmp/hugo_cache/modules/filecache/modules/pkg/mod/github.com/twbs/bootstrap@v5.3.2+incompatible/js/src/dom/manipulator.js
+  // ns-hugo-imp:/tmp/hugo_cache/modules/filecache/modules/pkg/mod/github.com/twbs/bootstrap@v5.3.2+incompatible/js/src/dom/manipulator.js
   function normalizeData(value) {
     if (value === "true") {
       return true;
@@ -2941,7 +2940,7 @@ node C: community 1
   };
   var manipulator_default = Manipulator;
 
-  // ns-hugo:/tmp/hugo_cache/modules/filecache/modules/pkg/mod/github.com/twbs/bootstrap@v5.3.2+incompatible/js/src/util/config.js
+  // ns-hugo-imp:/tmp/hugo_cache/modules/filecache/modules/pkg/mod/github.com/twbs/bootstrap@v5.3.2+incompatible/js/src/util/config.js
   var Config = class {
     // Getters
     static get Default() {
@@ -2985,7 +2984,7 @@ node C: community 1
   };
   var config_default = Config;
 
-  // ns-hugo:/tmp/hugo_cache/modules/filecache/modules/pkg/mod/github.com/twbs/bootstrap@v5.3.2+incompatible/js/src/base-component.js
+  // ns-hugo-imp:/tmp/hugo_cache/modules/filecache/modules/pkg/mod/github.com/twbs/bootstrap@v5.3.2+incompatible/js/src/base-component.js
   var VERSION = "5.3.2";
   var BaseComponent = class extends config_default {
     constructor(element, config) {
@@ -3037,7 +3036,7 @@ node C: community 1
   };
   var base_component_default = BaseComponent;
 
-  // ns-hugo:/tmp/hugo_cache/modules/filecache/modules/pkg/mod/github.com/twbs/bootstrap@v5.3.2+incompatible/js/src/dom/selector-engine.js
+  // ns-hugo-imp:/tmp/hugo_cache/modules/filecache/modules/pkg/mod/github.com/twbs/bootstrap@v5.3.2+incompatible/js/src/dom/selector-engine.js
   var getSelector = (element) => {
     let selector = element.getAttribute("data-bs-target");
     if (!selector || selector === "#") {
@@ -3123,7 +3122,7 @@ node C: community 1
   };
   var selector_engine_default = SelectorEngine;
 
-  // ns-hugo:/tmp/hugo_cache/modules/filecache/modules/pkg/mod/github.com/twbs/bootstrap@v5.3.2+incompatible/js/src/collapse.js
+  // ns-hugo-imp:/tmp/hugo_cache/modules/filecache/modules/pkg/mod/github.com/twbs/bootstrap@v5.3.2+incompatible/js/src/collapse.js
   var NAME = "collapse";
   var DATA_KEY = "bs.collapse";
   var EVENT_KEY = `.${DATA_KEY}`;
@@ -3319,7 +3318,7 @@ node C: community 1
   });
   defineJQueryPlugin(Collapse);
 
-  // ns-hugo:/tmp/hugo_cache/modules/filecache/modules/pkg/mod/github.com/twbs/bootstrap@v5.3.2+incompatible/js/src/dropdown.js
+  // ns-hugo-imp:/tmp/hugo_cache/modules/filecache/modules/pkg/mod/github.com/twbs/bootstrap@v5.3.2+incompatible/js/src/dropdown.js
   var Popper = __toESM(require_popper());
   var NAME2 = "dropdown";
   var DATA_KEY2 = "bs.dropdown";
@@ -3628,7 +3627,7 @@ node C: community 1
   });
   defineJQueryPlugin(Dropdown);
 
-  // ns-hugo:/tmp/hugo_cache/modules/filecache/modules/pkg/mod/github.com/twbs/bootstrap@v5.3.2+incompatible/js/src/util/backdrop.js
+  // ns-hugo-imp:/tmp/hugo_cache/modules/filecache/modules/pkg/mod/github.com/twbs/bootstrap@v5.3.2+incompatible/js/src/util/backdrop.js
   var NAME3 = "backdrop";
   var CLASS_NAME_FADE = "fade";
   var CLASS_NAME_SHOW3 = "show";
@@ -3734,7 +3733,7 @@ node C: community 1
   };
   var backdrop_default = Backdrop;
 
-  // ns-hugo:/tmp/hugo_cache/modules/filecache/modules/pkg/mod/github.com/twbs/bootstrap@v5.3.2+incompatible/js/src/util/component-functions.js
+  // ns-hugo-imp:/tmp/hugo_cache/modules/filecache/modules/pkg/mod/github.com/twbs/bootstrap@v5.3.2+incompatible/js/src/util/component-functions.js
   var enableDismissTrigger = (component, method = "hide") => {
     const clickEvent = `click.dismiss${component.EVENT_KEY}`;
     const name = component.NAME;
@@ -3751,7 +3750,7 @@ node C: community 1
     });
   };
 
-  // ns-hugo:/tmp/hugo_cache/modules/filecache/modules/pkg/mod/github.com/twbs/bootstrap@v5.3.2+incompatible/js/src/util/focustrap.js
+  // ns-hugo-imp:/tmp/hugo_cache/modules/filecache/modules/pkg/mod/github.com/twbs/bootstrap@v5.3.2+incompatible/js/src/util/focustrap.js
   var NAME4 = "focustrap";
   var DATA_KEY3 = "bs.focustrap";
   var EVENT_KEY3 = `.${DATA_KEY3}`;
@@ -3830,7 +3829,7 @@ node C: community 1
   };
   var focustrap_default = FocusTrap;
 
-  // ns-hugo:/tmp/hugo_cache/modules/filecache/modules/pkg/mod/github.com/twbs/bootstrap@v5.3.2+incompatible/js/src/util/scrollbar.js
+  // ns-hugo-imp:/tmp/hugo_cache/modules/filecache/modules/pkg/mod/github.com/twbs/bootstrap@v5.3.2+incompatible/js/src/util/scrollbar.js
   var SELECTOR_FIXED_CONTENT = ".fixed-top, .fixed-bottom, .is-fixed, .sticky-top";
   var SELECTOR_STICKY_CONTENT = ".sticky-top";
   var PROPERTY_PADDING = "padding-right";
@@ -3907,7 +3906,7 @@ node C: community 1
   };
   var scrollbar_default = ScrollBarHelper;
 
-  // ns-hugo:/tmp/hugo_cache/modules/filecache/modules/pkg/mod/github.com/twbs/bootstrap@v5.3.2+incompatible/js/src/modal.js
+  // ns-hugo-imp:/tmp/hugo_cache/modules/filecache/modules/pkg/mod/github.com/twbs/bootstrap@v5.3.2+incompatible/js/src/modal.js
   var NAME5 = "modal";
   var DATA_KEY4 = "bs.modal";
   var EVENT_KEY4 = `.${DATA_KEY4}`;
@@ -4174,7 +4173,7 @@ node C: community 1
   enableDismissTrigger(Modal);
   defineJQueryPlugin(Modal);
 
-  // ns-hugo:/tmp/hugo_cache/modules/filecache/modules/pkg/mod/github.com/twbs/bootstrap@v5.3.2+incompatible/js/src/tab.js
+  // ns-hugo-imp:/tmp/hugo_cache/modules/filecache/modules/pkg/mod/github.com/twbs/bootstrap@v5.3.2+incompatible/js/src/tab.js
   var NAME6 = "tab";
   var DATA_KEY5 = "bs.tab";
   var EVENT_KEY5 = `.${DATA_KEY5}`;
@@ -4423,8 +4422,8 @@ node C: community 1
 
 <script
   crossorigin="anonymous"
-  integrity="sha256-SyT6nS49vJ1/Zx1siX9mn5ItqSp7UqeLYc/nzkEpijg="
-  src="/js/scripts.min.4b24fa9d2e3dbc9d7f671d6c897f669f922da92a7b52a78b61cfe7ce41298a38.js"></script>
+  integrity="sha256-GbV8tt3Br424vpm8wFXcEegeMsaMyouy3Q6aqbmdy/c="
+  src="/js/scripts.min.19b57cb6ddc1af8db8be99bcc055dc11e81e32c68cca8bb2dd0e9aa9b99dcbf7.js"></script>
 
 
 

@@ -25,11 +25,11 @@
 
 
 
-<link rel="shortcut icon" href="/images/logos/logo_small_wb_hu68a4318163ff8e011babdec4caf974c7_3412_96x0_resize_lanczos_3.png" type="image/x-icon">
-<link rel="icon" href="/images/logos/logo_small_wb_hu68a4318163ff8e011babdec4caf974c7_3412_96x0_resize_lanczos_3.png" type="image/x-icon">
-<link rel="icon" type="image/png" sizes="48x48" href="/images/logos/logo_small_wb_hu68a4318163ff8e011babdec4caf974c7_3412_48x0_resize_lanczos_3.png">
-<link rel="icon" type="image/png" sizes="96x96" href="/images/logos/logo_small_wb_hu68a4318163ff8e011babdec4caf974c7_3412_96x0_resize_lanczos_3.png">
-<link rel="apple-touch-icon" sizes="144x144" href="/images/logos/logo_small_wb_hu68a4318163ff8e011babdec4caf974c7_3412_144x0_resize_lanczos_3.png">
+<link rel="shortcut icon" href="/images/logos/logo_small_wb_hu_a9331ed94db35663.png" type="image/x-icon">
+<link rel="icon" href="/images/logos/logo_small_wb_hu_a9331ed94db35663.png" type="image/x-icon">
+<link rel="icon" type="image/png" sizes="48x48" href="/images/logos/logo_small_wb_hu_88ce2efb8e2851f7.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/images/logos/logo_small_wb_hu_a9331ed94db35663.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/images/logos/logo_small_wb_hu_bf6340b74362cbec.png">
 
 
 
@@ -310,7 +310,7 @@
 	
 
 	
-	
+
 	
 	
 <header class="navigation">
@@ -555,12 +555,12 @@
 
 
 ><code>{lubridate}</code></a> which is part of the <code>{tidyverse}</code> since version 2.0.0.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#a6e22e">library</span>(tidyverse)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#a6e22e">library</span>(tidyverse)
 </span></span></code></pre></div><h4 id="the-data">The data</h4>
 <p>Obviously, we cannot share actual Statistics Netherlands microdata here, so we first generate some tables that capture the gist of the data structure. First, let’s generate some basic person identifiers and some info about each person:</p>
 <details>
 <summary>Code</summary>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>(person_df <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">tibble</span>(
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>(person_df <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">tibble</span>(
 </span></span><span style="display:flex;"><span>  person_id <span style="color:#f92672">=</span> <span style="color:#a6e22e">factor</span>(<span style="color:#a6e22e">c</span>(<span style="color:#e6db74">&#34;A10232&#34;</span>, <span style="color:#e6db74">&#34;A39211&#34;</span>, <span style="color:#e6db74">&#34;A28183&#34;</span>, <span style="color:#e6db74">&#34;A10124&#34;</span>)), 
 </span></span><span style="display:flex;"><span>  firstname <span style="color:#f92672">=</span> <span style="color:#a6e22e">c</span>(<span style="color:#e6db74">&#34;Aron&#34;</span>, <span style="color:#e6db74">&#34;Beth&#34;</span>, <span style="color:#e6db74">&#34;Carol&#34;</span>, <span style="color:#e6db74">&#34;Dave&#34;</span>),
 </span></span><span style="display:flex;"><span>  income_avg <span style="color:#f92672">=</span> <span style="color:#a6e22e">c</span>(<span style="color:#ae81ff">14001</span>, <span style="color:#ae81ff">45304</span>, <span style="color:#ae81ff">110123</span>, <span style="color:#ae81ff">43078</span>)
@@ -577,7 +577,7 @@
 <p>Then, we create a small example of housing transaction register data. In this data, for any period where a person is not registered to a house, they are assumed to live abroad (because everyone in the Netherlands is required to be registered at an address).</p>
 <details>
 <summary>Code</summary>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>(house_df <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">tibble</span>(
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>(house_df <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">tibble</span>(
 </span></span><span style="display:flex;"><span>  person_id  <span style="color:#f92672">=</span> <span style="color:#a6e22e">factor</span>(<span style="color:#a6e22e">c</span>(<span style="color:#e6db74">&#34;A10232&#34;</span>, <span style="color:#e6db74">&#34;A10232&#34;</span>, <span style="color:#e6db74">&#34;A10232&#34;</span>, <span style="color:#e6db74">&#34;A39211&#34;</span>, <span style="color:#e6db74">&#34;A39211&#34;</span>, <span style="color:#e6db74">&#34;A28183&#34;</span>, <span style="color:#e6db74">&#34;A28183&#34;</span>, <span style="color:#e6db74">&#34;A10124&#34;</span>)),
 </span></span><span style="display:flex;"><span>  house_id   <span style="color:#f92672">=</span> <span style="color:#a6e22e">factor</span>(<span style="color:#a6e22e">c</span>(<span style="color:#e6db74">&#34;H1200E&#34;</span>, <span style="color:#e6db74">&#34;H1243D&#34;</span>, <span style="color:#e6db74">&#34;H3432B&#34;</span>, <span style="color:#e6db74">&#34;HA7382&#34;</span>, <span style="color:#e6db74">&#34;H53621&#34;</span>, <span style="color:#e6db74">&#34;HC39EF&#34;</span>, <span style="color:#e6db74">&#34;HA3A01&#34;</span>, <span style="color:#e6db74">&#34;H222BA&#34;</span>)),
 </span></span><span style="display:flex;"><span>  start_date <span style="color:#f92672">=</span> <span style="color:#a6e22e">ymd</span>(<span style="color:#a6e22e">c</span>(<span style="color:#e6db74">&#34;20200101&#34;</span>, <span style="color:#e6db74">&#34;20200112&#34;</span>, <span style="color:#e6db74">&#34;20211120&#34;</span>, <span style="color:#e6db74">&#34;19800101&#34;</span>, <span style="color:#e6db74">&#34;19900101&#34;</span>, <span style="color:#e6db74">&#34;20170303&#34;</span>, <span style="color:#e6db74">&#34;20190202&#34;</span>, <span style="color:#e6db74">&#34;19931023&#34;</span>)),
@@ -613,7 +613,7 @@
 >here</a></li>
 </ul>
 <p>So let’s transform these start and end columns into a single interval column!</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>house_df <span style="color:#f92672">&lt;-</span> 
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>house_df <span style="color:#f92672">&lt;-</span> 
 </span></span><span style="display:flex;"><span>  house_df <span style="color:#f92672">|&gt;</span> 
 </span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">mutate</span>(
 </span></span><span style="display:flex;"><span>    <span style="color:#75715e"># create the interval</span>
@@ -637,7 +637,7 @@
 </code></pre>
 <p>We will want to compare this interval with a reference interval to compute the proportion of time that a person lived in the Netherlands within the reference interval. Therefore, we quickly define a new interval operation which truncates an interval to a reference interval.
 Don’t worry too much about it for now, we will use it later. Do notice that we’re always using the <code>int_*()</code> functions defined by <code>{lubridate}</code> to interact with the interval objects.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#75715e"># utility function to truncate an interval object to limits (also vectorized so it works in mutate())</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#75715e"># utility function to truncate an interval object to limits (also vectorized so it works in mutate())</span>
 </span></span><span style="display:flex;"><span>int_truncate <span style="color:#f92672">&lt;-</span> <span style="color:#66d9ef">function</span>(int, int_limits) {
 </span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">int_start</span>(int) <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">pmax</span>(<span style="color:#a6e22e">int_start</span>(int), <span style="color:#a6e22e">int_start</span>(int_limits))
 </span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">int_end</span>(int)   <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">pmin</span>(<span style="color:#a6e22e">int_end</span>(int), <span style="color:#a6e22e">int_end</span>(int_limits))
@@ -656,7 +656,7 @@ extensive use of the <code>{tidyverse}</code>, with verbs like <code>filter()</c
 
 ><code>{dplyr}</code>
 documentation</a> (but of course you can also use your own flavour of data processing, such as <code>{data.table}</code> or base <code>R</code>).</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#75715e"># function to compute overlap proportion per person</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#75715e"># function to compute overlap proportion per person</span>
 </span></span><span style="display:flex;"><span>proportion_tab <span style="color:#f92672">&lt;-</span> <span style="color:#66d9ef">function</span>(housing_data, reference_interval) {
 </span></span><span style="display:flex;"><span>  
 </span></span><span style="display:flex;"><span>  <span style="color:#75715e"># start with the housing data</span>
@@ -682,7 +682,7 @@ documentation</a> (but of course you can also use your own flavour of data proce
 </span></span><span style="display:flex;"><span>  
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>Now we’ve defined this function, let’s try it out for a specific year such as 2017!</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>int_2017  <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">interval</span>(<span style="color:#a6e22e">ymd</span>(<span style="color:#e6db74">&#34;20170101&#34;</span>), <span style="color:#a6e22e">ymd</span>(<span style="color:#e6db74">&#34;20171231&#34;</span>))
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>int_2017  <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">interval</span>(<span style="color:#a6e22e">ymd</span>(<span style="color:#e6db74">&#34;20170101&#34;</span>), <span style="color:#a6e22e">ymd</span>(<span style="color:#e6db74">&#34;20171231&#34;</span>))
 </span></span><span style="display:flex;"><span>prop_2017 <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">proportion_tab</span>(house_df, int_2017)
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>prop_2017
@@ -696,7 +696,7 @@ documentation</a> (but of course you can also use your own flavour of data proce
 <p>Now we’ve computed this proportion, notice that we only have three people. This means that the other person was living abroad in that time,
 with a proportion in the Netherlands of 0. To nicely display this information, we can join the proportion table with the original person
 dataset and replace the <code>NA</code> values in the proportion column with 0.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#a6e22e">left_join</span>(person_df, prop_2017, by <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;person_id&#34;</span>) <span style="color:#f92672">|&gt;</span> 
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#a6e22e">left_join</span>(person_df, prop_2017, by <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;person_id&#34;</span>) <span style="color:#f92672">|&gt;</span> 
 </span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">mutate</span>(prop_in_nl <span style="color:#f92672">=</span> <span style="color:#a6e22e">replace_na</span>(prop_in_nl, <span style="color:#ae81ff">0</span>)) 
 </span></span></code></pre></div><pre><code># A tibble: 4 × 4
   person_id firstname income_avg prop_in_nl
@@ -734,7 +734,7 @@ Statistics Netherlands microdata or other complex or large social science datase
 <h4 id="bonus-appendix-multiple-time-intervals">Bonus appendix: multiple time intervals</h4>
 <p>Because we created a function that takes in the transaction data and a reference interval, we can do the same thing for multiple time intervals
 (e.g., years) and combine the data together in one wide or long dataset. This is one way to do this:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#a6e22e">library</span>(glue) <span style="color:#75715e"># for easy string manipulation</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#a6e22e">library</span>(glue) <span style="color:#75715e"># for easy string manipulation</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># initialize an empty dataframe with all our columns</span>
 </span></span><span style="display:flex;"><span>nl_prop <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">tibble</span>(person_id <span style="color:#f92672">=</span> <span style="color:#a6e22e">factor</span>(), prop_in_nl <span style="color:#f92672">=</span> <span style="color:#a6e22e">double</span>(), yr <span style="color:#f92672">=</span> <span style="color:#a6e22e">integer</span>())
@@ -953,7 +953,7 @@ Statistics Netherlands microdata or other complex or large social science datase
 
 
 
-<script crossorigin="anonymous" defer  integrity="sha512-dCIZHcmW8pL&#43;DPLWQFFEYQLuqKBywPohaIj0FJKVrrlZ6iljjXafVk&#43;5hh&#43;sRe8ffzZ6Hh9AK4OC6NcwxyEyNQ==" type="application/javascript">(() => {
+<script crossorigin="anonymous" defer  integrity="sha512-ViniUxt4SXT/zp/QUEsaapP5q49gJyiD3w26VBvYXN1FTJjsC2Ph9o72hD04ywD7dojnLvMVHHsUESthRC8q3Q==" type="application/javascript">(() => {
   var __create = Object.create;
   var __defProp = Object.defineProperty;
   var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
@@ -980,9 +980,9 @@ Statistics Netherlands microdata or other complex or large social science datase
     mod
   ));
 
-  // ns-hugo:/tmp/hugo_cache/modules/filecache/modules/pkg/mod/github.com/gohugoio/hugo-mod-jslibs-dist/popperjs/v2@v2.21100.20000/package/dist/cjs/popper.js
+  // ns-hugo-imp:/tmp/hugo_cache/modules/filecache/modules/pkg/mod/github.com/gohugoio/hugo-mod-jslibs-dist/popperjs/v2@v2.21100.20000/package/dist/cjs/popper.js
   var require_popper = __commonJS({
-    "ns-hugo:/tmp/hugo_cache/modules/filecache/modules/pkg/mod/github.com/gohugoio/hugo-mod-jslibs-dist/popperjs/v2@v2.21100.20000/package/dist/cjs/popper.js"(exports) {
+    "ns-hugo-imp:/tmp/hugo_cache/modules/filecache/modules/pkg/mod/github.com/gohugoio/hugo-mod-jslibs-dist/popperjs/v2@v2.21100.20000/package/dist/cjs/popper.js"(exports) {
       "use strict";
       Object.defineProperty(exports, "__esModule", { value: true });
       function getWindow(node) {
@@ -2190,8 +2190,7 @@ Statistics Netherlands microdata or other complex or large social science datase
           };
           for (var _i = numberOfChecks; _i > 0; _i--) {
             var _ret = _loop(_i);
-            if (_ret === "break")
-              break;
+            if (_ret === "break") break;
           }
         }
         if (state.placement !== firstFittingPlacement) {
@@ -2456,7 +2455,7 @@ Statistics Netherlands microdata or other complex or large social science datase
     }
   });
 
-  // ns-hugo:/tmp/hugo_cache/modules/filecache/modules/pkg/mod/github.com/twbs/bootstrap@v5.3.2+incompatible/js/src/dom/data.js
+  // ns-hugo-imp:/tmp/hugo_cache/modules/filecache/modules/pkg/mod/github.com/twbs/bootstrap@v5.3.2+incompatible/js/src/dom/data.js
   var elementMap = /* @__PURE__ */ new Map();
   var data_default = {
     set(element, key, instance) {
@@ -2488,7 +2487,7 @@ Statistics Netherlands microdata or other complex or large social science datase
     }
   };
 
-  // ns-hugo:/tmp/hugo_cache/modules/filecache/modules/pkg/mod/github.com/twbs/bootstrap@v5.3.2+incompatible/js/src/util/index.js
+  // ns-hugo-imp:/tmp/hugo_cache/modules/filecache/modules/pkg/mod/github.com/twbs/bootstrap@v5.3.2+incompatible/js/src/util/index.js
   var MILLISECONDS_MULTIPLIER = 1e3;
   var TRANSITION_END = "transitionend";
   var parseSelector = (selector) => {
@@ -2651,7 +2650,7 @@ Statistics Netherlands microdata or other complex or large social science datase
     return list[Math.max(0, Math.min(index, listLength - 1))];
   };
 
-  // ns-hugo:/tmp/hugo_cache/modules/filecache/modules/pkg/mod/github.com/twbs/bootstrap@v5.3.2+incompatible/js/src/dom/event-handler.js
+  // ns-hugo-imp:/tmp/hugo_cache/modules/filecache/modules/pkg/mod/github.com/twbs/bootstrap@v5.3.2+incompatible/js/src/dom/event-handler.js
   var namespaceRegex = /[^.]*(?=\..*)\.|.*/;
   var stripNameRegex = /\..*/;
   var stripUidRegex = /::\d+$/;
@@ -2890,7 +2889,7 @@ Statistics Netherlands microdata or other complex or large social science datase
   }
   var event_handler_default = EventHandler;
 
-  // ns-hugo:/tmp/hugo_cache/modules/filecache/modules/pkg/mod/github.com/twbs/bootstrap@v5.3.2+incompatible/js/src/dom/manipulator.js
+  // ns-hugo-imp:/tmp/hugo_cache/modules/filecache/modules/pkg/mod/github.com/twbs/bootstrap@v5.3.2+incompatible/js/src/dom/manipulator.js
   function normalizeData(value) {
     if (value === "true") {
       return true;
@@ -2942,7 +2941,7 @@ Statistics Netherlands microdata or other complex or large social science datase
   };
   var manipulator_default = Manipulator;
 
-  // ns-hugo:/tmp/hugo_cache/modules/filecache/modules/pkg/mod/github.com/twbs/bootstrap@v5.3.2+incompatible/js/src/util/config.js
+  // ns-hugo-imp:/tmp/hugo_cache/modules/filecache/modules/pkg/mod/github.com/twbs/bootstrap@v5.3.2+incompatible/js/src/util/config.js
   var Config = class {
     // Getters
     static get Default() {
@@ -2986,7 +2985,7 @@ Statistics Netherlands microdata or other complex or large social science datase
   };
   var config_default = Config;
 
-  // ns-hugo:/tmp/hugo_cache/modules/filecache/modules/pkg/mod/github.com/twbs/bootstrap@v5.3.2+incompatible/js/src/base-component.js
+  // ns-hugo-imp:/tmp/hugo_cache/modules/filecache/modules/pkg/mod/github.com/twbs/bootstrap@v5.3.2+incompatible/js/src/base-component.js
   var VERSION = "5.3.2";
   var BaseComponent = class extends config_default {
     constructor(element, config) {
@@ -3038,7 +3037,7 @@ Statistics Netherlands microdata or other complex or large social science datase
   };
   var base_component_default = BaseComponent;
 
-  // ns-hugo:/tmp/hugo_cache/modules/filecache/modules/pkg/mod/github.com/twbs/bootstrap@v5.3.2+incompatible/js/src/dom/selector-engine.js
+  // ns-hugo-imp:/tmp/hugo_cache/modules/filecache/modules/pkg/mod/github.com/twbs/bootstrap@v5.3.2+incompatible/js/src/dom/selector-engine.js
   var getSelector = (element) => {
     let selector = element.getAttribute("data-bs-target");
     if (!selector || selector === "#") {
@@ -3124,7 +3123,7 @@ Statistics Netherlands microdata or other complex or large social science datase
   };
   var selector_engine_default = SelectorEngine;
 
-  // ns-hugo:/tmp/hugo_cache/modules/filecache/modules/pkg/mod/github.com/twbs/bootstrap@v5.3.2+incompatible/js/src/collapse.js
+  // ns-hugo-imp:/tmp/hugo_cache/modules/filecache/modules/pkg/mod/github.com/twbs/bootstrap@v5.3.2+incompatible/js/src/collapse.js
   var NAME = "collapse";
   var DATA_KEY = "bs.collapse";
   var EVENT_KEY = `.${DATA_KEY}`;
@@ -3320,7 +3319,7 @@ Statistics Netherlands microdata or other complex or large social science datase
   });
   defineJQueryPlugin(Collapse);
 
-  // ns-hugo:/tmp/hugo_cache/modules/filecache/modules/pkg/mod/github.com/twbs/bootstrap@v5.3.2+incompatible/js/src/dropdown.js
+  // ns-hugo-imp:/tmp/hugo_cache/modules/filecache/modules/pkg/mod/github.com/twbs/bootstrap@v5.3.2+incompatible/js/src/dropdown.js
   var Popper = __toESM(require_popper());
   var NAME2 = "dropdown";
   var DATA_KEY2 = "bs.dropdown";
@@ -3629,7 +3628,7 @@ Statistics Netherlands microdata or other complex or large social science datase
   });
   defineJQueryPlugin(Dropdown);
 
-  // ns-hugo:/tmp/hugo_cache/modules/filecache/modules/pkg/mod/github.com/twbs/bootstrap@v5.3.2+incompatible/js/src/util/backdrop.js
+  // ns-hugo-imp:/tmp/hugo_cache/modules/filecache/modules/pkg/mod/github.com/twbs/bootstrap@v5.3.2+incompatible/js/src/util/backdrop.js
   var NAME3 = "backdrop";
   var CLASS_NAME_FADE = "fade";
   var CLASS_NAME_SHOW3 = "show";
@@ -3735,7 +3734,7 @@ Statistics Netherlands microdata or other complex or large social science datase
   };
   var backdrop_default = Backdrop;
 
-  // ns-hugo:/tmp/hugo_cache/modules/filecache/modules/pkg/mod/github.com/twbs/bootstrap@v5.3.2+incompatible/js/src/util/component-functions.js
+  // ns-hugo-imp:/tmp/hugo_cache/modules/filecache/modules/pkg/mod/github.com/twbs/bootstrap@v5.3.2+incompatible/js/src/util/component-functions.js
   var enableDismissTrigger = (component, method = "hide") => {
     const clickEvent = `click.dismiss${component.EVENT_KEY}`;
     const name = component.NAME;
@@ -3752,7 +3751,7 @@ Statistics Netherlands microdata or other complex or large social science datase
     });
   };
 
-  // ns-hugo:/tmp/hugo_cache/modules/filecache/modules/pkg/mod/github.com/twbs/bootstrap@v5.3.2+incompatible/js/src/util/focustrap.js
+  // ns-hugo-imp:/tmp/hugo_cache/modules/filecache/modules/pkg/mod/github.com/twbs/bootstrap@v5.3.2+incompatible/js/src/util/focustrap.js
   var NAME4 = "focustrap";
   var DATA_KEY3 = "bs.focustrap";
   var EVENT_KEY3 = `.${DATA_KEY3}`;
@@ -3831,7 +3830,7 @@ Statistics Netherlands microdata or other complex or large social science datase
   };
   var focustrap_default = FocusTrap;
 
-  // ns-hugo:/tmp/hugo_cache/modules/filecache/modules/pkg/mod/github.com/twbs/bootstrap@v5.3.2+incompatible/js/src/util/scrollbar.js
+  // ns-hugo-imp:/tmp/hugo_cache/modules/filecache/modules/pkg/mod/github.com/twbs/bootstrap@v5.3.2+incompatible/js/src/util/scrollbar.js
   var SELECTOR_FIXED_CONTENT = ".fixed-top, .fixed-bottom, .is-fixed, .sticky-top";
   var SELECTOR_STICKY_CONTENT = ".sticky-top";
   var PROPERTY_PADDING = "padding-right";
@@ -3908,7 +3907,7 @@ Statistics Netherlands microdata or other complex or large social science datase
   };
   var scrollbar_default = ScrollBarHelper;
 
-  // ns-hugo:/tmp/hugo_cache/modules/filecache/modules/pkg/mod/github.com/twbs/bootstrap@v5.3.2+incompatible/js/src/modal.js
+  // ns-hugo-imp:/tmp/hugo_cache/modules/filecache/modules/pkg/mod/github.com/twbs/bootstrap@v5.3.2+incompatible/js/src/modal.js
   var NAME5 = "modal";
   var DATA_KEY4 = "bs.modal";
   var EVENT_KEY4 = `.${DATA_KEY4}`;
@@ -4175,7 +4174,7 @@ Statistics Netherlands microdata or other complex or large social science datase
   enableDismissTrigger(Modal);
   defineJQueryPlugin(Modal);
 
-  // ns-hugo:/tmp/hugo_cache/modules/filecache/modules/pkg/mod/github.com/twbs/bootstrap@v5.3.2+incompatible/js/src/tab.js
+  // ns-hugo-imp:/tmp/hugo_cache/modules/filecache/modules/pkg/mod/github.com/twbs/bootstrap@v5.3.2+incompatible/js/src/tab.js
   var NAME6 = "tab";
   var DATA_KEY5 = "bs.tab";
   var EVENT_KEY5 = `.${DATA_KEY5}`;
@@ -4424,8 +4423,8 @@ Statistics Netherlands microdata or other complex or large social science datase
 
 <script
   crossorigin="anonymous"
-  integrity="sha256-SyT6nS49vJ1/Zx1siX9mn5ItqSp7UqeLYc/nzkEpijg="
-  src="/js/scripts.min.4b24fa9d2e3dbc9d7f671d6c897f669f922da92a7b52a78b61cfe7ce41298a38.js"></script>
+  integrity="sha256-GbV8tt3Br424vpm8wFXcEegeMsaMyouy3Q6aqbmdy/c="
+  src="/js/scripts.min.19b57cb6ddc1af8db8be99bcc055dc11e81e32c68cca8bb2dd0e9aa9b99dcbf7.js"></script>
 
 
 

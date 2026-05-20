@@ -4,7 +4,7 @@
     <title>Tutorials on SoDa</title>
     <link>https://odissei-soda.nl/tutorials/</link>
     <description>Recent content in Tutorials on SoDa</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>en-US</language>
     <lastBuildDate>Tue, 24 Mar 2026 00:00:00 +0100</lastBuildDate>
     <atom:link href="https://odissei-soda.nl/tutorials/index.xml" rel="self" type="application/rss+xml" />
@@ -13,7 +13,7 @@
       <link>https://odissei-soda.nl/tutorials/websweep_tutorial/</link>
       <pubDate>Tue, 24 Mar 2026 00:00:00 +0100</pubDate>
       <guid>https://odissei-soda.nl/tutorials/websweep_tutorial/</guid>
-      <description>WebSweep helps researchers capture what was publicly visible on a given date, preserve the raw HTML as a reproducible archive, and turn those pages into analysis-ready text.&#xA;Use WebSweep when you:&#xA;have a list of public websites or domains want a repeatable workflow for many domains mainly need HTML text and metadata from public pages In this tutorial, we use the example of FIRMBACKBONE. It is the Dutch research infrastructure to provides secure, FAIR access to comprehensive data on all registered organizations in the Netherlands, including web-based data.</description>
+      <description>&lt;p&gt;WebSweep helps researchers capture what was publicly visible on a given date, preserve the raw HTML as a reproducible archive, and turn those pages into analysis-ready text.&lt;/p&gt;&#xA;&lt;p&gt;Use WebSweep when you:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;have a list of public websites or domains&lt;/li&gt;&#xA;&lt;li&gt;want a repeatable workflow for many domains&lt;/li&gt;&#xA;&lt;li&gt;mainly need HTML text and metadata from public pages&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;In this tutorial, we use the example of FIRMBACKBONE. It is the Dutch research infrastructure to provides secure, FAIR access to comprehensive data on all registered organizations in the Netherlands, including web-based data. We would like to collect information of corporate websites, for example to track the scope and depth of coverage of the energy transition. The same workflow can be used for universities, NGOs, government organisations, local news sites, project websites, or any other public set of domains.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Map explorer</title>

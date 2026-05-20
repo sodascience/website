@@ -2,11 +2,8 @@
   "name": "SoDa",
   "short_name": "SoDa",
   "lang": "en-US",
-  "display": "fullscreen",
-  "orientation" : "portrait",
-  "start_url": "https://odissei-soda.nl/?utm_source=web_app_manifest",
-  "background_color": "#fff",
   "theme_color": "#006388",
+  "background_color": "#fff",
 
   
   
@@ -20,37 +17,38 @@
   
   "icons": [
     {
-      "src": "/images/logos/logo_small_wb_hu68a4318163ff8e011babdec4caf974c7_3412_48x48_resize_lanczos_3.png",
+      "src": "/images/logos/logo_small_wb_hu_88ce2efb8e2851f7.png",
       "sizes": "48x48",
       "type": "image/png"
     },
     {
-      "src": "/images/logos/logo_small_wb_hu68a4318163ff8e011babdec4caf974c7_3412_72x72_resize_lanczos_3.png",
+      "src": "/images/logos/logo_small_wb_hu_f98688cc1d42c3eb.png",
       "sizes": "72x72",
       "type": "image/png"
     },
     {
-      "src": "/images/logos/logo_small_wb_hu68a4318163ff8e011babdec4caf974c7_3412_96x96_resize_lanczos_3.png",
+      "src": "/images/logos/logo_small_wb_hu_a9331ed94db35663.png",
       "sizes": "96x96",
       "type": "image/png"
     },
     {
-      "src": "/images/logos/logo_small_wb_hu68a4318163ff8e011babdec4caf974c7_3412_144x144_resize_lanczos_3.png",
+      "src": "/images/logos/logo_small_wb_hu_bf6340b74362cbec.png",
       "sizes": "144x144",
       "type": "image/png"
     },
     {
-      "src": "/images/logos/logo_small_wb_hu68a4318163ff8e011babdec4caf974c7_3412_192x192_resize_lanczos_3.png",
+      "src": "/images/logos/logo_small_wb_hu_6639d008fedcc56c.png",
       "sizes": "192x192",
-      "type": "image/png",
-      "purpose": "any maskable"
+      "type": "image/png"
     },
     {
-      "src": "/images/logos/logo_small_wb_hu68a4318163ff8e011babdec4caf974c7_3412_512x512_resize_lanczos_3.png",
+      "src": "/images/logos/logo_small_wb_hu_4d52ad5da8cf7ea3.png",
       "sizes": "512x512",
       "type": "image/png"
     }
-  ]
+  ],
   
   
+  "display": "standalone",
+  "start_url": "/?utm_source=web_app_manifest"
 }

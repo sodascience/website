@@ -25,11 +25,11 @@
 
 
 
-<link rel="shortcut icon" href="/images/logos/logo_small_wb_hu68a4318163ff8e011babdec4caf974c7_3412_96x0_resize_lanczos_3.png" type="image/x-icon">
-<link rel="icon" href="/images/logos/logo_small_wb_hu68a4318163ff8e011babdec4caf974c7_3412_96x0_resize_lanczos_3.png" type="image/x-icon">
-<link rel="icon" type="image/png" sizes="48x48" href="/images/logos/logo_small_wb_hu68a4318163ff8e011babdec4caf974c7_3412_48x0_resize_lanczos_3.png">
-<link rel="icon" type="image/png" sizes="96x96" href="/images/logos/logo_small_wb_hu68a4318163ff8e011babdec4caf974c7_3412_96x0_resize_lanczos_3.png">
-<link rel="apple-touch-icon" sizes="144x144" href="/images/logos/logo_small_wb_hu68a4318163ff8e011babdec4caf974c7_3412_144x0_resize_lanczos_3.png">
+<link rel="shortcut icon" href="/images/logos/logo_small_wb_hu_a9331ed94db35663.png" type="image/x-icon">
+<link rel="icon" href="/images/logos/logo_small_wb_hu_a9331ed94db35663.png" type="image/x-icon">
+<link rel="icon" type="image/png" sizes="48x48" href="/images/logos/logo_small_wb_hu_88ce2efb8e2851f7.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/images/logos/logo_small_wb_hu_a9331ed94db35663.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/images/logos/logo_small_wb_hu_bf6340b74362cbec.png">
 
 
 
@@ -310,7 +310,7 @@
 	
 
 	
-	
+
 	
 	
 <header class="navigation">
@@ -626,7 +626,7 @@
 <p>Note that this is the only information we want to collect from the participants of the study, not the whole group chat file!</p>
 </blockquote>
 <p>The first step in creating a DDP processing script is to obtain an example DDP and examine it. This example DDP can be, for example, your own DDP requested from WhatsApp. Usually, platforms provide a (compressed) folder with many different files; i.e., data in a format that is not ready to use. Once uncompressed, a WhatsApp group chat file could look like this:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-R" data-lang="R"><span style="display:flex;"><span>[16<span style="color:#f92672">/</span><span style="color:#ae81ff">03</span><span style="color:#f92672">/</span><span style="color:#ae81ff">2022</span>, <span style="color:#ae81ff">15</span><span style="color:#f92672">:</span><span style="color:#ae81ff">10</span><span style="color:#f92672">:</span><span style="color:#ae81ff">17</span>] Messages and calls are end<span style="color:#f92672">-</span>to<span style="color:#f92672">-</span>end encrypted. No one outside of this chat, not even WhatsApp, can read or listen to them. Tap to learn more.
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-R" data-lang="R"><span style="display:flex;"><span>[16<span style="color:#f92672">/</span><span style="color:#ae81ff">03</span><span style="color:#f92672">/</span><span style="color:#ae81ff">2022</span>, <span style="color:#ae81ff">15</span><span style="color:#f92672">:</span><span style="color:#ae81ff">10</span><span style="color:#f92672">:</span><span style="color:#ae81ff">17</span>] Messages and calls are end<span style="color:#f92672">-</span>to<span style="color:#f92672">-</span>end encrypted. No one outside of this chat, not even WhatsApp, can read or listen to them. Tap to learn more.
 </span></span><span style="display:flex;"><span>[16<span style="color:#f92672">/</span><span style="color:#ae81ff">03</span><span style="color:#f92672">/</span><span style="color:#ae81ff">2022</span>, <span style="color:#ae81ff">15</span><span style="color:#f92672">:</span><span style="color:#ae81ff">20</span><span style="color:#f92672">:</span><span style="color:#ae81ff">25</span>] person1<span style="color:#f92672">:</span> Hi shiva<span style="color:#f92672">!</span>
 </span></span><span style="display:flex;"><span>[16<span style="color:#f92672">/</span><span style="color:#ae81ff">03</span><span style="color:#f92672">/</span><span style="color:#ae81ff">2022</span>, <span style="color:#ae81ff">15</span><span style="color:#f92672">:</span><span style="color:#ae81ff">25</span><span style="color:#f92672">:</span><span style="color:#ae81ff">38</span>] person2<span style="color:#f92672">:</span> Hi 👋
 </span></span><span style="display:flex;"><span>[16<span style="color:#f92672">/</span><span style="color:#ae81ff">03</span><span style="color:#f92672">/</span><span style="color:#ae81ff">2022</span>, <span style="color:#ae81ff">15</span><span style="color:#f92672">:</span><span style="color:#ae81ff">26</span><span style="color:#f92672">:</span><span style="color:#ae81ff">48</span>] person3<span style="color:#f92672">:</span> Hoi<span style="color:#f92672">!</span>
@@ -658,130 +658,130 @@
 <p>In Figure 1 you can see a (fictitious) snippet of the dataset obtained. This is how a dataset in which you combine donations from different users would look like. As can be seen, we have moved from a rather untidy text file to a tidy, directly analysable dataset, where each row corresponds to an user in a given data donation package, and the rest of the columns give information about that user. Particularly, the dataset displays the following information: data donation package id (ddp_id), an anonymized user name (user_name), number of words sent on the groupchat by the user (nwords), date of first and last messages sent on the groupchat by the user (date_first_mess, date_last_mess), number of urls, files and locations sent on the groupchat by the user (respectively, nurls, nfiles, nlocations), and the (other) user that has replied more to that user (replies_from), as well as the user that that user has replied to the most (replies_to).</p>
 <p>Table 1. <em>Snippet of fictitious dataset</em></p>
 <table>
-<thead>
-<tr>
-<th>ddp_id</th>
-<th>user_name</th>
-<th>nwords</th>
-<th>date_first_mess</th>
-<th>date_last_mess</th>
-<th>nurls</th>
-<th>nfiles</th>
-<th>nlocations</th>
-<th>replies_from</th>
-<th>replies_to</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>1</td>
-<td>User1_1</td>
-<td>121</td>
-<td>10/08/2023</td>
-<td>27/08/2023</td>
-<td>0</td>
-<td>15</td>
-<td>0</td>
-<td>User1_2</td>
-<td>User1_4</td>
-</tr>
-<tr>
-<td>1</td>
-<td>User1_2</td>
-<td>17</td>
-<td>11/08/2023</td>
-<td>28/08/2023</td>
-<td>3</td>
-<td>1</td>
-<td>2</td>
-<td>User1_1</td>
-<td>User1_1</td>
-</tr>
-<tr>
-<td>1</td>
-<td>User1_3</td>
-<td>44</td>
-<td>10/08/2023</td>
-<td>28/08/2023</td>
-<td>9</td>
-<td>6</td>
-<td>3</td>
-<td>User1_2</td>
-<td>User1_1</td>
-</tr>
-<tr>
-<td>1</td>
-<td>User1_4</td>
-<td>50</td>
-<td>12/08/2023</td>
-<td>29/08/2023</td>
-<td>0</td>
-<td>3</td>
-<td>1</td>
-<td>User1_3</td>
-<td>User1_1</td>
-</tr>
-<tr>
-<td>2</td>
-<td>User2_1</td>
-<td>123</td>
-<td>01/05/2022</td>
-<td>01/11/2022</td>
-<td>2</td>
-<td>0</td>
-<td>1</td>
-<td>User2_2</td>
-<td>User2_2</td>
-</tr>
-<tr>
-<td>2</td>
-<td>User2_2</td>
-<td>250</td>
-<td>01/05/2022</td>
-<td>02/11/2022</td>
-<td>0</td>
-<td>32</td>
-<td>3</td>
-<td>User2_3</td>
-<td>User2_1</td>
-</tr>
-<tr>
-<td>2</td>
-<td>User2_3</td>
-<td>176</td>
-<td>08/07/2022</td>
-<td>04/12/2022</td>
-<td>6</td>
-<td>0</td>
-<td>5</td>
-<td>User2_2</td>
-<td>User2_3</td>
-</tr>
-<tr>
-<td>3</td>
-<td>User3_1</td>
-<td>12</td>
-<td>05/06/2023</td>
-<td>26/07/2023</td>
-<td>12</td>
-<td>2</td>
-<td>0</td>
-<td>User3_1</td>
-<td>User3_2</td>
-</tr>
-<tr>
-<td>3</td>
-<td>User3_2</td>
-<td>16</td>
-<td>06/06/2023</td>
-<td>26/07/2023</td>
-<td>17</td>
-<td>2</td>
-<td>0</td>
-<td>User3_2</td>
-<td>User3_1</td>
-</tr>
-</tbody>
+  <thead>
+      <tr>
+          <th>ddp_id</th>
+          <th>user_name</th>
+          <th>nwords</th>
+          <th>date_first_mess</th>
+          <th>date_last_mess</th>
+          <th>nurls</th>
+          <th>nfiles</th>
+          <th>nlocations</th>
+          <th>replies_from</th>
+          <th>replies_to</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>1</td>
+          <td>User1_1</td>
+          <td>121</td>
+          <td>10/08/2023</td>
+          <td>27/08/2023</td>
+          <td>0</td>
+          <td>15</td>
+          <td>0</td>
+          <td>User1_2</td>
+          <td>User1_4</td>
+      </tr>
+      <tr>
+          <td>1</td>
+          <td>User1_2</td>
+          <td>17</td>
+          <td>11/08/2023</td>
+          <td>28/08/2023</td>
+          <td>3</td>
+          <td>1</td>
+          <td>2</td>
+          <td>User1_1</td>
+          <td>User1_1</td>
+      </tr>
+      <tr>
+          <td>1</td>
+          <td>User1_3</td>
+          <td>44</td>
+          <td>10/08/2023</td>
+          <td>28/08/2023</td>
+          <td>9</td>
+          <td>6</td>
+          <td>3</td>
+          <td>User1_2</td>
+          <td>User1_1</td>
+      </tr>
+      <tr>
+          <td>1</td>
+          <td>User1_4</td>
+          <td>50</td>
+          <td>12/08/2023</td>
+          <td>29/08/2023</td>
+          <td>0</td>
+          <td>3</td>
+          <td>1</td>
+          <td>User1_3</td>
+          <td>User1_1</td>
+      </tr>
+      <tr>
+          <td>2</td>
+          <td>User2_1</td>
+          <td>123</td>
+          <td>01/05/2022</td>
+          <td>01/11/2022</td>
+          <td>2</td>
+          <td>0</td>
+          <td>1</td>
+          <td>User2_2</td>
+          <td>User2_2</td>
+      </tr>
+      <tr>
+          <td>2</td>
+          <td>User2_2</td>
+          <td>250</td>
+          <td>01/05/2022</td>
+          <td>02/11/2022</td>
+          <td>0</td>
+          <td>32</td>
+          <td>3</td>
+          <td>User2_3</td>
+          <td>User2_1</td>
+      </tr>
+      <tr>
+          <td>2</td>
+          <td>User2_3</td>
+          <td>176</td>
+          <td>08/07/2022</td>
+          <td>04/12/2022</td>
+          <td>6</td>
+          <td>0</td>
+          <td>5</td>
+          <td>User2_2</td>
+          <td>User2_3</td>
+      </tr>
+      <tr>
+          <td>3</td>
+          <td>User3_1</td>
+          <td>12</td>
+          <td>05/06/2023</td>
+          <td>26/07/2023</td>
+          <td>12</td>
+          <td>2</td>
+          <td>0</td>
+          <td>User3_1</td>
+          <td>User3_2</td>
+      </tr>
+      <tr>
+          <td>3</td>
+          <td>User3_2</td>
+          <td>16</td>
+          <td>06/06/2023</td>
+          <td>26/07/2023</td>
+          <td>17</td>
+          <td>2</td>
+          <td>0</td>
+          <td>User3_2</td>
+          <td>User3_1</td>
+      </tr>
+  </tbody>
 </table>
 <p>In Figure 2 you can see a screenshot of how the Port software would display the data to be shared (number of words or messages, date stamps…) and ask for consent to the research subjects. As you see, the Port software guarantees that research subjects are aware of what information they are sharing and consent to it.  The rest of the DDPs, including sensitive data, is analyzed locally and does not leave the respondents&rsquo; devices.</p>
 
@@ -872,9 +872,9 @@
             class="img img-fluid"
             width="1073"
             height="531"
-            src="/images/tutorials/data-donation/donation_hor_merged_hu4d7298b2de6263ec811a5dc43fcb3eb1_225182_1243x700_fit_q100_h2_lanczos_3.webp"
+            src="/images/tutorials/data-donation/donation_hor_merged_hu_9625006f0b2bc3a7.webp"
             alt="zenodo_project"
-            onerror="this.onerror='null';this.src='\/images\/tutorials\/data-donation\/donation_hor_merged_hu4d7298b2de6263ec811a5dc43fcb3eb1_225182_1243x700_fit_q100_lanczos_3.png'" />
+            onerror="this.onerror='null';this.src='\/images\/tutorials\/data-donation\/donation_hor_merged_hu_f8e263eb39bdbde5.png'" />
       
         <figcaption id="caption-Figure 2. How the Port software displays the data to be shared and asks for consent" class="caption-Figure-2-How-the-Port-software-displays-the-data-to-be-shared-and-asks-for-consent">
           Figure 2. <em>How the Port software displays the data to be shared and asks for consent</em>
@@ -983,9 +983,9 @@
             class="img img-fluid img-center"
             width="283"
             height="402"
-            src="/images/tutorials/data-donation/donation-2_hufb96f8c7487b053a4ead9e2310e83d86_76887_768x402_fit_q50_h2_lanczos_3.webp"
+            src="/images/tutorials/data-donation/donation-2_hu_e62f7a391adde252.webp"
             alt="zenodo_project"
-            onerror="this.onerror='null';this.src='\/images\/tutorials\/data-donation\/donation-2_hufb96f8c7487b053a4ead9e2310e83d86_76887_768x402_fit_q50_lanczos_3.png'" />
+            onerror="this.onerror='null';this.src='\/images\/tutorials\/data-donation\/donation-2_hu_e4b5bc7b4405e7e3.png'" />
       
     
 
@@ -1084,9 +1084,9 @@
             class="img img-fluid img-center"
             width="461"
             height="402"
-            src="/images/tutorials/data-donation/donation-3_hu3ad033c170ec3a898dc44405aab37ace_45206_768x402_fit_q50_h2_lanczos_3.webp"
+            src="/images/tutorials/data-donation/donation-3_hu_f657b42fff2b37c7.webp"
             alt="zenodo_project"
-            onerror="this.onerror='null';this.src='\/images\/tutorials\/data-donation\/donation-3_hu3ad033c170ec3a898dc44405aab37ace_45206_768x402_fit_q50_lanczos_3.png'" />
+            onerror="this.onerror='null';this.src='\/images\/tutorials\/data-donation\/donation-3_hu_c62261b00f97606.png'" />
       
     
 
@@ -1299,7 +1299,7 @@
 
 
 
-<script crossorigin="anonymous" defer  integrity="sha512-dCIZHcmW8pL&#43;DPLWQFFEYQLuqKBywPohaIj0FJKVrrlZ6iljjXafVk&#43;5hh&#43;sRe8ffzZ6Hh9AK4OC6NcwxyEyNQ==" type="application/javascript">(() => {
+<script crossorigin="anonymous" defer  integrity="sha512-ViniUxt4SXT/zp/QUEsaapP5q49gJyiD3w26VBvYXN1FTJjsC2Ph9o72hD04ywD7dojnLvMVHHsUESthRC8q3Q==" type="application/javascript">(() => {
   var __create = Object.create;
   var __defProp = Object.defineProperty;
   var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
@@ -1326,9 +1326,9 @@
     mod
   ));
 
-  // ns-hugo:/tmp/hugo_cache/modules/filecache/modules/pkg/mod/github.com/gohugoio/hugo-mod-jslibs-dist/popperjs/v2@v2.21100.20000/package/dist/cjs/popper.js
+  // ns-hugo-imp:/tmp/hugo_cache/modules/filecache/modules/pkg/mod/github.com/gohugoio/hugo-mod-jslibs-dist/popperjs/v2@v2.21100.20000/package/dist/cjs/popper.js
   var require_popper = __commonJS({
-    "ns-hugo:/tmp/hugo_cache/modules/filecache/modules/pkg/mod/github.com/gohugoio/hugo-mod-jslibs-dist/popperjs/v2@v2.21100.20000/package/dist/cjs/popper.js"(exports) {
+    "ns-hugo-imp:/tmp/hugo_cache/modules/filecache/modules/pkg/mod/github.com/gohugoio/hugo-mod-jslibs-dist/popperjs/v2@v2.21100.20000/package/dist/cjs/popper.js"(exports) {
       "use strict";
       Object.defineProperty(exports, "__esModule", { value: true });
       function getWindow(node) {
@@ -2536,8 +2536,7 @@
           };
           for (var _i = numberOfChecks; _i > 0; _i--) {
             var _ret = _loop(_i);
-            if (_ret === "break")
-              break;
+            if (_ret === "break") break;
           }
         }
         if (state.placement !== firstFittingPlacement) {
@@ -2802,7 +2801,7 @@
     }
   });
 
-  // ns-hugo:/tmp/hugo_cache/modules/filecache/modules/pkg/mod/github.com/twbs/bootstrap@v5.3.2+incompatible/js/src/dom/data.js
+  // ns-hugo-imp:/tmp/hugo_cache/modules/filecache/modules/pkg/mod/github.com/twbs/bootstrap@v5.3.2+incompatible/js/src/dom/data.js
   var elementMap = /* @__PURE__ */ new Map();
   var data_default = {
     set(element, key, instance) {
@@ -2834,7 +2833,7 @@
     }
   };
 
-  // ns-hugo:/tmp/hugo_cache/modules/filecache/modules/pkg/mod/github.com/twbs/bootstrap@v5.3.2+incompatible/js/src/util/index.js
+  // ns-hugo-imp:/tmp/hugo_cache/modules/filecache/modules/pkg/mod/github.com/twbs/bootstrap@v5.3.2+incompatible/js/src/util/index.js
   var MILLISECONDS_MULTIPLIER = 1e3;
   var TRANSITION_END = "transitionend";
   var parseSelector = (selector) => {
@@ -2997,7 +2996,7 @@
     return list[Math.max(0, Math.min(index, listLength - 1))];
   };
 
-  // ns-hugo:/tmp/hugo_cache/modules/filecache/modules/pkg/mod/github.com/twbs/bootstrap@v5.3.2+incompatible/js/src/dom/event-handler.js
+  // ns-hugo-imp:/tmp/hugo_cache/modules/filecache/modules/pkg/mod/github.com/twbs/bootstrap@v5.3.2+incompatible/js/src/dom/event-handler.js
   var namespaceRegex = /[^.]*(?=\..*)\.|.*/;
   var stripNameRegex = /\..*/;
   var stripUidRegex = /::\d+$/;
@@ -3236,7 +3235,7 @@
   }
   var event_handler_default = EventHandler;
 
-  // ns-hugo:/tmp/hugo_cache/modules/filecache/modules/pkg/mod/github.com/twbs/bootstrap@v5.3.2+incompatible/js/src/dom/manipulator.js
+  // ns-hugo-imp:/tmp/hugo_cache/modules/filecache/modules/pkg/mod/github.com/twbs/bootstrap@v5.3.2+incompatible/js/src/dom/manipulator.js
   function normalizeData(value) {
     if (value === "true") {
       return true;
@@ -3288,7 +3287,7 @@
   };
   var manipulator_default = Manipulator;
 
-  // ns-hugo:/tmp/hugo_cache/modules/filecache/modules/pkg/mod/github.com/twbs/bootstrap@v5.3.2+incompatible/js/src/util/config.js
+  // ns-hugo-imp:/tmp/hugo_cache/modules/filecache/modules/pkg/mod/github.com/twbs/bootstrap@v5.3.2+incompatible/js/src/util/config.js
   var Config = class {
     // Getters
     static get Default() {
@@ -3332,7 +3331,7 @@
   };
   var config_default = Config;
 
-  // ns-hugo:/tmp/hugo_cache/modules/filecache/modules/pkg/mod/github.com/twbs/bootstrap@v5.3.2+incompatible/js/src/base-component.js
+  // ns-hugo-imp:/tmp/hugo_cache/modules/filecache/modules/pkg/mod/github.com/twbs/bootstrap@v5.3.2+incompatible/js/src/base-component.js
   var VERSION = "5.3.2";
   var BaseComponent = class extends config_default {
     constructor(element, config) {
@@ -3384,7 +3383,7 @@
   };
   var base_component_default = BaseComponent;
 
-  // ns-hugo:/tmp/hugo_cache/modules/filecache/modules/pkg/mod/github.com/twbs/bootstrap@v5.3.2+incompatible/js/src/dom/selector-engine.js
+  // ns-hugo-imp:/tmp/hugo_cache/modules/filecache/modules/pkg/mod/github.com/twbs/bootstrap@v5.3.2+incompatible/js/src/dom/selector-engine.js
   var getSelector = (element) => {
     let selector = element.getAttribute("data-bs-target");
     if (!selector || selector === "#") {
@@ -3470,7 +3469,7 @@
   };
   var selector_engine_default = SelectorEngine;
 
-  // ns-hugo:/tmp/hugo_cache/modules/filecache/modules/pkg/mod/github.com/twbs/bootstrap@v5.3.2+incompatible/js/src/collapse.js
+  // ns-hugo-imp:/tmp/hugo_cache/modules/filecache/modules/pkg/mod/github.com/twbs/bootstrap@v5.3.2+incompatible/js/src/collapse.js
   var NAME = "collapse";
   var DATA_KEY = "bs.collapse";
   var EVENT_KEY = `.${DATA_KEY}`;
@@ -3666,7 +3665,7 @@
   });
   defineJQueryPlugin(Collapse);
 
-  // ns-hugo:/tmp/hugo_cache/modules/filecache/modules/pkg/mod/github.com/twbs/bootstrap@v5.3.2+incompatible/js/src/dropdown.js
+  // ns-hugo-imp:/tmp/hugo_cache/modules/filecache/modules/pkg/mod/github.com/twbs/bootstrap@v5.3.2+incompatible/js/src/dropdown.js
   var Popper = __toESM(require_popper());
   var NAME2 = "dropdown";
   var DATA_KEY2 = "bs.dropdown";
@@ -3975,7 +3974,7 @@
   });
   defineJQueryPlugin(Dropdown);
 
-  // ns-hugo:/tmp/hugo_cache/modules/filecache/modules/pkg/mod/github.com/twbs/bootstrap@v5.3.2+incompatible/js/src/util/backdrop.js
+  // ns-hugo-imp:/tmp/hugo_cache/modules/filecache/modules/pkg/mod/github.com/twbs/bootstrap@v5.3.2+incompatible/js/src/util/backdrop.js
   var NAME3 = "backdrop";
   var CLASS_NAME_FADE = "fade";
   var CLASS_NAME_SHOW3 = "show";
@@ -4081,7 +4080,7 @@
   };
   var backdrop_default = Backdrop;
 
-  // ns-hugo:/tmp/hugo_cache/modules/filecache/modules/pkg/mod/github.com/twbs/bootstrap@v5.3.2+incompatible/js/src/util/component-functions.js
+  // ns-hugo-imp:/tmp/hugo_cache/modules/filecache/modules/pkg/mod/github.com/twbs/bootstrap@v5.3.2+incompatible/js/src/util/component-functions.js
   var enableDismissTrigger = (component, method = "hide") => {
     const clickEvent = `click.dismiss${component.EVENT_KEY}`;
     const name = component.NAME;
@@ -4098,7 +4097,7 @@
     });
   };
 
-  // ns-hugo:/tmp/hugo_cache/modules/filecache/modules/pkg/mod/github.com/twbs/bootstrap@v5.3.2+incompatible/js/src/util/focustrap.js
+  // ns-hugo-imp:/tmp/hugo_cache/modules/filecache/modules/pkg/mod/github.com/twbs/bootstrap@v5.3.2+incompatible/js/src/util/focustrap.js
   var NAME4 = "focustrap";
   var DATA_KEY3 = "bs.focustrap";
   var EVENT_KEY3 = `.${DATA_KEY3}`;
@@ -4177,7 +4176,7 @@
   };
   var focustrap_default = FocusTrap;
 
-  // ns-hugo:/tmp/hugo_cache/modules/filecache/modules/pkg/mod/github.com/twbs/bootstrap@v5.3.2+incompatible/js/src/util/scrollbar.js
+  // ns-hugo-imp:/tmp/hugo_cache/modules/filecache/modules/pkg/mod/github.com/twbs/bootstrap@v5.3.2+incompatible/js/src/util/scrollbar.js
   var SELECTOR_FIXED_CONTENT = ".fixed-top, .fixed-bottom, .is-fixed, .sticky-top";
   var SELECTOR_STICKY_CONTENT = ".sticky-top";
   var PROPERTY_PADDING = "padding-right";
@@ -4254,7 +4253,7 @@
   };
   var scrollbar_default = ScrollBarHelper;
 
-  // ns-hugo:/tmp/hugo_cache/modules/filecache/modules/pkg/mod/github.com/twbs/bootstrap@v5.3.2+incompatible/js/src/modal.js
+  // ns-hugo-imp:/tmp/hugo_cache/modules/filecache/modules/pkg/mod/github.com/twbs/bootstrap@v5.3.2+incompatible/js/src/modal.js
   var NAME5 = "modal";
   var DATA_KEY4 = "bs.modal";
   var EVENT_KEY4 = `.${DATA_KEY4}`;
@@ -4521,7 +4520,7 @@
   enableDismissTrigger(Modal);
   defineJQueryPlugin(Modal);
 
-  // ns-hugo:/tmp/hugo_cache/modules/filecache/modules/pkg/mod/github.com/twbs/bootstrap@v5.3.2+incompatible/js/src/tab.js
+  // ns-hugo-imp:/tmp/hugo_cache/modules/filecache/modules/pkg/mod/github.com/twbs/bootstrap@v5.3.2+incompatible/js/src/tab.js
   var NAME6 = "tab";
   var DATA_KEY5 = "bs.tab";
   var EVENT_KEY5 = `.${DATA_KEY5}`;
@@ -4770,8 +4769,8 @@
 
 <script
   crossorigin="anonymous"
-  integrity="sha256-SyT6nS49vJ1/Zx1siX9mn5ItqSp7UqeLYc/nzkEpijg="
-  src="/js/scripts.min.4b24fa9d2e3dbc9d7f671d6c897f669f922da92a7b52a78b61cfe7ce41298a38.js"></script>
+  integrity="sha256-GbV8tt3Br424vpm8wFXcEegeMsaMyouy3Q6aqbmdy/c="
+  src="/js/scripts.min.19b57cb6ddc1af8db8be99bcc055dc11e81e32c68cca8bb2dd0e9aa9b99dcbf7.js"></script>
 
 
 
